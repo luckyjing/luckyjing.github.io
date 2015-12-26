@@ -1,0 +1,609 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:type" content="article">
+<meta property="og:title" content="curl全部命令">
+<meta property="og:url" content="http://yoursite.com/Node-js/curl全部命令/index.html">
+<meta property="og:site_name" content="全栈杂货铺">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:updated_time" content="2015-12-26T06:25:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="curl全部命令">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide',
+    motion: true
+  };
+</script>
+
+  <title> curl全部命令 | 全栈杂货铺 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">全栈杂货铺</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">MEAN Web</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                curl全部命令
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-26T14:25:04+08:00" content="2015年12月26日">
+              2015年12月26日
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node-js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br></pre></td><td class="code"><pre><span class="line">curl --help</span><br><span class="line">Usage: curl [options...] &lt;url&gt;</span><br><span class="line">Options: (H) means HTTP/HTTPS only, (F) means FTP only</span><br><span class="line">     -<span class="ruby">-anyauth       <span class="constant">Pick</span> <span class="string">"any"</span> authentication method (<span class="constant">H</span>)</span><br><span class="line"></span> -<span class="ruby">a, --append        <span class="constant">Append</span> to target file <span class="keyword">when</span> uploading (<span class="constant">F</span>/<span class="constant">SFTP</span>)</span><br><span class="line"></span>     -<span class="ruby">-basic         <span class="constant">Use</span> <span class="constant">HTTP</span> <span class="constant">Basic</span> <span class="constant">Authentication</span> (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-cacert <span class="constant">FILE</span>   <span class="constant">CA</span> certificate to verify peer against (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-capath <span class="constant">DIR</span>    <span class="constant">CA</span> directory to verify peer against (<span class="constant">SSL</span>)</span><br><span class="line"></span> -<span class="ruby"><span class="constant">E</span>, --cert <span class="constant">CERT</span>[<span class="symbol">:PASSWD</span>]  <span class="constant">Client</span> certificate file <span class="keyword">and</span> password (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-cert-status   <span class="constant">Verify</span> the status of the server certificate (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-cert-type <span class="constant">TYPE</span>  <span class="constant">Certificate</span> file type (<span class="constant">DER</span>/<span class="constant">PEM</span>/<span class="constant">ENG</span>) (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-ciphers <span class="constant">LIST</span>  <span class="constant">SSL</span> ciphers to use (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-compressed    <span class="constant">Request</span> compressed response (using deflate <span class="keyword">or</span> gzip)</span><br><span class="line"></span> -<span class="ruby"><span class="constant">K</span>, --config <span class="constant">FILE</span>   <span class="constant">Read</span> config from <span class="constant">FILE</span></span><br><span class="line"></span>     -<span class="ruby">-connect-timeout <span class="constant">SECONDS</span>  <span class="constant">Maximum</span> time allowed <span class="keyword">for</span> connection</span><br><span class="line"></span> -<span class="ruby"><span class="constant">C</span>, --continue-at <span class="constant">OFFSET</span>  <span class="constant">Resumed</span> transfer <span class="constant">OFFSET</span></span><br><span class="line"></span> -<span class="ruby">b, --cookie <span class="constant">STRING</span>/<span class="constant">FILE</span>  <span class="constant">Read</span> cookies from <span class="constant">STRING</span>/<span class="constant">FILE</span> (<span class="constant">H</span>)</span><br><span class="line"></span> -<span class="ruby">c, --cookie-jar <span class="constant">FILE</span>  <span class="constant">Write</span> cookies to <span class="constant">FILE</span> after operation (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-create-dirs   <span class="constant">Create</span> necessary local directory hierarchy</span><br><span class="line"></span>     -<span class="ruby">-crlf          <span class="constant">Convert</span> <span class="constant">LF</span> to <span class="constant">CRLF</span> <span class="keyword">in</span> upload</span><br><span class="line"></span>     -<span class="ruby">-crlfile <span class="constant">FILE</span>  <span class="constant">Get</span> a <span class="constant">CRL</span> list <span class="keyword">in</span> <span class="constant">PEM</span> format from the given file</span><br><span class="line"></span> -<span class="ruby">d, --data <span class="constant">DATA</span>     <span class="constant">HTTP</span> <span class="constant">POST</span> data (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-data-raw <span class="constant">DATA</span>  <span class="constant">HTTP</span> <span class="constant">POST</span> data, <span class="string">'@'</span> allowed (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-data-ascii <span class="constant">DATA</span>  <span class="constant">HTTP</span> <span class="constant">POST</span> <span class="constant">ASCII</span> data (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-data-binary <span class="constant">DATA</span>  <span class="constant">HTTP</span> <span class="constant">POST</span> binary data (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-data-urlencode <span class="constant">DATA</span>  <span class="constant">HTTP</span> <span class="constant">POST</span> data url encoded (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-delegation <span class="constant">STRING</span>  <span class="constant">GSS</span>-<span class="constant">API</span> delegation permission</span><br><span class="line"></span>     -<span class="ruby">-digest        <span class="constant">Use</span> <span class="constant">HTTP</span> <span class="constant">Digest</span> <span class="constant">Authentication</span> (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-disable-eprt  <span class="constant">Inhibit</span> using <span class="constant">EPRT</span> <span class="keyword">or</span> <span class="constant">LPRT</span> (<span class="constant">F</span>)</span><br><span class="line"></span>     -<span class="ruby">-disable-epsv  <span class="constant">Inhibit</span> using <span class="constant">EPSV</span> (<span class="constant">F</span>)</span><br><span class="line"></span>     -<span class="ruby">-dns-servers   <span class="constant">DNS</span> server addrs to <span class="symbol">use:</span> <span class="number">1.1</span>.<span class="number">1.1</span>;<span class="number">2.2</span>.<span class="number">2.2</span></span><br><span class="line"></span>     -<span class="ruby">-dns-interface  <span class="constant">Interface</span> to use <span class="keyword">for</span> <span class="constant">DNS</span> requests</span><br><span class="line"></span>     -<span class="ruby">-dns-ipv4-addr  <span class="constant">IPv4</span> address to use <span class="keyword">for</span> <span class="constant">DNS</span> requests, dot notation</span><br><span class="line"></span>     -<span class="ruby">-dns-ipv6-addr  <span class="constant">IPv6</span> address to use <span class="keyword">for</span> <span class="constant">DNS</span> requests, dot notation</span><br><span class="line"></span> -<span class="ruby"><span class="constant">D</span>, --dump-header <span class="constant">FILE</span>  <span class="constant">Write</span> the headers to <span class="constant">FILE</span></span><br><span class="line"></span>     -<span class="ruby">-egd-file <span class="constant">FILE</span>  <span class="constant">EGD</span> socket path <span class="keyword">for</span> random data (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-engine <span class="constant">ENGINE</span>  <span class="constant">Crypto</span> engine (use <span class="string">"--engine list"</span> <span class="keyword">for</span> list) (<span class="constant">SSL</span>)</span><br><span class="line"></span> -<span class="ruby">f, --fail          <span class="constant">Fail</span> silently (no output at all) on <span class="constant">HTTP</span> errors (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-<span class="keyword">false</span>-start   <span class="constant">Enable</span> <span class="constant">TLS</span> <span class="constant">False</span> <span class="constant">Start</span>.</span><br><span class="line"></span> -<span class="ruby"><span class="constant">F</span>, --form <span class="constant">CONTENT</span>  <span class="constant">Specify</span> <span class="constant">HTTP</span> multipart <span class="constant">POST</span> data (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-form-string <span class="constant">STRING</span>  <span class="constant">Specify</span> <span class="constant">HTTP</span> multipart <span class="constant">POST</span> data (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-ftp-account <span class="constant">DATA</span>  <span class="constant">Account</span> data string (<span class="constant">F</span>)</span><br><span class="line"></span>     -<span class="ruby">-ftp-alternative-to-user <span class="constant">COMMAND</span>  <span class="constant">String</span> to replace <span class="string">"USER [name]"</span> (<span class="constant">F</span>)</span><br><span class="line"></span>     -<span class="ruby">-ftp-create-dirs  <span class="constant">Create</span> the remote dirs <span class="keyword">if</span> <span class="keyword">not</span> present (<span class="constant">F</span>)</span><br><span class="line"></span>     -<span class="ruby">-ftp-method [<span class="constant">MULTICWD</span>/<span class="constant">NOCWD</span>/<span class="constant">SINGLECWD</span>]  <span class="constant">Control</span> <span class="constant">CWD</span> usage (<span class="constant">F</span>)</span><br><span class="line"></span>     -<span class="ruby">-ftp-pasv      <span class="constant">Use</span> <span class="constant">PASV</span>/<span class="constant">EPSV</span> instead of <span class="constant">PORT</span> (<span class="constant">F</span>)</span><br><span class="line"></span> -<span class="ruby"><span class="constant">P</span>, --ftp-port <span class="constant">ADR</span>  <span class="constant">Use</span> <span class="constant">PORT</span> with given address instead of <span class="constant">PASV</span> (<span class="constant">F</span>)</span><br><span class="line"></span>     -<span class="ruby">-ftp-skip-pasv-ip  <span class="constant">Skip</span> the <span class="constant">IP</span> address <span class="keyword">for</span> <span class="constant">PASV</span> (<span class="constant">F</span>)</span><br><span class="line"></span>     -<span class="ruby">-ftp-pret      <span class="constant">Send</span> <span class="constant">PRET</span> before <span class="constant">PASV</span> (<span class="keyword">for</span> drftpd) (<span class="constant">F</span>)</span><br><span class="line"></span>     -<span class="ruby">-ftp-ssl-ccc   <span class="constant">Send</span> <span class="constant">CCC</span> after authenticating (<span class="constant">F</span>)</span><br><span class="line"></span>     -<span class="ruby">-ftp-ssl-ccc-mode <span class="constant">ACTIVE</span>/<span class="constant">PASSIVE</span>  <span class="constant">Set</span> <span class="constant">CCC</span> mode (<span class="constant">F</span>)</span><br><span class="line"></span>     -<span class="ruby">-ftp-ssl-control  <span class="constant">Require</span> <span class="constant">SSL</span>/<span class="constant">TLS</span> <span class="keyword">for</span> <span class="constant">FTP</span> login, clear <span class="keyword">for</span> transfer (<span class="constant">F</span>)</span><br><span class="line"></span> -<span class="ruby"><span class="constant">G</span>, --get           <span class="constant">Send</span> the -d data with a <span class="constant">HTTP</span> <span class="constant">GET</span> (<span class="constant">H</span>)</span><br><span class="line"></span> -<span class="ruby">g, --globoff       <span class="constant">Disable</span> <span class="constant">URL</span> sequences <span class="keyword">and</span> ranges using &#123;&#125; <span class="keyword">and</span> []</span><br><span class="line"></span> -<span class="ruby"><span class="constant">H</span>, --header <span class="constant">LINE</span>   <span class="constant">Pass</span> custom header <span class="constant">LINE</span> to server (<span class="constant">H</span>)</span><br><span class="line"></span> -<span class="ruby"><span class="constant">I</span>, --head          <span class="constant">Show</span> document info only</span><br><span class="line"></span> -<span class="ruby">h, --help          <span class="constant">This</span> help text</span><br><span class="line"></span>     -<span class="ruby">-hostpubmd5 <span class="constant">MD5</span>  <span class="constant">Hex</span>-encoded <span class="constant">MD5</span> string of the host public key. (<span class="constant">SSH</span>)</span><br><span class="line"></span> -<span class="ruby"><span class="number">0</span>, --http1.<span class="number">0</span>       <span class="constant">Use</span> <span class="constant">HTTP</span> <span class="number">1.0</span> (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-http1.<span class="number">1</span>       <span class="constant">Use</span> <span class="constant">HTTP</span> <span class="number">1.1</span> (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-http2         <span class="constant">Use</span> <span class="constant">HTTP</span> <span class="number">2</span> (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-ignore-content-length  <span class="constant">Ignore</span> the <span class="constant">HTTP</span> <span class="constant">Content</span>-<span class="constant">Length</span> header</span><br><span class="line"></span> -<span class="ruby">i, --<span class="keyword">include</span>       <span class="constant">Include</span> protocol headers <span class="keyword">in</span> the output (<span class="constant">H</span>/<span class="constant">F</span>)</span><br><span class="line"></span> -<span class="ruby">k, --insecure      <span class="constant">Allow</span> connections to <span class="constant">SSL</span> sites without certs (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-interface <span class="constant">INTERFACE</span>  <span class="constant">Use</span> network <span class="constant">INTERFACE</span> (<span class="keyword">or</span> address)</span><br><span class="line"></span> -<span class="ruby"><span class="number">4</span>, --ipv4          <span class="constant">Resolve</span> name to <span class="constant">IPv4</span> address</span><br><span class="line"></span> -<span class="ruby"><span class="number">6</span>, --ipv6          <span class="constant">Resolve</span> name to <span class="constant">IPv6</span> address</span><br><span class="line"></span> -<span class="ruby">j, --junk-session-cookies  <span class="constant">Ignore</span> session cookies read from file (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-keepalive-time <span class="constant">SECONDS</span>  <span class="constant">Wait</span> <span class="constant">SECONDS</span> between keepalive probes</span><br><span class="line"></span>     -<span class="ruby">-key <span class="constant">KEY</span>       <span class="constant">Private</span> key file name (<span class="constant">SSL</span>/<span class="constant">SSH</span>)</span><br><span class="line"></span>     -<span class="ruby">-key-type <span class="constant">TYPE</span>  <span class="constant">Private</span> key file type (<span class="constant">DER</span>/<span class="constant">PEM</span>/<span class="constant">ENG</span>) (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-krb <span class="constant">LEVEL</span>     <span class="constant">Enable</span> <span class="constant">Kerberos</span> with security <span class="constant">LEVEL</span> (<span class="constant">F</span>)</span><br><span class="line"></span>     -<span class="ruby">-libcurl <span class="constant">FILE</span>  <span class="constant">Dump</span> libcurl equivalent code of this command line</span><br><span class="line"></span>     -<span class="ruby">-limit-rate <span class="constant">RATE</span>  <span class="constant">Limit</span> transfer speed to <span class="constant">RATE</span></span><br><span class="line"></span> -<span class="ruby">l, --list-only     <span class="constant">List</span> only mode (<span class="constant">F</span>/<span class="constant">POP3</span>)</span><br><span class="line"></span>     -<span class="ruby">-local-port <span class="constant">RANGE</span>  <span class="constant">Force</span> use of <span class="constant">RANGE</span> <span class="keyword">for</span> local port numbers</span><br><span class="line"></span> -<span class="ruby"><span class="constant">L</span>, --location      <span class="constant">Follow</span> redirects (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-location-trusted  <span class="constant">Like</span> <span class="string">'--location'</span>, <span class="keyword">and</span> send auth to other hosts (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-login-options <span class="constant">OPTIONS</span>  <span class="constant">Server</span> login options (<span class="constant">IMAP</span>, <span class="constant">POP3</span>, <span class="constant">SMTP</span>)</span><br><span class="line"></span> -<span class="ruby"><span class="constant">M</span>, --manual        <span class="constant">Display</span> the full manual</span><br><span class="line"></span>     -<span class="ruby">-mail-from <span class="constant">FROM</span>  <span class="constant">Mail</span> from this address (<span class="constant">SMTP</span>)</span><br><span class="line"></span>     -<span class="ruby">-mail-rcpt <span class="constant">TO</span>  <span class="constant">Mail</span> to this/these addresses (<span class="constant">SMTP</span>)</span><br><span class="line"></span>     -<span class="ruby">-mail-auth <span class="constant">AUTH</span>  <span class="constant">Originator</span> address of the original email (<span class="constant">SMTP</span>)</span><br><span class="line"></span>     -<span class="ruby">-max-filesize <span class="constant">BYTES</span>  <span class="constant">Maximum</span> file size to download (<span class="constant">H</span>/<span class="constant">F</span>)</span><br><span class="line"></span>     -<span class="ruby">-max-redirs <span class="constant">NUM</span>  <span class="constant">Maximum</span> number of redirects allowed (<span class="constant">H</span>)</span><br><span class="line"></span> -<span class="ruby">m, --max-time <span class="constant">SECONDS</span>  <span class="constant">Maximum</span> time allowed <span class="keyword">for</span> the transfer</span><br><span class="line"></span>     -<span class="ruby">-metalink      <span class="constant">Process</span> given <span class="constant">URLs</span> as metalink <span class="constant">XML</span> file</span><br><span class="line"></span>     -<span class="ruby">-negotiate     <span class="constant">Use</span> <span class="constant">HTTP</span> <span class="constant">Negotiate</span> (<span class="constant">SPNEGO</span>) authentication (<span class="constant">H</span>)</span><br><span class="line"></span> -<span class="ruby">n, --netrc         <span class="constant">Must</span> read .netrc <span class="keyword">for</span> user name <span class="keyword">and</span> password</span><br><span class="line"></span>     -<span class="ruby">-netrc-optional  <span class="constant">Use</span> either .netrc <span class="keyword">or</span> <span class="constant">URL</span>; overrides -n</span><br><span class="line"></span>     -<span class="ruby">-netrc-file <span class="constant">FILE</span>  <span class="constant">Specify</span> <span class="constant">FILE</span> <span class="keyword">for</span> netrc</span><br><span class="line"></span> -<span class="ruby"><span class="symbol">:</span>, --<span class="keyword">next</span>          <span class="constant">Allows</span> the following <span class="constant">URL</span> to use a separate set of options</span><br><span class="line"></span>     -<span class="ruby">-no-alpn       <span class="constant">Disable</span> the <span class="constant">ALPN</span> <span class="constant">TLS</span> extension (<span class="constant">H</span>)</span><br><span class="line"></span> -<span class="ruby"><span class="constant">N</span>, --no-buffer     <span class="constant">Disable</span> buffering of the output stream</span><br><span class="line"></span>     -<span class="ruby">-no-keepalive  <span class="constant">Disable</span> keepalive use on the connection</span><br><span class="line"></span>     -<span class="ruby">-no-npn        <span class="constant">Disable</span> the <span class="constant">NPN</span> <span class="constant">TLS</span> extension (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-no-sessionid  <span class="constant">Disable</span> <span class="constant">SSL</span> session-<span class="constant">ID</span> reusing (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-noproxy       <span class="constant">List</span> of hosts which <span class="keyword">do</span> <span class="keyword">not</span> use proxy</span><br><span class="line"></span>     -<span class="ruby">-ntlm          <span class="constant">Use</span> <span class="constant">HTTP</span> <span class="constant">NTLM</span> authentication (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-oauth2-bearer <span class="constant">TOKEN</span>  <span class="constant">OAuth</span> <span class="number">2</span> <span class="constant">Bearer</span> <span class="constant">Token</span> (<span class="constant">IMAP</span>, <span class="constant">POP3</span>, <span class="constant">SMTP</span>)</span><br><span class="line"></span> -<span class="ruby">o, --output <span class="constant">FILE</span>   <span class="constant">Write</span> to <span class="constant">FILE</span> instead of stdout</span><br><span class="line"></span>     -<span class="ruby">-pass <span class="constant">PASS</span>     <span class="constant">Pass</span> phrase <span class="keyword">for</span> the private key (<span class="constant">SSL</span>/<span class="constant">SSH</span>)</span><br><span class="line"></span>     -<span class="ruby">-path-as-is    <span class="constant">Do</span> <span class="keyword">not</span> squash .. sequences <span class="keyword">in</span> <span class="constant">URL</span> path</span><br><span class="line"></span>     -<span class="ruby">-pinnedpubkey <span class="constant">FILE</span>  <span class="constant">Public</span> key (<span class="constant">PEM</span>/<span class="constant">DER</span>) to verify peer against (<span class="constant">OpenSSL</span>/<span class="constant">GnuTLS</span>/<span class="constant">NSS</span>/wolfSSL/<span class="constant">CyaSSL</span>/<span class="constant">GSKit</span> only)</span><br><span class="line"></span>     -<span class="ruby">-post301       <span class="constant">Do</span> <span class="keyword">not</span> switch to <span class="constant">GET</span> after following a <span class="number">301</span> redirect (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-post302       <span class="constant">Do</span> <span class="keyword">not</span> switch to <span class="constant">GET</span> after following a <span class="number">302</span> redirect (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-post303       <span class="constant">Do</span> <span class="keyword">not</span> switch to <span class="constant">GET</span> after following a <span class="number">303</span> redirect (<span class="constant">H</span>)</span><br><span class="line"></span><span class="comment"> -#, --progress-bar  Display transfer progress as a progress bar</span></span><br><span class="line">     -<span class="ruby">-proto <span class="constant">PROTOCOLS</span>  <span class="constant">Enable</span>/disable <span class="constant">PROTOCOLS</span></span><br><span class="line"></span>     -<span class="ruby">-proto-redir <span class="constant">PROTOCOLS</span>  <span class="constant">Enable</span>/disable <span class="constant">PROTOCOLS</span> on redirect</span><br><span class="line"></span> -<span class="ruby">x, --proxy [<span class="constant">PROTOCOL</span><span class="symbol">://</span>]<span class="constant">HOST</span>[<span class="symbol">:PORT</span>]  <span class="constant">Use</span> proxy on given port</span><br><span class="line"></span>     -<span class="ruby">-proxy-anyauth  <span class="constant">Pick</span> <span class="string">"any"</span> proxy authentication method (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-proxy-basic   <span class="constant">Use</span> <span class="constant">Basic</span> authentication on the proxy (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-proxy-digest  <span class="constant">Use</span> <span class="constant">Digest</span> authentication on the proxy (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-proxy-negotiate  <span class="constant">Use</span> <span class="constant">HTTP</span> <span class="constant">Negotiate</span> (<span class="constant">SPNEGO</span>) authentication on the proxy (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-proxy-ntlm    <span class="constant">Use</span> <span class="constant">NTLM</span> authentication on the proxy (<span class="constant">H</span>)</span><br><span class="line"></span>     -<span class="ruby">-proxy-service-name <span class="constant">NAME</span>  <span class="constant">SPNEGO</span> proxy service name</span><br><span class="line"></span>     -<span class="ruby">-service-name <span class="constant">NAME</span>  <span class="constant">SPNEGO</span> service name</span><br><span class="line"></span> -<span class="ruby"><span class="constant">U</span>, --proxy-user <span class="constant">USER</span>[<span class="symbol">:PASSWORD</span>]  <span class="constant">Proxy</span> user <span class="keyword">and</span> password</span><br><span class="line"></span>     -<span class="ruby">-proxy1.<span class="number">0</span> <span class="constant">HOST</span>[<span class="symbol">:PORT</span>]  <span class="constant">Use</span> <span class="constant">HTTP</span>/<span class="number">1.0</span> proxy on given port</span><br><span class="line"></span> -<span class="ruby">p, --proxytunnel   <span class="constant">Operate</span> through a <span class="constant">HTTP</span> proxy tunnel (using <span class="constant">CONNECT</span>)</span><br><span class="line"></span>     -<span class="ruby">-pubkey <span class="constant">KEY</span>    <span class="constant">Public</span> key file name (<span class="constant">SSH</span>)</span><br><span class="line"></span> -<span class="ruby"><span class="constant">Q</span>, --quote <span class="constant">CMD</span>     <span class="constant">Send</span> command(s) to server before transfer (<span class="constant">F</span>/<span class="constant">SFTP</span>)</span><br><span class="line"></span>     -<span class="ruby">-random-file <span class="constant">FILE</span>  <span class="constant">File</span> <span class="keyword">for</span> reading random data from (<span class="constant">SSL</span>)</span><br><span class="line"></span> -<span class="ruby">r, --range <span class="constant">RANGE</span>   <span class="constant">Retrieve</span> only the bytes within <span class="constant">RANGE</span></span><br><span class="line"></span>     -<span class="ruby">-raw           <span class="constant">Do</span> <span class="constant">HTTP</span> <span class="string">"raw"</span>; no transfer decoding (<span class="constant">H</span>)</span><br><span class="line"></span> -<span class="ruby">e, --referer       <span class="constant">Referer</span> <span class="constant">URL</span> (<span class="constant">H</span>)</span><br><span class="line"></span> -<span class="ruby"><span class="constant">J</span>, --remote-header-name  <span class="constant">Use</span> the header-provided filename (<span class="constant">H</span>)</span><br><span class="line"></span> -<span class="ruby"><span class="constant">O</span>, --remote-name   <span class="constant">Write</span> output to a file named as the remote file</span><br><span class="line"></span>     -<span class="ruby">-remote-name-all  <span class="constant">Use</span> the remote file name <span class="keyword">for</span> all <span class="constant">URLs</span></span><br><span class="line"></span> -<span class="ruby"><span class="constant">R</span>, --remote-time   <span class="constant">Set</span> the remote file<span class="string">'s time on the local output</span><br><span class="line"></span></span> -<span class="ruby"><span class="string">X, --request COMMAND  Specify request command to use</span><br><span class="line"></span></span>     -<span class="ruby"><span class="string">-resolve HOST:PORT:ADDRESS  Force resolve of HOST:PORT to ADDRESS</span><br><span class="line"></span></span>     -<span class="ruby"><span class="string">-retry NUM   Retry request NUM times if transient problems occur</span><br><span class="line"></span></span>     -<span class="ruby"><span class="string">-retry-delay SECONDS  Wait SECONDS between retries</span><br><span class="line"></span></span>     -<span class="ruby"><span class="string">-retry-max-time SECONDS  Retry only within this period</span><br><span class="line"></span></span>     -<span class="ruby"><span class="string">-sasl-ir       Enable initial response in SASL authentication</span><br><span class="line"></span></span> -<span class="ruby"><span class="string">S, --show-error    Show error. With -s, make curl show errors when they occur</span><br><span class="line"></span></span> -<span class="ruby"><span class="string">s, --silent        Silent mode (don'</span>t output anything)</span><br><span class="line"></span>     -<span class="ruby">-socks4 <span class="constant">HOST</span>[<span class="symbol">:PORT</span>]  <span class="constant">SOCKS4</span> proxy on given host + port</span><br><span class="line"></span>     -<span class="ruby">-socks4a <span class="constant">HOST</span>[<span class="symbol">:PORT</span>]  <span class="constant">SOCKS4a</span> proxy on given host + port</span><br><span class="line"></span>     -<span class="ruby">-socks5 <span class="constant">HOST</span>[<span class="symbol">:PORT</span>]  <span class="constant">SOCKS5</span> proxy on given host + port</span><br><span class="line"></span>     -<span class="ruby">-socks5-hostname <span class="constant">HOST</span>[<span class="symbol">:PORT</span>]  <span class="constant">SOCKS5</span> proxy, pass host name to proxy</span><br><span class="line"></span>     -<span class="ruby">-socks5-gssapi-service <span class="constant">NAME</span>  <span class="constant">SOCKS5</span> proxy service name <span class="keyword">for</span> <span class="constant">GSS</span>-<span class="constant">API</span></span><br><span class="line"></span>     -<span class="ruby">-socks5-gssapi-nec  <span class="constant">Compatibility</span> with <span class="constant">NEC</span> <span class="constant">SOCKS5</span> server</span><br><span class="line"></span> -<span class="ruby"><span class="constant">Y</span>, --speed-limit <span class="constant">RATE</span>  <span class="constant">Stop</span> transfers below <span class="constant">RATE</span> <span class="keyword">for</span> <span class="string">'speed-time'</span> secs</span><br><span class="line"></span> -<span class="ruby">y, --speed-time <span class="constant">SECONDS</span>  <span class="constant">Trigger</span> <span class="string">'speed-limit'</span> abort after <span class="constant">SECONDS</span> (<span class="symbol">default:</span> <span class="number">30</span>)</span><br><span class="line"></span>     -<span class="ruby">-ssl           <span class="constant">Try</span> <span class="constant">SSL</span>/<span class="constant">TLS</span> (<span class="constant">FTP</span>, <span class="constant">IMAP</span>, <span class="constant">POP3</span>, <span class="constant">SMTP</span>)</span><br><span class="line"></span>     -<span class="ruby">-ssl-reqd      <span class="constant">Require</span> <span class="constant">SSL</span>/<span class="constant">TLS</span> (<span class="constant">FTP</span>, <span class="constant">IMAP</span>, <span class="constant">POP3</span>, <span class="constant">SMTP</span>)</span><br><span class="line"></span> -<span class="ruby"><span class="number">2</span>, --sslv2         <span class="constant">Use</span> <span class="constant">SSLv2</span> (<span class="constant">SSL</span>)</span><br><span class="line"></span> -<span class="ruby"><span class="number">3</span>, --sslv3         <span class="constant">Use</span> <span class="constant">SSLv3</span> (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-ssl-allow-beast  <span class="constant">Allow</span> security flaw to improve interop (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-stderr <span class="constant">FILE</span>   <span class="constant">Where</span> to redirect stderr (use <span class="string">"-"</span> <span class="keyword">for</span> stdout)</span><br><span class="line"></span>     -<span class="ruby">-tcp-nodelay   <span class="constant">Use</span> the <span class="constant">TCP_NODELAY</span> option</span><br><span class="line"></span> -<span class="ruby">t, --telnet-option <span class="constant">OPT</span>=<span class="constant">VAL</span>  <span class="constant">Set</span> telnet option</span><br><span class="line"></span>     -<span class="ruby">-tftp-blksize <span class="constant">VALUE</span>  <span class="constant">Set</span> <span class="constant">TFTP</span> <span class="constant">BLKSIZE</span> option (must be &gt;<span class="number">512</span>)</span><br><span class="line"></span> -<span class="ruby">z, --time-cond <span class="constant">TIME</span>  <span class="constant">Transfer</span> based on a time condition</span><br><span class="line"></span> -<span class="ruby"><span class="number">1</span>, --tlsv1         <span class="constant">Use</span> =&gt; <span class="constant">TLSv1</span> (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-tlsv1.<span class="number">0</span>       <span class="constant">Use</span> <span class="constant">TLSv1</span>.<span class="number">0</span> (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-tlsv1.<span class="number">1</span>       <span class="constant">Use</span> <span class="constant">TLSv1</span>.<span class="number">1</span> (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-tlsv1.<span class="number">2</span>       <span class="constant">Use</span> <span class="constant">TLSv1</span>.<span class="number">2</span> (<span class="constant">SSL</span>)</span><br><span class="line"></span>     -<span class="ruby">-trace <span class="constant">FILE</span>    <span class="constant">Write</span> a debug trace to <span class="constant">FILE</span></span><br><span class="line"></span>     -<span class="ruby">-trace-ascii <span class="constant">FILE</span>  <span class="constant">Like</span> --trace, but without hex output</span><br><span class="line"></span>     -<span class="ruby">-trace-time    <span class="constant">Add</span> time stamps to trace/verbose output</span><br><span class="line"></span>     -<span class="ruby">-tr-encoding   <span class="constant">Request</span> compressed transfer encoding (<span class="constant">H</span>)</span><br><span class="line"></span> -<span class="ruby"><span class="constant">T</span>, --upload-file <span class="constant">FILE</span>  <span class="constant">Transfer</span> <span class="constant">FILE</span> to destination</span><br><span class="line"></span>     -<span class="ruby">-url <span class="constant">URL</span>       <span class="constant">URL</span> to work with</span><br><span class="line"></span> -<span class="ruby"><span class="constant">B</span>, --use-ascii     <span class="constant">Use</span> <span class="constant">ASCII</span>/text transfer</span><br><span class="line"></span> -<span class="ruby">u, --user <span class="constant">USER</span>[<span class="symbol">:PASSWORD</span>]  <span class="constant">Server</span> user <span class="keyword">and</span> password</span><br><span class="line"></span>     -<span class="ruby">-tlsuser <span class="constant">USER</span>  <span class="constant">TLS</span> username</span><br><span class="line"></span>     -<span class="ruby">-tlspassword <span class="constant">STRING</span>  <span class="constant">TLS</span> password</span><br><span class="line"></span>     -<span class="ruby">-tlsauthtype <span class="constant">STRING</span>  <span class="constant">TLS</span> authentication type (<span class="symbol">default:</span> <span class="constant">SRP</span>)</span><br><span class="line"></span>     -<span class="ruby">-unix-socket <span class="constant">FILE</span>    <span class="constant">Connect</span> through this <span class="constant">Unix</span> domain socket</span><br><span class="line"></span> -<span class="ruby"><span class="constant">A</span>, --user-agent <span class="constant">STRING</span>  <span class="constant">Send</span> <span class="constant">User</span>-<span class="constant">Agent</span> <span class="constant">STRING</span> to server (<span class="constant">H</span>)</span><br><span class="line"></span> -<span class="ruby">v, --verbose       <span class="constant">Make</span> the operation more talkative</span><br><span class="line"></span> -<span class="ruby"><span class="constant">V</span>, --version       <span class="constant">Show</span> version number <span class="keyword">and</span> quit</span><br><span class="line"></span> -<span class="ruby">w, --write-out <span class="constant">FORMAT</span>  <span class="constant">Use</span> output <span class="constant">FORMAT</span> after completion</span><br><span class="line"></span>     -<span class="ruby">-xattr         <span class="constant">Store</span> metadata <span class="keyword">in</span> extended file attributes</span><br><span class="line"></span> -<span class="ruby">q                  <span class="constant">Disable</span> .curlrc (must be first parameter)</span></span><br></pre></td></tr></table></figure>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/前端记录/再也忘不了Git的命令了/" rel="prev" title="再也忘不了Git的命令了">
+                再也忘不了Git的命令了 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://7xlqsb.com1.z0.glb.clouddn.com/logo.jpg" alt="Lucky Jing" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Lucky Jing</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">致力于全栈路线的大三君</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">标签</span>
+              
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lucky Jing</span>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

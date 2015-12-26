@@ -1,0 +1,667 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="引言：作为一名软件工程Web专业学生，对于HTTP的熟悉掌握是必不可少的，特此做记录，打造自己的HTTP栈。
+
+URL与URI我们经常接触到的就是URL了，它就是我们访问web的一个字符串地址，那么URI是什么呢？他们是什么关系呢？URL：uniform resource location 统一资源定位符URI：uniform resource identifier 统一资源标识符这也就是说，UR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="全面理解HTTP">
+<meta property="og:url" content="http://yoursite.com/JavaScript/全面理解HTTP/index.html">
+<meta property="og:site_name" content="全栈杂货铺">
+<meta property="og:description" content="引言：作为一名软件工程Web专业学生，对于HTTP的熟悉掌握是必不可少的，特此做记录，打造自己的HTTP栈。
+
+URL与URI我们经常接触到的就是URL了，它就是我们访问web的一个字符串地址，那么URI是什么呢？他们是什么关系呢？URL：uniform resource location 统一资源定位符URI：uniform resource identifier 统一资源标识符这也就是说，UR">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-340caa79e7d65854.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-384323e63add5cd5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-7129daf6bf693d8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-2d2f07356575b586.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-c1beffca0f00b20f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-31f3af6aa3405976.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-4de98a5a646df99c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-219f8b2c3fa40a3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-2fdc0039a218345b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-5f46616e0d9a802c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-ce55d2fc363c60b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2015-12-26T06:25:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="全面理解HTTP">
+<meta name="twitter:description" content="引言：作为一名软件工程Web专业学生，对于HTTP的熟悉掌握是必不可少的，特此做记录，打造自己的HTTP栈。
+
+URL与URI我们经常接触到的就是URL了，它就是我们访问web的一个字符串地址，那么URI是什么呢？他们是什么关系呢？URL：uniform resource location 统一资源定位符URI：uniform resource identifier 统一资源标识符这也就是说，UR">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide',
+    motion: true
+  };
+</script>
+
+  <title> 全面理解HTTP | 全栈杂货铺 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">全栈杂货铺</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">MEAN Web</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                全面理解HTTP
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-26T14:25:04+08:00" content="2015年12月26日">
+              2015年12月26日
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p><img src="http://upload-images.jianshu.io/upload_images/101399-340caa79e7d65854.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>引言：作为一名软件工程Web专业学生，对于HTTP的熟悉掌握是必不可少的，特此做记录，打造自己的HTTP栈。</p>
+</blockquote>
+<h2 id="URL_u4E0EURI"><a href="#URL_u4E0EURI" class="headerlink" title="URL与URI"></a>URL与URI</h2><p>我们经常接触到的就是URL了，它就是我们访问web的一个字符串地址，那么URI是什么呢？他们是什么关系呢？<br>URL：uniform resource location 统一资源定位符<br>URI：uniform resource identifier 统一资源标识符<br>这也就是说，URI是一种资源的标识；而URL也是一种URI，也是一种资源的标识，但它也指明了如何定位Locate到这个资源。<br>URI是一种抽象的资源标识，<strong>既可以是绝对的，也可以是相对的</strong>。但是URL是一种URI，它指明了定位的信息，必须是绝对的。</p>
+<h2 id="u62A5_u6587-_u901A_u4FE1_u7684_u6865_u6881"><a href="#u62A5_u6587-_u901A_u4FE1_u7684_u6865_u6881" class="headerlink" title="报文-通信的桥梁"></a>报文-通信的桥梁</h2><p>客户端和服务器端通过相互发送<strong>报文</strong>进行通信，要深刻理解HTTP协议，就需要理解报文的格式和内容。</p>
+<h3 id="u62A5_u6587_u7684_u7EC4_u6210"><a href="#u62A5_u6587_u7684_u7EC4_u6210" class="headerlink" title="报文的组成"></a>报文的组成</h3><p><img src="http://upload-images.jianshu.io/upload_images/101399-384323e63add5cd5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>无论是请求报文还是响应报文都需要有报文首部，当然报文主体并不是必需的。<br>一般来说，请求报文的格式如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-7129daf6bf693d8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>看一下百度网站的请求报文：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-2d2f07356575b586.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>简单的报文形式：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET <span class="regexp">/ HTTP/</span><span class="number">1.1</span>    <span class="comment">//请求行，包含用于请求的方法，请求的URI，HTTP版本</span></span><br><span class="line"><span class="comment">//以下为各种首部字段</span></span><br><span class="line"><span class="string">Host:</span> www.baidu.com</span><br><span class="line"><span class="string">Connection:</span> keep-alive</span><br><span class="line">Upgrade-Insecure-<span class="string">Requests:</span> <span class="number">1</span></span><br><span class="line">User-<span class="string">Agent:</span> Mozilla/<span class="number">5.0</span>...</span><br><span class="line">Accept-<span class="string">Encoding:</span> gzip, deflate, sdch</span><br><span class="line">Accept-<span class="string">Language:</span> zh-CN,zh;q=<span class="number">0.8</span></span><br></pre></td></tr></table></figure></p>
+<p>响应报文的格式如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-c1beffca0f00b20f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>看一下百度网站的响应报文：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-31f3af6aa3405976.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK   <span class="comment">//状态行，包含表明响应结果的状态码，原因短语和HTTP版本</span></span><br><span class="line"><span class="comment">//以下为各种首部字段</span></span><br><span class="line">Server: bfe/<span class="number">1.0</span><span class="number">.8</span><span class="number">.5</span></span><br><span class="line">Date: Tue, <span class="number">06</span> Oct <span class="number">2015</span> <span class="number">14</span>:<span class="number">48</span>:<span class="number">28</span> GMT</span><br><span class="line">Content-Type: text/html;charset=utf-<span class="number">8</span></span><br><span class="line">Transfer-Encoding: chunked</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Cache-Control: <span class="keyword">private</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="u544A_u77E5_u670D_u52A1_u5668_u610F_u56FE_u7684HTTP_u65B9_u6CD5"><a href="#u544A_u77E5_u670D_u52A1_u5668_u610F_u56FE_u7684HTTP_u65B9_u6CD5" class="headerlink" title="告知服务器意图的HTTP方法"></a>告知服务器意图的HTTP方法</h2><p>发送HTTP的方法有许多种，最常用的便是GET和POST，下面就这两种进行详细地说明。</p>
+<ol>
+<li><strong>GET</strong><br>GET方法用来请求访问URI所指定的资源，<strong>（我想访问你的某个资源）</strong>并不对服务器上的内容产生任何作用结果；每次GET的内容都是相同的。GET方式把请求所需要的参数放到<code>URL</code>中，直接就可以在URL中看见，有大小限制。</li>
+<li><strong>POST</strong><br>POST方法用来传输实体主体，目的并不是获取响应的主体内容，<strong>（我要把这条信息告诉你）</strong>，POST方式则是把内容放在<code>报文内容</code>中，因此只要报文的内容没有限制，它的大小就没有限制。</li>
+<li><strong>总结</strong><br>GET用于获取某个内容，POST用于提交某种数据请求。<br>按照使用场景来说，一般用户注册的内容属于私密的，这应该使用POST方式；而针对某一内容的查询，为了快速的响应，可以使用GET方式。</li>
+</ol>
+<h2 id="u65E0_u72B6_u6001_u534F_u8BAE_u4E0ECookie"><a href="#u65E0_u72B6_u6001_u534F_u8BAE_u4E0ECookie" class="headerlink" title="无状态协议与Cookie"></a>无状态协议与Cookie</h2><p>HTTP是一种无状态协议，也就是每一次发送都是一次新的开始，服务器并不知道也没有必要知道当前连接的客户端是否之前有过交集，那么当需要进行保存用户登录状态时，则出现了麻烦，这个时候使用Cookie来保存状态。<br>Cookie会根据服务器端发送的响应报文内的一个叫做<strong>Set-Cookie</strong>的首部字段，通知客户端保存Cookie（保存在自己的电脑里），当下次客户端发送请求时，<strong>Cookie值会被添加到请求报文中发送出去。</strong></p>
+<h2 id="u6301_u4E45_u8FDE_u63A5"><a href="#u6301_u4E45_u8FDE_u63A5" class="headerlink" title="持久连接"></a>持久连接</h2><p>使用浏览器浏览一个包含多张图片的HTML页面时，浏览器会发起多次请求，如图所示：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-4de98a5a646df99c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>显而易见每次请求会造成<strong>无谓的TCP连接建立和断开，增加通信量的开销。</strong></p>
+<h4 id="u5F15_u5165_u6301_u4E45_u8FDE_u63A5"><a href="#u5F15_u5165_u6301_u4E45_u8FDE_u63A5" class="headerlink" title="引入持久连接"></a>引入持久连接</h4><p>持久连接的特点是，只要任意一端没有明确提出断开连接，则保持TCP连接状态。目前HTTP/1.1中默认为持久连接。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">Connection</span><span class="symbol">:keep-alive</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-219f8b2c3fa40a3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="u7BA1_u7EBF_u5316"><a href="#u7BA1_u7EBF_u5316" class="headerlink" title="管线化"></a>管线化</h2><p>管线化可以同时并行发送多个请求，不需要一个一个等待响应了。</p>
+<h2 id="u5E38_u89C1_u7684_u72B6_u6001_u7801"><a href="#u5E38_u89C1_u7684_u72B6_u6001_u7801" class="headerlink" title="常见的状态码"></a>常见的状态码</h2><p><img src="http://upload-images.jianshu.io/upload_images/101399-2fdc0039a218345b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="u786E_u4FDD_u5B89_u5168_u7684HTTPS"><a href="#u786E_u4FDD_u5B89_u5168_u7684HTTPS" class="headerlink" title="确保安全的HTTPS"></a>确保安全的HTTPS</h2><p>HTTP+加密+认证+完整性保护 = HTTPS<br>一些登陆界面和购物结算界面使用HTTPS通信，也就是改用<code>https://</code>，HTTPS说简单点就是它的通信接口部分被SSL和TLS协议代替而已。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-5f46616e0d9a802c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="u8EAB_u4EFD_u8BA4_u8BC1"><a href="#u8EAB_u4EFD_u8BA4_u8BC1" class="headerlink" title="身份认证"></a>身份认证</h2><p>有一些网址或者服务需要用户的身份信息，因此需要随时知道这些消息，但是肯定不能每次都让用户输入用户密码，因此关于认证就有下面几种方式：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-ce55d2fc363c60b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>在这里主要说一下FormBase认证，也就是<strong>表单认证</strong>。</p>
+<h4 id="u4F7F_u7528Cookie_u6765_u7BA1_u7406Session"><a href="#u4F7F_u7528Cookie_u6765_u7BA1_u7406Session" class="headerlink" title="使用Cookie来管理Session"></a>使用Cookie来管理Session</h4><ol>
+<li>客户端把用户IE和密码等登录信息放入报文的实体部分，以<strong>POST</strong>方式发送给服务器。</li>
+<li>服务器进行身份认证，产生SessionID，加入到Set-Cookie内，返回给客户端。</li>
+<li>客户端接收到SessionID后，将其加入Cookie，下次请求时，浏览器会自动发送Cookie。</li>
+</ol>
+<blockquote>
+<p>在传输过程中，一种安全地保存密码方式是，先利用给密码加盐的方式增加额外信息，再使用散列hash函数计算出散列值后保存。</p>
+</blockquote>
+<p>书籍推荐：《图解HTTP》，轻松理解更全面的HTTP知识。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/JavaScript/使用函数和闭包去构建JavaScript模块/" rel="next" title="使用函数和闭包去构建JavaScript模块">
+                <i class="fa fa-chevron-left"></i> 使用函数和闭包去构建JavaScript模块
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/JavaScript/创建简单的JavaScript对象/" rel="prev" title="创建简单的JavaScript对象">
+                创建简单的JavaScript对象 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://7xlqsb.com1.z0.glb.clouddn.com/logo.jpg" alt="Lucky Jing" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Lucky Jing</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">致力于全栈路线的大三君</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">标签</span>
+              
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#URL_u4E0EURI"><span class="nav-number">1.</span> <span class="nav-text">URL与URI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u62A5_u6587-_u901A_u4FE1_u7684_u6865_u6881"><span class="nav-number">2.</span> <span class="nav-text">报文-通信的桥梁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u62A5_u6587_u7684_u7EC4_u6210"><span class="nav-number">2.1.</span> <span class="nav-text">报文的组成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u544A_u77E5_u670D_u52A1_u5668_u610F_u56FE_u7684HTTP_u65B9_u6CD5"><span class="nav-number">3.</span> <span class="nav-text">告知服务器意图的HTTP方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u65E0_u72B6_u6001_u534F_u8BAE_u4E0ECookie"><span class="nav-number">4.</span> <span class="nav-text">无状态协议与Cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6301_u4E45_u8FDE_u63A5"><span class="nav-number">5.</span> <span class="nav-text">持久连接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5F15_u5165_u6301_u4E45_u8FDE_u63A5"><span class="nav-number">5.0.1.</span> <span class="nav-text">引入持久连接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7BA1_u7EBF_u5316"><span class="nav-number">6.</span> <span class="nav-text">管线化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5E38_u89C1_u7684_u72B6_u6001_u7801"><span class="nav-number">7.</span> <span class="nav-text">常见的状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u786E_u4FDD_u5B89_u5168_u7684HTTPS"><span class="nav-number">8.</span> <span class="nav-text">确保安全的HTTPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u8EAB_u4EFD_u8BA4_u8BC1"><span class="nav-number">9.</span> <span class="nav-text">身份认证</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u4F7F_u7528Cookie_u6765_u7BA1_u7406Session"><span class="nav-number">9.0.1.</span> <span class="nav-text">使用Cookie来管理Session</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lucky Jing</span>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

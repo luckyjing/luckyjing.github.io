@@ -1,0 +1,673 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="Ajax终结了“单击，等待”的交互模式，它那么神奇，我们怎么会不爱它？根据大牛的观点结合自己的经验，希望给大家和未来的自己一份比较好的Ajax参考文章。
+
+什么是Ajax？为什么要使用它？Ajax全称 Asynchronous(异步) JavaScript and XML，终结了“单击，等待”的交互模式，它是指一种创建交互式网页应用的网页开发技术，Ajax并不是一种技术，它是一系列规范的集合，包含">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爱不释手的Ajax（一）">
+<meta property="og:url" content="http://yoursite.com/JavaScript/爱不释手的Ajax（一）/index.html">
+<meta property="og:site_name" content="全栈杂货铺">
+<meta property="og:description" content="Ajax终结了“单击，等待”的交互模式，它那么神奇，我们怎么会不爱它？根据大牛的观点结合自己的经验，希望给大家和未来的自己一份比较好的Ajax参考文章。
+
+什么是Ajax？为什么要使用它？Ajax全称 Asynchronous(异步) JavaScript and XML，终结了“单击，等待”的交互模式，它是指一种创建交互式网页应用的网页开发技术，Ajax并不是一种技术，它是一系列规范的集合，包含">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-9b83d78629bf24f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-6af3383b5db109d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-bca76e079e0d4597.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-f4297629d690c5a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-97ea782addb64da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2015-12-26T06:25:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="爱不释手的Ajax（一）">
+<meta name="twitter:description" content="Ajax终结了“单击，等待”的交互模式，它那么神奇，我们怎么会不爱它？根据大牛的观点结合自己的经验，希望给大家和未来的自己一份比较好的Ajax参考文章。
+
+什么是Ajax？为什么要使用它？Ajax全称 Asynchronous(异步) JavaScript and XML，终结了“单击，等待”的交互模式，它是指一种创建交互式网页应用的网页开发技术，Ajax并不是一种技术，它是一系列规范的集合，包含">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide',
+    motion: true
+  };
+</script>
+
+  <title> 爱不释手的Ajax（一） | 全栈杂货铺 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">全栈杂货铺</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">MEAN Web</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                爱不释手的Ajax（一）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-26T14:25:04+08:00" content="2015年12月26日">
+              2015年12月26日
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><blockquote>
+<p>Ajax终结了“单击，等待”的交互模式，它那么神奇，我们怎么会不爱它？根据大牛的观点结合自己的经验，希望给大家和未来的自己一份比较好的Ajax参考文章。</p>
+</blockquote>
+<h2 id="u4EC0_u4E48_u662FAjax_uFF1F_u4E3A_u4EC0_u4E48_u8981_u4F7F_u7528_u5B83_uFF1F"><a href="#u4EC0_u4E48_u662FAjax_uFF1F_u4E3A_u4EC0_u4E48_u8981_u4F7F_u7528_u5B83_uFF1F" class="headerlink" title="什么是Ajax？为什么要使用它？"></a>什么是Ajax？为什么要使用它？</h2><p>Ajax全称 Asynchronous(异步) JavaScript and XML，终结了“单击，等待”的交互模式，它是指一种创建交互式网页应用的网页开发技术，Ajax并不是一种技术，它是一系列规范的集合，包含：</p>
+<ul>
+<li>基于web标准（standards-basedpresentation）XHTML+CSS的表示；</li>
+<li>使用 DOM（Document ObjectModel）进行动态显示及交互；</li>
+<li>使用 XML 和 XSLT 进行数据交换及相关操作；</li>
+<li>使用 XMLHttpRequest 进行异步数据查询、检索；</li>
+<li>使用 JavaScript 将所有的东西绑定在一起。</li>
+</ul>
+<p>Ajax应用程序的优势在于：</p>
+<ol>
+<li>通过异步模式，提升了用户体验</li>
+<li>优化了浏览器和服务器之间的传输，减少不必要的数据往返，减少了带宽占用</li>
+<li>Ajax引擎在客户端运行，承担了一部分本来由服务器承担的工作，从而减少了大用户量下的服务器负载。</li>
+</ol>
+<h2 id="u57FA_u7840-HTTP_u534F_u8BAE"><a href="#u57FA_u7840-HTTP_u534F_u8BAE" class="headerlink" title="基础-HTTP协议"></a>基础-HTTP协议</h2><p>在使用Ajax之前，必须先了解客户端和服务器间通信的基础是怎样的，在这里，他们使用的规则是<strong>HTTP</strong>协议，两者之间通过一定格式的<strong>报文</strong>（请求报文和响应报文）进行交流，详细的看这篇文章。链接：<a href="http://www.jianshu.com/p/81632fea327c" target="_blank" rel="external">http://www.jianshu.com/p/81632fea327c</a></p>
+<h2 id="u6838_u5FC3-XMLHttpRequest_u5BF9_u8C61"><a href="#u6838_u5FC3-XMLHttpRequest_u5BF9_u8C61" class="headerlink" title="核心-XMLHttpRequest对象"></a>核心-XMLHttpRequest对象</h2><p>支撑起Ajax大桥的便是XHR这个对象了，它是一种支持异步请求的技术。简而言之，XmlHttpRequest可以让JavaScript向服务器提出请求并处理响应，而不阻塞用户。通过XMLHttpRequest对象，Web开发人员可以在页面加载以后进行页面的局部更新。<br>在使用它之前，我们先来了解一下XHR对象，简单起见。关于不同浏览器之间的XHR对象暂时不叙述，直接使用原生XHR对象，在浏览器里面创建一个新的XHR对象<code>var xhr = new XMLHttpRequest();</code>，在调试窗口里面输出它可以看到：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-9b83d78629bf24f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>它是一个对象，拥有一些属性，常见的如下：</p>
+<ul>
+<li>readyState：该属性表示请求/响应过程的当前活动阶段，可用取值如下：<blockquote>
+<p>0：请求未初始化（还没有调用 open()）。<br>1：请求已经建立，但是还没有发送（还没有调用 send()）。<br>2：请求已发送，正在处理中（通常现在可以从响应中获取内容头）。<br>3：请求在处理中；通常响应中已有部分数据可用了，但是服务器还没有完成响应的生成。<br>4：响应已完成；已经接收到全部响应数据，而且已经可以在客户端使用了。<br>只要readyState属性的值发生变化，便可以触发readystatechange事件，下面来体验一下。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//演示readystatechange事件</span></span><br><span class="line"><span class="keyword">var</span> log = <span class="function"><span class="keyword">function</span>(<span class="params">tmp</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(tmp);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	log(xhr.readyState);</span><br><span class="line">&#125;;</span><br><span class="line">xhr.open(<span class="string">"get"</span>,<span class="string">"./content.txt"</span>,<span class="literal">true</span>);</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>观察运行结果，可以很明确地看到状态的发生改变。<br><img src="http://upload-images.jianshu.io/upload_images/101399-6af3383b5db109d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>responseText：作为响应主体被返回的文本，<strong>无论内容类型是什么，响应主体的内容都会保存在这里。</strong></li>
+<li><p>responseXML：如果响应的内容类型是<code>text/xml</code>或<code>application/xml</code>，这个属性中将保存着响应数据的XML DOM文档。</p>
+</li>
+<li><p>status：响应的HTTP状态，就是HTTP的状态代码，200,304（表示请求的资源没有被修改，可以直接使用浏览器中缓存的版本）这些，<strong>确保接收到适当的响应</strong>。</p>
+</li>
+<li>statusText：HTTP状态的说明</li>
+</ul>
+<h4 id="u57FA_u7840_u7528_u6CD5"><a href="#u57FA_u7840_u7528_u6CD5" class="headerlink" title="基础用法"></a>基础用法</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> xhr</span> = new XMLHttpRequest(); </span><br><span class="line"><span class="comment">//创建一个XHR对象</span></span><br><span class="line">xhr.<span class="keyword">open</span>(<span class="string">"get"</span>,<span class="string">"test.txt"</span>,<span class="literal">true</span>);</span><br><span class="line"><span class="comment">//启动一个请求以备发送，这个时候xhr的readyState为1</span></span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br><span class="line"><span class="comment">//正式发送请求，readyState为2，随后请求成功，readyState为4</span></span><br></pre></td></tr></table></figure>
+<p>我们来详细说一下细节。</p>
+<ul>
+<li>首先是open方法：<br>第一个参数是HTTP的请求方式，常用的比如<code>get</code>和<code>post</code>，第二个参数是请求的url，如果是<code>get</code>方式的话那么一般请求的参数就附加在这里。第三个参数是控制同步或者异步，<code>true</code>表示异步，<code>false</code>表示同步。简单来说，如果使用同步的话，那么会阻塞后面的代码，必须等到本次请求完毕才可以，异步则是另开一个线程去执行ajax，下面代码继续进行。</li>
+<li>再说send方法：<br>send方法有一个参数，这个参数将被写入到<code>请求报文</code>里面传递，上面说到了<code>get</code>方式的参数是直接写到url里面的，所以对于这种方法，send的参数应该为<code>null</code>，而对于post方式，url和请求参数是分离的，所以需要写入到send方法里。</li>
+</ul>
+<h4 id="HTTP_u5934_u90E8_u4FE1_u606F"><a href="#HTTP_u5934_u90E8_u4FE1_u606F" class="headerlink" title="HTTP头部信息"></a>HTTP头部信息</h4><p>我们可以使用已有的API来对上面创建的请求报文进行增添或对响应报文进行处理，比如设置Cookie。<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xhr.setRequestHeader(<span class="string">"imake"</span>,<span class="string">"myValue"</span>);<span class="comment">//添加头部信息</span></span><br><span class="line">xhr.getResponseHeader(headerName);<span class="comment">//获取头部信息</span></span><br><span class="line">xhr.getAllResponseHeaders();<span class="comment">//获取全部头部信息</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="GET_u8BF7_u6C42"><a href="#GET_u8BF7_u6C42" class="headerlink" title="GET请求"></a>GET请求</h2><p>GET方法将需要查询的字符串追加到URL的末尾，也就是在XHR的open方法的URL末尾进行添加，需要进行<code>encodeURIComponent()</code>处理，对此封装函数如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addURLParam</span>(<span class="params">url,name,value</span>)</span>&#123;</span><br><span class="line">	url+=(url.indexOf(<span class="string">"?"</span>) == -<span class="number">1</span> ? <span class="string">"?"</span> : <span class="string">"&amp;"</span>);</span><br><span class="line">	url+=<span class="built_in">encodeURIComponent</span>(name)+<span class="string">"="</span>+<span class="built_in">encodeURIComponent</span>(value);</span><br><span class="line">&#125;</span><br><span class="line">xhr.open(<span class="string">"get"</span>,url,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-bca76e079e0d4597.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="具体的请求过程"></p>
+<h2 id="POST_u8BF7_u6C42"><a href="#POST_u8BF7_u6C42" class="headerlink" title="POST请求"></a>POST请求</h2><p>讨论POST之前，我们先回想一下，POST主要用在<strong>表单提交</strong>，表单提交的写法很多，比如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">button</span>&gt;</span>提交<span class="tag">&lt;/<span class="title">button</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"提交"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"submit"</span>&gt;</span>我用来提交表单<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var <span class="sub"><span class="keyword">sub</span> = document.getElementById("submit");</span></span><br><span class="line"><span class="sub"><span class="keyword">sub</span>.addEventListener("click",function()&#123;</span></span><br><span class="line">	document.getElementById(<span class="string">"test"</span>).submit();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>前两种方式在使用的时候非常不便，比如我们再检测它们点击之前需要进行表单验证，那么因为它们自身具有默认的提交功能，所以我们得把它们的默认功能阻止一下，<strong>所以使用第三种比较舒服。</strong><br>在表单进行post时，背地里它将请求的<code>Content-Type</code>设置为了<code>application/x-www-form-urlencoded</code>（这种类型是上传不了文件的，先挖个坑），并且把表单序列化了。我们来演示一下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-f4297629d690c5a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="POST过程"><br>明白了传统的post表单提交之后，我们来说说Ajax，<strong>其实它也是模仿表单提交，所以要主动地告诉服务器，我是post方式，比较复杂，你做好准备，</strong>所以要设置<code>Content-Type</code>头部信息为<code>application/x-www-form-urlencoded</code>，其次是对表单进行序列化，我们可以使用jQuery里面的<code>serialize()</code>方法，测试如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-97ea782addb64da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Ajax模拟表单提交过程"></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/JavaScript/有趣的JavaScript原生数组函数/" rel="next" title="有趣的JavaScript原生数组函数">
+                <i class="fa fa-chevron-left"></i> 有趣的JavaScript原生数组函数
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/JavaScript/爱不释手的Ajax（三）/" rel="prev" title="爱不释手的Ajax（三）">
+                爱不释手的Ajax（三） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://7xlqsb.com1.z0.glb.clouddn.com/logo.jpg" alt="Lucky Jing" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Lucky Jing</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">致力于全栈路线的大三君</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">标签</span>
+              
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u4EC0_u4E48_u662FAjax_uFF1F_u4E3A_u4EC0_u4E48_u8981_u4F7F_u7528_u5B83_uFF1F"><span class="nav-number">1.</span> <span class="nav-text">什么是Ajax？为什么要使用它？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u57FA_u7840-HTTP_u534F_u8BAE"><span class="nav-number">2.</span> <span class="nav-text">基础-HTTP协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6838_u5FC3-XMLHttpRequest_u5BF9_u8C61"><span class="nav-number">3.</span> <span class="nav-text">核心-XMLHttpRequest对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u57FA_u7840_u7528_u6CD5"><span class="nav-number">3.0.1.</span> <span class="nav-text">基础用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP_u5934_u90E8_u4FE1_u606F"><span class="nav-number">3.0.2.</span> <span class="nav-text">HTTP头部信息</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GET_u8BF7_u6C42"><span class="nav-number">4.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POST_u8BF7_u6C42"><span class="nav-number">5.</span> <span class="nav-text">POST请求</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lucky Jing</span>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="###类选择器选择p标签中class属性包含class1和class2的，注意没有空格1p.class1.class2&amp;#123;...&amp;#125;
+###属性选择12345.demo[name] 选择含有name属性的demo类h1#page-titleh1[id=&quot;page-title&quot;]上述存在差别img[title~=&quot;myimg&quot;]//~=为部分匹配选择
+这种匹配要求属性与值完全匹配，也">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《CSS权威指南》学习笔记">
+<meta property="og:url" content="http://yoursite.com/CSS/《CSS权威指南》学习笔记/index.html">
+<meta property="og:site_name" content="全栈杂货铺">
+<meta property="og:description" content="###类选择器选择p标签中class属性包含class1和class2的，注意没有空格1p.class1.class2&amp;#123;...&amp;#125;
+###属性选择12345.demo[name] 选择含有name属性的demo类h1#page-titleh1[id=&quot;page-title&quot;]上述存在差别img[title~=&quot;myimg&quot;]//~=为部分匹配选择
+这种匹配要求属性与值完全匹配，也">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-3fb335b6c446a56d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-32462b9ba08ee04e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-190a84b54a783b2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-b2c5fba26d560a7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-0065fe7a69a9e077.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-216e54858392c62c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2015-12-26T06:25:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《CSS权威指南》学习笔记">
+<meta name="twitter:description" content="###类选择器选择p标签中class属性包含class1和class2的，注意没有空格1p.class1.class2&amp;#123;...&amp;#125;
+###属性选择12345.demo[name] 选择含有name属性的demo类h1#page-titleh1[id=&quot;page-title&quot;]上述存在差别img[title~=&quot;myimg&quot;]//~=为部分匹配选择
+这种匹配要求属性与值完全匹配，也">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide',
+    motion: true
+  };
+</script>
+
+  <title> 《CSS权威指南》学习笔记 | 全栈杂货铺 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">全栈杂货铺</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">MEAN Web</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                《CSS权威指南》学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-26T14:25:04+08:00" content="2015年12月26日">
+              2015年12月26日
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>###类选择器<br>选择p标签中class属性包含class1和class2的，注意没有空格<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.class1.class2<span class="decorator">&#123;...&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>###属性选择<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.demo[name] 选择含有name属性的demo类</span><br><span class="line">h1#page-title</span><br><span class="line">h1[id="page-title"]</span><br><span class="line">上述存在差别</span><br><span class="line">img[title~="myimg"]//~=为部分匹配选择</span><br></pre></td></tr></table></figure></p>
+<p>这种匹配要求属性与值完全匹配，也就是说值被引号所包括，在html标签中有空格的出现的话，那么css选择器也必须具有</p>
+<p>###子串匹配选择器<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="atom">foo</span>^=<span class="string">"bar"</span>] 选中<span class="atom">foo</span>属性以<span class="atom">bar</span>开头的元素</span><br><span class="line">[<span class="atom">foo</span>$=<span class="string">"bar"</span>] 选中<span class="atom">foo</span>属性以<span class="atom">bar</span>结尾的元素</span><br><span class="line">[<span class="atom">foo</span>*=<span class="string">"bar"</span>] 选中<span class="atom">foo</span>属性包含<span class="atom">bar</span>的元素</span><br></pre></td></tr></table></figure></p>
+<p>###后代选择器<br>在A中寻找B，忽略了嵌套层次，只要包含即选中<br>h1空格em //在h1中找到em</p>
+<p>###子选择器<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">h1</span> &gt; <span class="tag">strong</span>&#123;&#125;</span><br><span class="line"><span class="comment">//在DOM树中表示为和h1直接相连的strong标记</span></span><br></pre></td></tr></table></figure></p>
+<p>###兄弟选择器<br>.className + span //选择className的元素的兄弟标签span</p>
+<p>###:link,:visited,:focus,:hover,:active</p>
+<ul>
+<li>我们都知道链接在浏览器中默认存在访问前后颜色的变化，那么可以通过伪类去更改样式，<code>a:link</code>选择了a元素而且是链接的（也就是有href属性），还存在a标签作为锚，例如<code>&lt;a name = &quot;node1&quot; &gt;Content&lt;/a&gt;</code>，那么:link伪类便不会选中它。</li>
+<li>focus聚焦，active激活，hover悬浮</li>
+</ul>
+<p>###:first-child选择器<br>它选择的是前面的元素，不要认为是前面元素的孩子，<code>p:first-child</code>选择属于其父元素的首个子元素的每个<code>&lt;p&gt;</code>元素。<br>选择列表中的第一个 <li> 元素并设置其样式：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">li</span><span class="pseudo">:first-child</span><span class="rules">&#123;&#125;</span></span><br></pre></td></tr></table></figure></li></p>
+<p>###:first-letter,:first-line</p>
+<p>###层叠规则</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-3fb335b6c446a56d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="层叠规则"></p>
+<p>###链接伪类的排列顺序<br>我们知道LVHA这四个伪类的特殊性是一样的，那么与元素匹配的最后一个伪类才会胜出。<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="pseudo">:active</span>&#123;&#125;</span><br><span class="line"><span class="pseudo">:hover</span>&#123;&#125;</span><br><span class="line"><span class="pseudo">:link</span>&#123;&#125;</span><br><span class="line"><span class="pseudo">:visited</span>&#123;&#125;</span><br><span class="line"><span class="comment">//我们都知道链接要么被访问，要么未被访问，那么当鼠标悬停到链接上时，它满足:hover和:link，因为排列较后的伪类权重大，所以:hover属性将会被覆盖，所以推荐顺序如下：</span></span><br><span class="line"><span class="pseudo">:link</span>&#123;&#125;</span><br><span class="line"><span class="pseudo">:visited</span>&#123;&#125;</span><br><span class="line"><span class="pseudo">:hover</span>&#123;&#125;</span><br><span class="line"><span class="pseudo">:active</span>&#123;&#125;</span><br><span class="line"><span class="comment">//应用：未访问链接有hover属性，已访问则没有</span></span><br><span class="line">：<span class="tag">link</span>&#123;&#125;</span><br><span class="line"><span class="pseudo">:hover</span>&#123;&#125;</span><br><span class="line"><span class="pseudo">:visited</span>&#123;&#125;</span><br><span class="line"><span class="pseudo">:active</span>&#123;&#125;</span><br><span class="line"><span class="comment">//未访问链接悬停时，满足link和hover，则hover胜出，已访问链接悬停时，满足hover，visited，则visited胜出</span></span><br></pre></td></tr></table></figure></p>
+<p>###长度单位em<br>一种给定字体大小的font-size值，也就是说，如果<code>h1</code>的font-size为20px，那么给它设置padding-left值，则此值为20px；</p>
+<p>###继承<br><img src="http://upload-images.jianshu.io/upload_images/101399-32462b9ba08ee04e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="继承"></p>
+<p>###字体并不是一种字体，而是一系列</p>
+<ul>
+<li>#####sans-serif字体<br>成比例，例如Helvetica</li>
+<li>Monospace字体<br>等宽字体</li>
+</ul>
+<p>如果希望文档使用一种sans-serif字体，那么就设置font-family为这个值，而不必指定具体的字体。<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在字体选择这里提供通用字体，用户代理会从左到右依次匹配，如果都没有匹配成功， 那么便会</span></span><br><span class="line"><span class="comment">//简单的在本机中选择最后一种通配字体</span></span><br><span class="line"><span class="attribute">font-family</span>: <span class="string">'Segoe UI'</span>, Tahoma, Geneva, Verdana, sans-serif;</span><br></pre></td></tr></table></figure></p>
+<p>如果字体名中含有特殊符号，例如空格，$,#，那么请使用引号包括起来。</p>
+<blockquote>
+<p>给sans-serif增加引号，则表示找到与此同名的字体，不增加则是我们所期望的使用通配字体。</p>
+</blockquote>
+<p>###行高line-height<br><img src="http://upload-images.jianshu.io/upload_images/101399-190a84b54a783b2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="行高"></p>
+<blockquote>
+<p>行高的继承<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">body</span><span class="rules">&#123;<span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">10px</span></span></span>;&#125;</span></span><br><span class="line"><span class="tag">div</span><span class="rules">&#123;<span class="rule"><span class="attribute">line-height</span>:<span class="value"><span class="number">1em</span></span></span>;&#125;</span></span><br><span class="line"><span class="tag">p</span><span class="rules">&#123;<span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">18px</span></span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>上述出来的结果可能是这样的<br><img src="http://upload-images.jianshu.io/upload_images/101399-b2c5fba26d560a7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>原因：div的行高设置为1em，它继承了父类的font-size为10px，那么对于此div来说1em == 10px，这个行高便又继承给了其孩子p标签，所以会显示错误，仔细想想，<strong>我们的本意是让div的孩子都按照各自的font-size去决定它们自己的行高</strong>，现在却并没有实现，所以需要使用<strong>缩放因子</strong>，也就是给line-height指定数字，那么接下来所有的子元素便会根据自己的font-size去计算。<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">body</span>&#123;<span class="attribute">font-size</span>:<span class="number">10px</span>;&#125;</span><br><span class="line"><span class="tag">div</span>&#123;<span class="attribute">line-height</span>:<span class="number">1</span>;&#125;<span class="comment">//这儿这儿</span></span><br><span class="line"><span class="tag">p</span>&#123; <span class="attribute">width</span>: <span class="number">200px</span>;<span class="attribute">font-size</span>:<span class="number">18px</span>;&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-0065fe7a69a9e077.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="u5904_u7406_u7A7A_u767D_u7B26_white-space"><a href="#u5904_u7406_u7A7A_u767D_u7B26_white-space" class="headerlink" title="处理空白符 white-space"></a>处理空白符 white-space</h3><ul>
+<li>normal：按照正常情况来，会忽略空白格</li>
+<li>pre：就像写代码一样，会识别所有空白格和回车</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/101399-216e54858392c62c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="总结"></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/CSS/z-index层叠上下文/" rel="next" title="z-index层叠上下文">
+                <i class="fa fa-chevron-left"></i> z-index层叠上下文
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/CSS/去掉chrome记住密码后自动填充表单的黄色背景/" rel="prev" title="去掉chrome记住密码后自动填充表单的黄色背景">
+                去掉chrome记住密码后自动填充表单的黄色背景 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://7xlqsb.com1.z0.glb.clouddn.com/logo.jpg" alt="Lucky Jing" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Lucky Jing</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">致力于全栈路线的大三君</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">标签</span>
+              
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5904_u7406_u7A7A_u767D_u7B26_white-space"><span class="nav-number">1.</span> <span class="nav-text">处理空白符 white-space</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lucky Jing</span>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

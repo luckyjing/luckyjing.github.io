@@ -1,0 +1,649 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="信道频带对信道而言，频带就是允许传送的信号的最高频率与允许传送的信号的最低频率这之间的频率范围(当然要考虑衰减必须在一定范围内)。若两者差别很大，可以认为频带就等于允许传送的信号的最高频率。
+ISP因特网服务提供者，是一个公司，IP地址管理机构转交给ISP，ISP再发给用户。同一级别的ISP之间不会互相控制，通过NAP来传送信息。
+路由器路由器是因特网上实现分组交换的关键部件，它是一种专用计算机，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第1章-概述">
+<meta property="og:url" content="http://yoursite.com/数据通信与计算机网络/第1章-概述/index.html">
+<meta property="og:site_name" content="全栈杂货铺">
+<meta property="og:description" content="信道频带对信道而言，频带就是允许传送的信号的最高频率与允许传送的信号的最低频率这之间的频率范围(当然要考虑衰减必须在一定范围内)。若两者差别很大，可以认为频带就等于允许传送的信号的最高频率。
+ISP因特网服务提供者，是一个公司，IP地址管理机构转交给ISP，ISP再发给用户。同一级别的ISP之间不会互相控制，通过NAP来传送信息。
+路由器路由器是因特网上实现分组交换的关键部件，它是一种专用计算机，">
+<meta property="og:updated_time" content="2015-12-26T06:25:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第1章-概述">
+<meta name="twitter:description" content="信道频带对信道而言，频带就是允许传送的信号的最高频率与允许传送的信号的最低频率这之间的频率范围(当然要考虑衰减必须在一定范围内)。若两者差别很大，可以认为频带就等于允许传送的信号的最高频率。
+ISP因特网服务提供者，是一个公司，IP地址管理机构转交给ISP，ISP再发给用户。同一级别的ISP之间不会互相控制，通过NAP来传送信息。
+路由器路由器是因特网上实现分组交换的关键部件，它是一种专用计算机，">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide',
+    motion: true
+  };
+</script>
+
+  <title> 第1章-概述 | 全栈杂货铺 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">全栈杂货铺</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">MEAN Web</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                第1章-概述
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-26T14:25:05+08:00" content="2015年12月26日">
+              2015年12月26日
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据通信与计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">数据通信与计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="u4FE1_u9053_u9891_u5E26"><a href="#u4FE1_u9053_u9891_u5E26" class="headerlink" title="信道频带"></a>信道频带</h1><p>对信道而言，频带就是允许传送的信号的<strong>最高频率</strong>与允许传送的信号的<strong>最低频率</strong>这之间的频率范围(当然要考虑衰减必须在一定范围内)。若两者差别很大，可以认为频带就等于允许传送的信号的最高频率。</p>
+<h1 id="ISP"><a href="#ISP" class="headerlink" title="ISP"></a>ISP</h1><p>因特网服务提供者，是一个公司，IP地址管理机构转交给ISP，ISP再发给用户。同一级别的ISP之间不会互相控制，通过NAP来传送信息。</p>
+<h1 id="u8DEF_u7531_u5668"><a href="#u8DEF_u7531_u5668" class="headerlink" title="路由器"></a>路由器</h1><p>路由器是因特网上实现分组交换的关键部件，它是一种专用计算机，主要功能是转发接收到的分组。</p>
+<p>#客户/服务器模式<br>Client/Server，就是两个进程在通过因特网交互，只不过其中之一是客户程序，另一个为服务器程序。发送请求和被动地接受请求。</p>
+<p>特点：</p>
+<ol>
+<li><h3 id="u975E_u5BF9_u7B49_u4F5C_u7528"><a href="#u975E_u5BF9_u7B49_u4F5C_u7528" class="headerlink" title="非对等作用"></a>非对等作用</h3><ul>
+<li>首先看一下什么是对等作用，P2P（Peer-to-Peer），两台主机地位是对等的，通过安装P2P软件便可以同时担任客户/服务器作用。好处就是减轻了绝对主机的负担，把数据交换碎片化分散化到P2P网络上的每一个<strong>客户</strong>上。</li>
+<li>非对等很显而易见，服务器通常由强大的计算机担任。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><h3 id="u901A_u4FE1_u5B8C_u5168_u5F02_u6B65_u3002"><a href="#u901A_u4FE1_u5B8C_u5168_u5F02_u6B65_u3002" class="headerlink" title="通信完全异步。"></a>通信完全异步。</h3></li>
+</ul>
+<p>#计算机网络的定义<br>以远程通信为目的，互联、独立的计算机的集合。区别分布式系统，分布式系统背后里是多台主机，但是它向提供的系统对于使用者来说就像一台主机来着。</p>
+<h1 id="u8BA1_u7B97_u673A_u7F51_u7EDC_u7684_u6027_u80FD_u6307_u6807"><a href="#u8BA1_u7B97_u673A_u7F51_u7EDC_u7684_u6027_u80FD_u6307_u6807" class="headerlink" title="计算机网络的性能指标"></a>计算机网络的性能指标</h1><ol>
+<li>速率<br>单位为比特/秒，b/s，bps，</li>
+</ol>
+<ul>
+<li>带宽<br>某个信号具有的频带宽度，单位是Hz，kHz,MHz。对于数字信号来说，是数据传输速率，比特/秒。</li>
+<li>吞吐量<br>单位时间内通过某个网络的数据量，比特/秒，受带宽的限制。</li>
+<li>时延<ul>
+<li>发送时延<br>主机或路由器发送数据帧所需要的时间。数据帧长度（b）/信道带宽（b/s），就跟上传/下载速度一样，</li>
+<li>传播时延<br>电磁波在信道中传播花费的时间。在光缆中的速率约为2.0E5 Km/s，例如1000km的光缆产生的传播延时为5ms，</li>
+<li>处理时延<br>主机处理分组的时间。</li>
+<li>排队时延<br>数据到主机了，先得排队，等待被处理。</li>
+</ul>
+</li>
+<li>时延带宽积<br>根据字面意思，就是把传播时延和带宽相乘。我们在脑子里构造出一个圆柱体，横着放，高度为时延时间，横截面积就是带宽，带宽是单位时间内传输多少比特，那么乘积就是时延时间内总共通过的数据量，也就是在管道里能够容纳的数据量，<strong>发送的第一比特到达目的地时，发送端已经发送了时延带宽积这么多比特了。</strong></li>
+</ul>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/数据库/索引/" rel="next" title="索引">
+                <i class="fa fa-chevron-left"></i> 索引
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/CSS/CSS3之Transform（变形）/" rel="prev" title="CSS3之Transform（变形）">
+                CSS3之Transform（变形） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://7xlqsb.com1.z0.glb.clouddn.com/logo.jpg" alt="Lucky Jing" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Lucky Jing</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">致力于全栈路线的大三君</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">标签</span>
+              
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u4FE1_u9053_u9891_u5E26"><span class="nav-number">1.</span> <span class="nav-text">信道频带</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ISP"><span class="nav-number">2.</span> <span class="nav-text">ISP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u8DEF_u7531_u5668"><span class="nav-number">3.</span> <span class="nav-text">路由器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u975E_u5BF9_u7B49_u4F5C_u7528"><span class="nav-number">3.0.1.</span> <span class="nav-text">非对等作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u901A_u4FE1_u5B8C_u5168_u5F02_u6B65_u3002"><span class="nav-number">3.0.2.</span> <span class="nav-text">通信完全异步。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u8BA1_u7B97_u673A_u7F51_u7EDC_u7684_u6027_u80FD_u6307_u6807"><span class="nav-number">4.</span> <span class="nav-text">计算机网络的性能指标</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lucky Jing</span>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="安装Git链接
+配置安装了git之后，就需要添上门牌号，打开Git Bash，所以需要进行以下步骤，如果要对特定的一个仓库设置的话，去掉–global12$ git config --global user.name &quot;Your Name&quot;$ git config --global user.email &quot;email@example.com&quot;
+生成仓库1git init
+把文件添加到仓库里面，进行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="再也忘不了Git的命令了">
+<meta property="og:url" content="http://yoursite.com/前端记录/再也忘不了Git的命令了/index.html">
+<meta property="og:site_name" content="全栈杂货铺">
+<meta property="og:description" content="安装Git链接
+配置安装了git之后，就需要添上门牌号，打开Git Bash，所以需要进行以下步骤，如果要对特定的一个仓库设置的话，去掉–global12$ git config --global user.name &quot;Your Name&quot;$ git config --global user.email &quot;email@example.com&quot;
+生成仓库1git init
+把文件添加到仓库里面，进行">
+<meta property="og:updated_time" content="2015-12-26T06:25:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="再也忘不了Git的命令了">
+<meta name="twitter:description" content="安装Git链接
+配置安装了git之后，就需要添上门牌号，打开Git Bash，所以需要进行以下步骤，如果要对特定的一个仓库设置的话，去掉–global12$ git config --global user.name &quot;Your Name&quot;$ git config --global user.email &quot;email@example.com&quot;
+生成仓库1git init
+把文件添加到仓库里面，进行">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide',
+    motion: true
+  };
+</script>
+
+  <title> 再也忘不了Git的命令了 | 全栈杂货铺 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">全栈杂货铺</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">MEAN Web</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                再也忘不了Git的命令了
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-26T14:25:04+08:00" content="2015年12月26日">
+              2015年12月26日
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端记录/" itemprop="url" rel="index">
+                    <span itemprop="name">前端记录</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="u5B89_u88C5Git"><a href="#u5B89_u88C5Git" class="headerlink" title="安装Git"></a>安装Git</h1><p><a href="https://git-for-windows.github.io/index.html" target="_blank" rel="external">链接</a></p>
+<h1 id="u914D_u7F6E"><a href="#u914D_u7F6E" class="headerlink" title="配置"></a>配置</h1><p>安装了git之后，就需要添上门牌号，打开<code>Git Bash</code>，所以需要进行以下步骤，如果要对特定的一个仓库设置的话，去掉–global<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user<span class="class">.name</span> <span class="string">"Your Name"</span></span><br><span class="line">$ git config --global user<span class="class">.email</span> <span class="string">"email@example.com"</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="u751F_u6210_u4ED3_u5E93"><a href="#u751F_u6210_u4ED3_u5E93" class="headerlink" title="生成仓库"></a>生成仓库</h1><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> init</span><br></pre></td></tr></table></figure>
+<h1 id="u628A_u6587_u4EF6_u6DFB_u52A0_u5230_u4ED3_u5E93_u91CC_u9762_uFF0C_u8FDB_u884C_u8DDF_u8E2A_u7BA1_u7406"><a href="#u628A_u6587_u4EF6_u6DFB_u52A0_u5230_u4ED3_u5E93_u91CC_u9762_uFF0C_u8FDB_u884C_u8DDF_u8E2A_u7BA1_u7406" class="headerlink" title="把文件添加到仓库里面，进行跟踪管理"></a>把文件添加到仓库里面，进行跟踪管理</h1><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">git</span> <span class="keyword">add </span>文件名.后缀</span><br></pre></td></tr></table></figure>
+<h1 id="u63D0_u4EA4_u4E00_u4E2A_u7248_u672C"><a href="#u63D0_u4EA4_u4E00_u4E2A_u7248_u672C" class="headerlink" title="提交一个版本"></a>提交一个版本</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">commit</span> -<span class="keyword">m</span> <span class="string">"这里是注释内容"</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="u638C_u63E1_u4ED3_u5E93_u72B6_u6001"><a href="#u638C_u63E1_u4ED3_u5E93_u72B6_u6001" class="headerlink" title="掌握仓库状态"></a>掌握仓库状态</h1><p>输入这个命令，可以看到当前被仓库追踪的文件的改动情况<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">status</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="u6BD4_u8F83_u4E0D_u540C"><a href="#u6BD4_u8F83_u4E0D_u540C" class="headerlink" title="比较不同"></a>比较不同</h1><p>可以比较目前文件内容与上一个版本之间到底有什么不同<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> diff 文件名</span><br></pre></td></tr></table></figure></p>
+<h1 id="u67E5_u770B_u5386_u53F2_u8BB0_u5F55"><a href="#u67E5_u770B_u5386_u53F2_u8BB0_u5F55" class="headerlink" title="查看历史记录"></a>查看历史记录</h1><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="command">log</span></span><br></pre></td></tr></table></figure>
+<h1 id="u56DE_u9000_u7248_u672C"><a href="#u56DE_u9000_u7248_u672C" class="headerlink" title="回退版本"></a>回退版本</h1><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset <span class="comment">--hard 版本号</span></span><br><span class="line">git reflog<span class="comment"> //就可以查看所有的版本号了</span></span><br></pre></td></tr></table></figure>
+<h1 id="u64A4_u9500_u4FEE_u6539"><a href="#u64A4_u9500_u4FEE_u6539" class="headerlink" title="撤销修改"></a>撤销修改</h1><p>让当前文件回到最近一次<code>git commit</code>或者<code>git add</code>的时候,一定注意要有<code>--</code><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="comment">-- readme.md</span></span><br><span class="line">git <span class="operator"><span class="keyword">reset</span> <span class="keyword">HEAD</span> 文件名.后缀 //回到最近一次<span class="keyword">commit</span>处</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="u64A4_u9500_u5C0F_u7ED3"><a href="#u64A4_u9500_u5C0F_u7ED3" class="headerlink" title="撤销小结"></a>撤销小结</h1><blockquote>
+<ul>
+<li>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file<br>。<br>*场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file<br>，就回到了场景1，第二步按场景1操作。<br>＊　场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退，不过前提是没有推送到远程库。</li>
+</ul>
+</blockquote>
+<p>＃ 添加远程仓库<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">git</span> remote <span class="keyword">add </span>origin 仓库地址</span><br></pre></td></tr></table></figure></p>
+<h1 id="u5C06_u672C_u5730_u5185_u5BB9_u63A8_u9001_u5230_u8FDC_u7A0B_u4ED3_u5E93"><a href="#u5C06_u672C_u5730_u5185_u5BB9_u63A8_u9001_u5230_u8FDC_u7A0B_u4ED3_u5E93" class="headerlink" title="将本地内容推送到远程仓库"></a>将本地内容推送到远程仓库</h1><p>由于远程库是空的，我们第一次推送master分支时，加上了<code>-u</code>参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin <span class="keyword">master</span> <span class="title">//首次</span><br><span class="line">git</span> push origin <span class="keyword">master</span> <span class="title">// 以后</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="u521B_u5EFA_u5E76_u5207_u6362_u5206_u652F"><a href="#u521B_u5EFA_u5E76_u5207_u6362_u5206_u652F" class="headerlink" title="创建并切换分支"></a>创建并切换分支</h1><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">git</span> <span class="keyword">branch </span>-<span class="keyword">b </span>分支名</span><br><span class="line">//相当于</span><br><span class="line">$ git <span class="keyword">branch </span>分支名</span><br><span class="line">$ git checkout 分支名</span><br></pre></td></tr></table></figure>
+<h1 id="u5408_u5E76"><a href="#u5408_u5E76" class="headerlink" title="合并"></a>合并</h1><p>切换回master分支，执行<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">merge</span> 分支名</span><br></pre></td></tr></table></figure></p>
+<h1 id="u5220_u9664_u5206_u652F"><a href="#u5220_u9664_u5206_u652F" class="headerlink" title="删除分支"></a>删除分支</h1><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">git</span> <span class="keyword">branch </span>-d 分支名</span><br></pre></td></tr></table></figure>
+<h1 id="u89E3_u51B3_u51B2_u7A81"><a href="#u89E3_u51B3_u51B2_u7A81" class="headerlink" title="解决冲突"></a>解决冲突</h1><p>删除完有歧义的地方后，再次执行git add ，便可以继续进行 commit</p>
+<h1 id="u62C9_u53D6_u8FDC_u7A0B"><a href="#u62C9_u53D6_u8FDC_u7A0B" class="headerlink" title="拉取远程"></a>拉取远程</h1><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> pull</span><br></pre></td></tr></table></figure>
+<h1 id="u591A_u4EBA_u534F_u4F5C"><a href="#u591A_u4EBA_u534F_u4F5C" class="headerlink" title="多人协作"></a>多人协作</h1><blockquote>
+<p>因此，多人协作的工作模式通常是这样：<br>首先，可以试图用git push origin branch-name推送自己的修改；<br>如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；<br>如果合并有冲突，则解决冲突，并在本地提交；<br>没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！<br>如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令git branch –set-upstream branch-name origin/branch-name。</p>
+</blockquote>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Node-js/curl全部命令/" rel="next" title="curl全部命令">
+                <i class="fa fa-chevron-left"></i> curl全部命令
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/前端记录/requireJS/" rel="prev" title="requireJS">
+                requireJS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://7xlqsb.com1.z0.glb.clouddn.com/logo.jpg" alt="Lucky Jing" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Lucky Jing</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">致力于全栈路线的大三君</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">标签</span>
+              
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u5B89_u88C5Git"><span class="nav-number">1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u914D_u7F6E"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u751F_u6210_u4ED3_u5E93"><span class="nav-number">3.</span> <span class="nav-text">生成仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u628A_u6587_u4EF6_u6DFB_u52A0_u5230_u4ED3_u5E93_u91CC_u9762_uFF0C_u8FDB_u884C_u8DDF_u8E2A_u7BA1_u7406"><span class="nav-number">4.</span> <span class="nav-text">把文件添加到仓库里面，进行跟踪管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u63D0_u4EA4_u4E00_u4E2A_u7248_u672C"><span class="nav-number">5.</span> <span class="nav-text">提交一个版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u638C_u63E1_u4ED3_u5E93_u72B6_u6001"><span class="nav-number">6.</span> <span class="nav-text">掌握仓库状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6BD4_u8F83_u4E0D_u540C"><span class="nav-number">7.</span> <span class="nav-text">比较不同</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u67E5_u770B_u5386_u53F2_u8BB0_u5F55"><span class="nav-number">8.</span> <span class="nav-text">查看历史记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u56DE_u9000_u7248_u672C"><span class="nav-number">9.</span> <span class="nav-text">回退版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u64A4_u9500_u4FEE_u6539"><span class="nav-number">10.</span> <span class="nav-text">撤销修改</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u64A4_u9500_u5C0F_u7ED3"><span class="nav-number">11.</span> <span class="nav-text">撤销小结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u5C06_u672C_u5730_u5185_u5BB9_u63A8_u9001_u5230_u8FDC_u7A0B_u4ED3_u5E93"><span class="nav-number">12.</span> <span class="nav-text">将本地内容推送到远程仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u521B_u5EFA_u5E76_u5207_u6362_u5206_u652F"><span class="nav-number">13.</span> <span class="nav-text">创建并切换分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u5408_u5E76"><span class="nav-number">14.</span> <span class="nav-text">合并</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u5220_u9664_u5206_u652F"><span class="nav-number">15.</span> <span class="nav-text">删除分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u89E3_u51B3_u51B2_u7A81"><span class="nav-number">16.</span> <span class="nav-text">解决冲突</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u62C9_u53D6_u8FDC_u7A0B"><span class="nav-number">17.</span> <span class="nav-text">拉取远程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u591A_u4EBA_u534F_u4F5C"><span class="nav-number">18.</span> <span class="nav-text">多人协作</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lucky Jing</span>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
