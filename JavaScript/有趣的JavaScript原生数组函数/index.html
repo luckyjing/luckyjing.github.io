@@ -68,7 +68,7 @@ every 和 somesome将会给数组里的每一个元素执行一遍回调函数�
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-91bfa53ed23dd926.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-a7b2235ab78d3a5b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/101399-1068155a9a05a9a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2015-12-26T06:25:04.000Z">
+<meta property="og:updated_time" content="2015-12-27T05:06:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有趣的JavaScript原生数组函数">
 <meta name="twitter:description" content="查找.indexOfarr.indexOf(elem)，我们实际中可能会写 a==&amp;#39;a&amp;#39; || a==&amp;#39;b&amp;#39; || a==&amp;#39;c&amp;#39;，现在可以这么写。[&amp;#39;a&amp;#39;,&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;].indexOf(a)
@@ -214,8 +214,8 @@ every 和 somesome将会给数组里的每一个元素执行一遍回调函数�
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-26T14:25:04+08:00" content="2015年12月26日">
-              2015年12月26日
+            <time itemprop="dateCreated" datetime="2015-12-27T13:06:26+08:00" content="2015年12月27日">
+              2015年12月27日
             </time>
           </span>
 
@@ -254,14 +254,14 @@ every 和 somesome将会给数组里的每一个元素执行一遍回调函数�
 
       
         <span itemprop="articleBody"><p><img src="http://upload-images.jianshu.io/upload_images/101399-c161ee524f0b66df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Array对象的一些基本信息"></p>
-<h1 id="u67E5_u627E-indexOf"><a href="#u67E5_u627E-indexOf" class="headerlink" title="查找.indexOf"></a>查找.indexOf</h1><p><code>arr.indexOf(elem)</code>，<br>我们实际中可能会写 <code>a==&#39;a&#39; || a==&#39;b&#39; || a==&#39;c&#39;</code>，现在可以这么写。<br><code>[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;].indexOf(a)</code></p>
-<h1 id="u5FAA_u73AF_forEach"><a href="#u5FAA_u73AF_forEach" class="headerlink" title="循环 forEach"></a>循环 forEach</h1><p><img src="http://upload-images.jianshu.io/upload_images/101399-6b12a3089ef219c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="every__u548C_some"><a href="#every__u548C_some" class="headerlink" title="every 和 some"></a>every 和 some</h1><p>some将会给数组里的每一个元素执行一遍回调函数，<strong>直到有一个回调函数返回true为止。</strong>如果找到目标元素，some立即返回true，否则some返回false。回调函数只对已经指定值的数组索引执行；它不会对已删除的或未指定值的元素执行。<br><img src="http://upload-images.jianshu.io/upload_images/101399-c65adb3c68bca353.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="u67E5_u627E-indexOf"><a href="#u67E5_u627E-indexOf" class="headerlink" title="查找.indexOf"></a>查找.indexOf</h3><p><code>arr.indexOf(elem)</code>，<br>我们实际中可能会写 <code>a==&#39;a&#39; || a==&#39;b&#39; || a==&#39;c&#39;</code>，现在可以这么写。<br><code>[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;].indexOf(a)</code></p>
+<h3 id="u5FAA_u73AF_forEach"><a href="#u5FAA_u73AF_forEach" class="headerlink" title="循环 forEach"></a>循环 forEach</h3><p><img src="http://upload-images.jianshu.io/upload_images/101399-6b12a3089ef219c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="every__u548C_some"><a href="#every__u548C_some" class="headerlink" title="every 和 some"></a>every 和 some</h3><p>some将会给数组里的每一个元素执行一遍回调函数，<strong>直到有一个回调函数返回true为止。</strong>如果找到目标元素，some立即返回true，否则some返回false。回调函数只对已经指定值的数组索引执行；它不会对已删除的或未指定值的元素执行。<br><img src="http://upload-images.jianshu.io/upload_images/101399-c65adb3c68bca353.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/101399-d1298dae23a43957.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="join__u548C_concat"><a href="#join__u548C_concat" class="headerlink" title="join 和 concat"></a>join 和 concat</h1><p>.join(分隔符)方法创建一个字符串，会将数组里面每个元素用分隔符连接。如果没有提供分隔符，默认的分隔符为“,”。.concat方法创建一个新数组，其是对原数组的浅拷贝（注意是浅拷贝哦）。<br><img src="http://upload-images.jianshu.io/upload_images/101399-e5c913a6f5db209f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="u6808_u65B9_u6CD5__u5165_u6808push/unshift__u51FA_u6808pop/shift"><a href="#u6808_u65B9_u6CD5__u5165_u6808push/unshift__u51FA_u6808pop/shift" class="headerlink" title="栈方法 入栈push/unshift 出栈pop/shift"></a>栈方法 入栈push/unshift 出栈pop/shift</h1><p><img src="http://upload-images.jianshu.io/upload_images/101399-0c932f63fc1e6aef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="u961F_u5217_u65B9_u6CD5_shift_u51FA_u961F_u5217_unshift__u5165_u961F_u5217"><a href="#u961F_u5217_u65B9_u6CD5_shift_u51FA_u961F_u5217_unshift__u5165_u961F_u5217" class="headerlink" title="队列方法 shift出队列 unshift 入队列"></a>队列方法 shift出队列 unshift 入队列</h1><p><img src="http://upload-images.jianshu.io/upload_images/101399-91bfa53ed23dd926.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="u7528-shift_u6216-pop_u80FD_u5F88_u5BB9_u6613_u904D_u5386_u6570_u7EC4_u5143_u7D20_uFF0C_u5E76_u5728_u64CD_u4F5C_u8FC7_u7A0B_u4E2D_u6E05_u7A7A_u6570_u7EC4"><a href="#u7528-shift_u6216-pop_u80FD_u5F88_u5BB9_u6613_u904D_u5386_u6570_u7EC4_u5143_u7D20_uFF0C_u5E76_u5728_u64CD_u4F5C_u8FC7_u7A0B_u4E2D_u6E05_u7A7A_u6570_u7EC4" class="headerlink" title="用.shift或.pop能很容易遍历数组元素，并在操作过程中清空数组"></a>用.shift或.pop能很容易遍历数组元素，并在操作过程中清空数组</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>]</span><br><span class="line"><span class="keyword">while</span> (item = <span class="built_in">list</span>.shift()) &#123;</span><br><span class="line">    console.<span class="built_in">log</span>(item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="join__u548C_concat"><a href="#join__u548C_concat" class="headerlink" title="join 和 concat"></a>join 和 concat</h3><p>.join(分隔符)方法创建一个字符串，会将数组里面每个元素用分隔符连接。如果没有提供分隔符，默认的分隔符为“,”。.concat方法创建一个新数组，其是对原数组的浅拷贝（注意是浅拷贝哦）。<br><img src="http://upload-images.jianshu.io/upload_images/101399-e5c913a6f5db209f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="u6808_u65B9_u6CD5__u5165_u6808push/unshift__u51FA_u6808pop/shift"><a href="#u6808_u65B9_u6CD5__u5165_u6808push/unshift__u51FA_u6808pop/shift" class="headerlink" title="栈方法 入栈push/unshift 出栈pop/shift"></a>栈方法 入栈push/unshift 出栈pop/shift</h3><p><img src="http://upload-images.jianshu.io/upload_images/101399-0c932f63fc1e6aef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="u961F_u5217_u65B9_u6CD5_shift_u51FA_u961F_u5217_unshift__u5165_u961F_u5217"><a href="#u961F_u5217_u65B9_u6CD5_shift_u51FA_u961F_u5217_unshift__u5165_u961F_u5217" class="headerlink" title="队列方法 shift出队列 unshift 入队列"></a>队列方法 shift出队列 unshift 入队列</h3><p><img src="http://upload-images.jianshu.io/upload_images/101399-91bfa53ed23dd926.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="u7528-shift_u6216-pop_u80FD_u5F88_u5BB9_u6613_u904D_u5386_u6570_u7EC4_u5143_u7D20_uFF0C_u5E76_u5728_u64CD_u4F5C_u8FC7_u7A0B_u4E2D_u6E05_u7A7A_u6570_u7EC4"><a href="#u7528-shift_u6216-pop_u80FD_u5F88_u5BB9_u6613_u904D_u5386_u6570_u7EC4_u5143_u7D20_uFF0C_u5E76_u5728_u64CD_u4F5C_u8FC7_u7A0B_u4E2D_u6E05_u7A7A_u6570_u7EC4" class="headerlink" title="用.shift或.pop能很容易遍历数组元素，并在操作过程中清空数组"></a>用.shift或.pop能很容易遍历数组元素，并在操作过程中清空数组</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>]</span><br><span class="line"><span class="keyword">while</span> (item = <span class="built_in">list</span>.shift()) &#123;</span><br><span class="line">    console.<span class="built_in">log</span>(item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="http://upload-images.jianshu.io/upload_images/101399-a7b2235ab78d3a5b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h1 id="u6A21_u578B_u6620_u5C04-map"><a href="#u6A21_u578B_u6620_u5C04-map" class="headerlink" title="模型映射.map"></a>模型映射.map</h1><blockquote>
 <p>map方法会按顺序给原数组中的每个元素(必须有值)都调用一次 callback函数.callback,每次执行后的返回值组合起来形成一个新数组. callback函数只会在有值的索引上被调用; 那些从来没被赋过值或者使用delete删除的索引则不会被调用。</p>
@@ -287,16 +287,16 @@ every 和 somesome将会给数组里的每一个元素执行一遍回调函数�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/JavaScript/字符串常用函数/" rel="next" title="字符串常用函数">
-                <i class="fa fa-chevron-left"></i> 字符串常用函数
+              <a href="/JavaScript/创建简单的JavaScript对象/" rel="next" title="创建简单的JavaScript对象">
+                <i class="fa fa-chevron-left"></i> 创建简单的JavaScript对象
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/JavaScript/爱不释手的Ajax（一）/" rel="prev" title="爱不释手的Ajax（一）">
-                爱不释手的Ajax（一） <i class="fa fa-chevron-right"></i>
+              <a href="/前端记录/Grunt使用实例/" rel="prev" title="Grunt使用实例">
+                Grunt使用实例 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -365,14 +365,14 @@ every 和 somesome将会给数组里的每一个元素执行一遍回调函数�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">61</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
@@ -411,7 +411,7 @@ every 和 somesome将会给数组里的每一个元素执行一遍回调函数�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u67E5_u627E-indexOf"><span class="nav-number">1.</span> <span class="nav-text">查找.indexOf</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u5FAA_u73AF_forEach"><span class="nav-number">2.</span> <span class="nav-text">循环 forEach</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#every__u548C_some"><span class="nav-number">3.</span> <span class="nav-text">every 和 some</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#join__u548C_concat"><span class="nav-number">4.</span> <span class="nav-text">join 和 concat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6808_u65B9_u6CD5__u5165_u6808push/unshift__u51FA_u6808pop/shift"><span class="nav-number">5.</span> <span class="nav-text">栈方法 入栈push/unshift 出栈pop/shift</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u961F_u5217_u65B9_u6CD5_shift_u51FA_u961F_u5217_unshift__u5165_u961F_u5217"><span class="nav-number">6.</span> <span class="nav-text">队列方法 shift出队列 unshift 入队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u7528-shift_u6216-pop_u80FD_u5F88_u5BB9_u6613_u904D_u5386_u6570_u7EC4_u5143_u7D20_uFF0C_u5E76_u5728_u64CD_u4F5C_u8FC7_u7A0B_u4E2D_u6E05_u7A7A_u6570_u7EC4"><span class="nav-number">7.</span> <span class="nav-text">用.shift或.pop能很容易遍历数组元素，并在操作过程中清空数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6A21_u578B_u6620_u5C04-map"><span class="nav-number">8.</span> <span class="nav-text">模型映射.map</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u67E5_u8BE2-filter"><span class="nav-number">9.</span> <span class="nav-text">查询.filter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6392_u5E8F-sort_28_u6BD4_u8F83_u51FD_u6570_29"><span class="nav-number">10.</span> <span class="nav-text">排序.sort(比较函数)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u590D_u5236-slice"><span class="nav-number">11.</span> <span class="nav-text">复制.slice</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u67E5_u627E-indexOf"><span class="nav-number">1.</span> <span class="nav-text">查找.indexOf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5FAA_u73AF_forEach"><span class="nav-number">2.</span> <span class="nav-text">循环 forEach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#every__u548C_some"><span class="nav-number">3.</span> <span class="nav-text">every 和 some</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join__u548C_concat"><span class="nav-number">4.</span> <span class="nav-text">join 和 concat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6808_u65B9_u6CD5__u5165_u6808push/unshift__u51FA_u6808pop/shift"><span class="nav-number">5.</span> <span class="nav-text">栈方法 入栈push/unshift 出栈pop/shift</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u961F_u5217_u65B9_u6CD5_shift_u51FA_u961F_u5217_unshift__u5165_u961F_u5217"><span class="nav-number">6.</span> <span class="nav-text">队列方法 shift出队列 unshift 入队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7528-shift_u6216-pop_u80FD_u5F88_u5BB9_u6613_u904D_u5386_u6570_u7EC4_u5143_u7D20_uFF0C_u5E76_u5728_u64CD_u4F5C_u8FC7_u7A0B_u4E2D_u6E05_u7A7A_u6570_u7EC4"><span class="nav-number">7.</span> <span class="nav-text">用.shift或.pop能很容易遍历数组元素，并在操作过程中清空数组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6A21_u578B_u6620_u5C04-map"><span class="nav-number"></span> <span class="nav-text">模型映射.map</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u67E5_u8BE2-filter"><span class="nav-number"></span> <span class="nav-text">查询.filter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6392_u5E8F-sort_28_u6BD4_u8F83_u51FD_u6570_29"><span class="nav-number"></span> <span class="nav-text">排序.sort(比较函数)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u590D_u5236-slice"><span class="nav-number"></span> <span class="nav-text">复制.slice</span></a></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

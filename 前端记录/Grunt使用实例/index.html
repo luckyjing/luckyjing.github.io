@@ -55,7 +55,7 @@
 <meta property="og:url" content="http://yoursite.com/前端记录/Grunt使用实例/index.html">
 <meta property="og:site_name" content="全栈杂货铺">
 <meta property="og:description" content="Grunt 基于 Node.js ，用 JS 开发，这样就可以借助 Node.js 实现跨系统跨平台的桌面端的操作，例如文件操作等等。此外，Grunt 以及它的插件们，都作为一个 包 ，可以用 NPM 安装进行管理。所以 NPM 生成的 package.json 项目文件，里面可以记录当前项目中用到的 Grunt 插件，而 Grunt 会调用 Gruntfile.js 这个文件，解析里面的任务（t">
-<meta property="og:updated_time" content="2015-12-26T06:25:04.000Z">
+<meta property="og:updated_time" content="2015-12-27T05:07:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Grunt使用实例">
 <meta name="twitter:description" content="Grunt 基于 Node.js ，用 JS 开发，这样就可以借助 Node.js 实现跨系统跨平台的桌面端的操作，例如文件操作等等。此外，Grunt 以及它的插件们，都作为一个 包 ，可以用 NPM 安装进行管理。所以 NPM 生成的 package.json 项目文件，里面可以记录当前项目中用到的 Grunt 插件，而 Grunt 会调用 Gruntfile.js 这个文件，解析里面的任务（t">
@@ -199,8 +199,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-26T14:25:04+08:00" content="2015年12月26日">
-              2015年12月26日
+            <time itemprop="dateCreated" datetime="2015-12-27T13:07:01+08:00" content="2015年12月27日">
+              2015年12月27日
             </time>
           </span>
 
@@ -241,7 +241,7 @@
         <span itemprop="articleBody"><blockquote>
 <p>Grunt 基于 Node.js ，用 JS 开发，这样就可以借助 Node.js 实现跨系统跨平台的桌面端的操作，例如文件操作等等。此外，Grunt 以及它的插件们，都作为一个 包 ，可以用 NPM 安装进行管理。<br>所以 NPM 生成的 package.json 项目文件，里面可以记录当前项目中用到的 Grunt 插件，而 Grunt 会调用 Gruntfile.js 这个文件，解析里面的任务（task）并执行相应操作。</p>
 </blockquote>
-<p>#安装 Grunt-cli<br>其实是安装 Grunt-cli ，这里安装Grunt的命令行支持（command line interface，简称CLI），在这之后，命令提示符中将会识别grunt命令。安装grunt-cli 并不能称为安装Grunt完毕。<strong>这是因为，Grunt本身不是全局使用的，任何具体的工作目录，如果要使用Grunt，都需要安装一次Grunt。</strong>这样做也是因为不同的工作目录，需要通过Grunt做的自动化工作也不同，因此需要独立配置。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> grunt-cli</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="u5B89_u88C5_Grunt-cli"><a href="#u5B89_u88C5_Grunt-cli" class="headerlink" title="安装 Grunt-cli"></a>安装 Grunt-cli</h1><p>其实是安装 Grunt-cli ，这里安装Grunt的命令行支持（command line interface，简称CLI），在这之后，命令提示符中将会识别grunt命令。安装grunt-cli 并不能称为安装Grunt完毕。<strong>这是因为，Grunt本身不是全局使用的，任何具体的工作目录，如果要使用Grunt，都需要安装一次Grunt。</strong>这样做也是因为不同的工作目录，需要通过Grunt做的自动化工作也不同，因此需要独立配置。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> grunt-cli</span></span><br></pre></td></tr></table></figure></p>
 <p> —save-dev 参数，表示会<strong>把刚安装的东西添加到 package.json 文件中</strong>。</p>
 <h1 id="u751F_u6210_package-json__u6587_u4EF6"><a href="#u751F_u6210_package-json__u6587_u4EF6" class="headerlink" title="生成 package.json 文件"></a>生成 package.json 文件</h1><p>npm对工作目录有一个要求。这个要求是：根目录位置处有一个package.json<br>文件。这个文件定义了工作目录对应的一些项目信息（名字，描述），以及包（就是npm模块）依赖关系。<br>执行下面命令便可以初始化<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> init</span><br></pre></td></tr></table></figure></p>
 <h1 id="u4E3A_u5F53_u524D_u5DE5_u4F5C_u76EE_u5F55_u5B89_u88C5Grunt_u548C_u9700_u8981_u7684_u63D2_u4EF6"><a href="#u4E3A_u5F53_u524D_u5DE5_u4F5C_u76EE_u5F55_u5B89_u88C5Grunt_u548C_u9700_u8981_u7684_u63D2_u4EF6" class="headerlink" title="为当前工作目录安装Grunt和需要的插件"></a>为当前工作目录安装Grunt和需要的插件</h1><ul>
@@ -288,16 +288,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/前端记录/Gruntfile-js配置全攻略/" rel="next" title="Gruntfile-js配置全攻略">
-                <i class="fa fa-chevron-left"></i> Gruntfile-js配置全攻略
+              <a href="/JavaScript/有趣的JavaScript原生数组函数/" rel="next" title="有趣的JavaScript原生数组函数">
+                <i class="fa fa-chevron-left"></i> 有趣的JavaScript原生数组函数
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/前端记录/JavaScript模块化编程/" rel="prev" title="JavaScript模块化编程">
-                JavaScript模块化编程 <i class="fa fa-chevron-right"></i>
+              <a href="/前端记录/WebStorm配置/" rel="prev" title="WebStorm配置">
+                WebStorm配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -366,14 +366,14 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">61</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
@@ -412,7 +412,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u751F_u6210_package-json__u6587_u4EF6"><span class="nav-number">1.</span> <span class="nav-text">生成 package.json 文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E3A_u5F53_u524D_u5DE5_u4F5C_u76EE_u5F55_u5B89_u88C5Grunt_u548C_u9700_u8981_u7684_u63D2_u4EF6"><span class="nav-number">2.</span> <span class="nav-text">为当前工作目录安装Grunt和需要的插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B9_u6CD51"><span class="nav-number">2.0.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B9_u6CD5_u4E8C-_u624B_u52A8_u66F4_u6539package-json"><span class="nav-number">2.0.2.</span> <span class="nav-text">方法二-手动更改package.json</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gruntfile-js_u6587_u4EF6"><span class="nav-number">3.</span> <span class="nav-text">Gruntfile.js文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u63D2_u4EF6_u914D_u7F6E_u533A_u57DF"><span class="nav-number">3.0.1.</span> <span class="nav-text">插件配置区域</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u5F00_u59CB_u4F7F_u7528"><span class="nav-number">4.</span> <span class="nav-text">开始使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4F7F_u7528_u6DD8_u5B9D_u955C_u50CF_u52A0_u901F"><span class="nav-number">5.</span> <span class="nav-text">使用淘宝镜像加速</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u63D0_u793A"><span class="nav-number">6.</span> <span class="nav-text">提示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u5B89_u88C5_Grunt-cli"><span class="nav-number">1.</span> <span class="nav-text">安装 Grunt-cli</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u751F_u6210_package-json__u6587_u4EF6"><span class="nav-number">2.</span> <span class="nav-text">生成 package.json 文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E3A_u5F53_u524D_u5DE5_u4F5C_u76EE_u5F55_u5B89_u88C5Grunt_u548C_u9700_u8981_u7684_u63D2_u4EF6"><span class="nav-number">3.</span> <span class="nav-text">为当前工作目录安装Grunt和需要的插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B9_u6CD51"><span class="nav-number">3.0.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B9_u6CD5_u4E8C-_u624B_u52A8_u66F4_u6539package-json"><span class="nav-number">3.0.2.</span> <span class="nav-text">方法二-手动更改package.json</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gruntfile-js_u6587_u4EF6"><span class="nav-number">4.</span> <span class="nav-text">Gruntfile.js文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u63D2_u4EF6_u914D_u7F6E_u533A_u57DF"><span class="nav-number">4.0.1.</span> <span class="nav-text">插件配置区域</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u5F00_u59CB_u4F7F_u7528"><span class="nav-number">5.</span> <span class="nav-text">开始使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4F7F_u7528_u6DD8_u5B9D_u955C_u50CF_u52A0_u901F"><span class="nav-number">6.</span> <span class="nav-text">使用淘宝镜像加速</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u63D0_u793A"><span class="nav-number">7.</span> <span class="nav-text">提示</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

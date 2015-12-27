@@ -51,23 +51,23 @@
 
 <meta name="description" content="引言：阅读《JavaScript语言精粹》这本书时的一些笔记摘要。在JavaScript，一切皆对象，对象相当于属性的容器，每一个属性都拥有名字和值。
 
-###对象字面量这是一种简便地创建对象的方式。12345var emptyObject = &amp;#123; &amp;#125;;var people = &amp;#123;	firstName:&quot;Lucky&quot;,	lastName:&quot;Jing&quot;&amp;#125;
-对象">
+对象字面量这是一种简便地创建对象的方式。12345var emptyObject = &amp;#123; &amp;#125;;var people = &amp;#123;	firstName:&quot;Lucky&quot;,	lastName:&quot;Jing&quot;&amp;#125;
+对象的访问">
 <meta property="og:type" content="article">
 <meta property="og:title" content="创建简单的JavaScript对象">
 <meta property="og:url" content="http://yoursite.com/JavaScript/创建简单的JavaScript对象/index.html">
 <meta property="og:site_name" content="全栈杂货铺">
 <meta property="og:description" content="引言：阅读《JavaScript语言精粹》这本书时的一些笔记摘要。在JavaScript，一切皆对象，对象相当于属性的容器，每一个属性都拥有名字和值。
 
-###对象字面量这是一种简便地创建对象的方式。12345var emptyObject = &amp;#123; &amp;#125;;var people = &amp;#123;	firstName:&quot;Lucky&quot;,	lastName:&quot;Jing&quot;&amp;#125;
-对象">
-<meta property="og:updated_time" content="2015-12-26T06:25:04.000Z">
+对象字面量这是一种简便地创建对象的方式。12345var emptyObject = &amp;#123; &amp;#125;;var people = &amp;#123;	firstName:&quot;Lucky&quot;,	lastName:&quot;Jing&quot;&amp;#125;
+对象的访问">
+<meta property="og:updated_time" content="2015-12-27T05:06:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建简单的JavaScript对象">
 <meta name="twitter:description" content="引言：阅读《JavaScript语言精粹》这本书时的一些笔记摘要。在JavaScript，一切皆对象，对象相当于属性的容器，每一个属性都拥有名字和值。
 
-###对象字面量这是一种简便地创建对象的方式。12345var emptyObject = &amp;#123; &amp;#125;;var people = &amp;#123;	firstName:&quot;Lucky&quot;,	lastName:&quot;Jing&quot;&amp;#125;
-对象">
+对象字面量这是一种简便地创建对象的方式。12345var emptyObject = &amp;#123; &amp;#125;;var people = &amp;#123;	firstName:&quot;Lucky&quot;,	lastName:&quot;Jing&quot;&amp;#125;
+对象的访问">
 
 
 
@@ -208,8 +208,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-26T14:25:04+08:00" content="2015年12月26日">
-              2015年12月26日
+            <time itemprop="dateCreated" datetime="2015-12-27T13:06:02+08:00" content="2015年12月27日">
+              2015年12月27日
             </time>
           </span>
 
@@ -250,15 +250,15 @@
         <span itemprop="articleBody"><blockquote>
 <p>引言：阅读《JavaScript语言精粹》这本书时的一些笔记摘要。<br>在JavaScript，一切皆对象，对象相当于属性的容器，每一个属性都拥有名字和值。</p>
 </blockquote>
-<p>###对象字面量<br>这是一种简便地创建对象的方式。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> emptyObject</span> = &#123; &#125;;</span><br><span class="line"><span class="variable"><span class="keyword">var</span> people</span> = &#123;</span><br><span class="line">	firstName:<span class="string">"Lucky"</span>,</span><br><span class="line">	lastName:<span class="string">"Jing"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="u5BF9_u8C61_u5B57_u9762_u91CF"><a href="#u5BF9_u8C61_u5B57_u9762_u91CF" class="headerlink" title="对象字面量"></a>对象字面量</h3><p>这是一种简便地创建对象的方式。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> emptyObject</span> = &#123; &#125;;</span><br><span class="line"><span class="variable"><span class="keyword">var</span> people</span> = &#123;</span><br><span class="line">	firstName:<span class="string">"Lucky"</span>,</span><br><span class="line">	lastName:<span class="string">"Jing"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>对象的访问</strong><br>一般情况下优先使用<code>.</code>表示法<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">people</span><span class="attr_selector">["firstName"]</span></span><br><span class="line"><span class="tag">people</span><span class="class">.firstName</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>||运算符可以用来填充默认值</strong><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">value</span> = people.age || <span class="number">20</span>;</span><br></pre></td></tr></table></figure></p>
 <p><strong>对象通过引用来传递</strong><br>对象之间绝对不会发生拷贝，也就是通过赋值运算符<code>=</code>并不会得到新的实例。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> people1</span> = people;</span><br><span class="line">people1.firstName = <span class="string">"newName"</span>;<span class="comment">//直接影响了people.firstName</span></span><br></pre></td></tr></table></figure></p>
-<p>###原型<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">Object</span>.beget !==<span class="string">'function'</span>)&#123;</span><br><span class="line">	<span class="built_in">Object</span>.beget = <span class="function"><span class="keyword">function</span> (<span class="params">object</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">		F.prototype = object;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> otherPeople = <span class="built_in">Object</span>.beget(People);</span><br></pre></td></tr></table></figure></p>
+<h3 id="u539F_u578B"><a href="#u539F_u578B" class="headerlink" title="原型"></a>原型</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">Object</span>.beget !==<span class="string">'function'</span>)&#123;</span><br><span class="line">	<span class="built_in">Object</span>.beget = <span class="function"><span class="keyword">function</span> (<span class="params">object</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">		F.prototype = object;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> otherPeople = <span class="built_in">Object</span>.beget(People);</span><br></pre></td></tr></table></figure>
 <p>当我们对otherPeople的属性进行更改的时候是不会触及到原型的。相反，如果我们对原型进行更改，那么对所有<strong>基于该原型</strong>创建的对象可见，其实就是继承的实现。</p>
-<p>###反射<br>通过<code>typeof</code>检查对象的属性的时候，是会顺着它的原型链依次查找的，例如每一个对象都继承了<code>Object</code>的<code>toString()</code>方法，那么调用<code>typeof people.toString</code>将会返回一个确定的值<code>function</code>，尽管我们再声明<code>People</code>时并没有显式指定<code>toString()</code>方法。</p>
+<h3 id="u53CD_u5C04"><a href="#u53CD_u5C04" class="headerlink" title="反射"></a>反射</h3><p>通过<code>typeof</code>检查对象的属性的时候，是会顺着它的原型链依次查找的，例如每一个对象都继承了<code>Object</code>的<code>toString()</code>方法，那么调用<code>typeof people.toString</code>将会返回一个确定的值<code>function</code>，尽管我们再声明<code>People</code>时并没有显式指定<code>toString()</code>方法。</p>
 <p><code>hasOwnProperty</code>方法可以检测对象独有的属性，换句话说，也就是不会顺着原型链进行查找。</p>
-<p>###删除<br><code>delete</code>运算符可以删除对象的属性，但是不会触及原型链。例如people1的name属性值为newName，删除之后，则再次调用时，就会输出其原型的name属性值。</p>
+<h3 id="u5220_u9664"><a href="#u5220_u9664" class="headerlink" title="删除"></a>删除</h3><p><code>delete</code>运算符可以删除对象的属性，但是不会触及原型链。例如people1的name属性值为newName，删除之后，则再次调用时，就会输出其原型的name属性值。</p>
 <p>###避免全局变量污染的方法之一<br><strong>最小化全局变量</strong><br>在程序中只出现一个全局变量，而把其他的通过类似于namespace的方式（这在C++中非常常见）包裹起来，例如：<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="type">MYAPP</span> = &#123;&#125;;</span><br><span class="line"><span class="type">MYAPP</span>.<span class="keyword">const</span>= &#123;</span><br><span class="line">	<span class="type">PI</span>:<span class="number">3</span>.<span class="number">1415926</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">MYAPP</span>.value= &#123;</span><br><span class="line">	<span class="literal">result</span>:undefined</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">MYAPP</span>.value.<span class="literal">result</span> = <span class="type">MYAPP</span>.<span class="keyword">const</span>.<span class="type">PI</span>;</span><br></pre></td></tr></table></figure></p>
 </span>
       
@@ -271,16 +271,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/JavaScript/全面理解HTTP/" rel="next" title="全面理解HTTP">
-                <i class="fa fa-chevron-left"></i> 全面理解HTTP
+              <a href="/JavaScript/使用函数和闭包去构建JavaScript模块/" rel="next" title="使用函数和闭包去构建JavaScript模块">
+                <i class="fa fa-chevron-left"></i> 使用函数和闭包去构建JavaScript模块
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/JavaScript/字符串常用函数/" rel="prev" title="字符串常用函数">
-                字符串常用函数 <i class="fa fa-chevron-right"></i>
+              <a href="/JavaScript/有趣的JavaScript原生数组函数/" rel="prev" title="有趣的JavaScript原生数组函数">
+                有趣的JavaScript原生数组函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -349,14 +349,14 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">61</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
@@ -395,7 +395,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5BF9_u8C61_u5B57_u9762_u91CF"><span class="nav-number">1.</span> <span class="nav-text">对象字面量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u539F_u578B"><span class="nav-number">2.</span> <span class="nav-text">原型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u53CD_u5C04"><span class="nav-number">3.</span> <span class="nav-text">反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5220_u9664"><span class="nav-number">4.</span> <span class="nav-text">删除</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

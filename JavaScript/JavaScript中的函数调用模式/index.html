@@ -65,7 +65,7 @@
 输入的参数和定义的参数不匹配会怎么样如果实际参数过多，那么多余的将会被忽略，否则缺少的值将被替换为undefined
 
 方法调用">
-<meta property="og:updated_time" content="2015-12-27T04:59:52.000Z">
+<meta property="og:updated_time" content="2015-12-27T05:04:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript中的函数调用模式">
 <meta name="twitter:description" content="引言：所谓编程就是将一组需求分解成一组函数与数据结构的技能。
@@ -214,7 +214,7 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-27T12:59:52+08:00" content="2015年12月27日">
+            <time itemprop="dateCreated" datetime="2015-12-27T13:04:26+08:00" content="2015年12月27日">
               2015年12月27日
             </time>
           </span>
@@ -260,26 +260,26 @@
 <h3 id="u8F93_u5165_u7684_u53C2_u6570_u548C_u5B9A_u4E49_u7684_u53C2_u6570_u4E0D_u5339_u914D_u4F1A_u600E_u4E48_u6837"><a href="#u8F93_u5165_u7684_u53C2_u6570_u548C_u5B9A_u4E49_u7684_u53C2_u6570_u4E0D_u5339_u914D_u4F1A_u600E_u4E48_u6837" class="headerlink" title="输入的参数和定义的参数不匹配会怎么样"></a>输入的参数和定义的参数不匹配会怎么样</h3><p>如果实际参数过多，那么多余的将会被忽略，否则缺少的值将被替换为undefined</p>
 <hr>
 <h3 id="u65B9_u6CD5_u8C03_u7528_u6A21_u5F0F"><a href="#u65B9_u6CD5_u8C03_u7528_u6A21_u5F0F" class="headerlink" title="方法调用模式"></a>方法调用模式</h3><p>当一个函数被保存为对象的属性时，被称为方法，方法被调用时，this指针就绑定了当前的调用者，再使用<code>()</code>时也就是方法调用。代码：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">	value:<span class="number">0</span>,</span><br><span class="line">	increment: <span class="function"><span class="keyword">function</span> <span class="params">(num)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.value += <span class="keyword">typeof</span> num === <span class="string">'number'</span> ? num : <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">myObject.increment();<span class="comment">//方法调用，this指针绑定到了myObject，同时没有传参数，相当于传入undefined</span></span><br></pre></td></tr></table></figure></p>
-<p>###出问题的调用模式–函数调用<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var sum = add(<span class="number">3</span>,<span class="number">4</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="u51FA_u95EE_u9898_u7684_u8C03_u7528_u6A21_u5F0F_u2013_u51FD_u6570_u8C03_u7528"><a href="#u51FA_u95EE_u9898_u7684_u8C03_u7528_u6A21_u5F0F_u2013_u51FD_u6570_u8C03_u7528" class="headerlink" title="出问题的调用模式–函数调用"></a>出问题的调用模式–函数调用</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var sum = add(<span class="number">3</span>,<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
 <p>这时候的this指针指向了<code>window</code></p>
 <blockquote>
 <p>使用这种方式时，内部函数的this跳过阻拦，不顾外部函数的感受，直接暴露在了全局环境中。</p>
 </blockquote>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">	value:<span class="number">1</span>,</span><br><span class="line">	increment: <span class="function"><span class="keyword">function</span> <span class="params">(num)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.value += <span class="keyword">typeof</span> num === <span class="string">'number'</span> ? num : <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">myObject.double = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">var</span> help = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.value = <span class="keyword">this</span>.value *<span class="number">2</span>;</span><br><span class="line">	&#125;;</span><br><span class="line">	help();</span><br><span class="line">&#125;;</span><br><span class="line">myObject.double();</span><br></pre></td></tr></table></figure>
 <p>上述代码为myObject对象添加了一个double方法，在这个方法内声明了一个内部函数help()，按照字面意思应该是让myObject对象的value值变化，可是实际运行后，并没有改变myObject.value的值，因为这样的调用把help暴露在全局环境中，那么this就指向了window而不是myObject，改进如下：<br><figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">myObject.<span class="keyword">double</span> = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">var</span> that = this;<span class="comment">//因为double是方法调用，所以this指向调用者myObject</span></span><br><span class="line">	<span class="keyword">var</span> help = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">		that.value = that.value *<span class="number">2</span>;<span class="comment">//help函数即使暴露在全局环境下，that指针依旧指向myObject</span></span><br><span class="line">	&#125;;</span><br><span class="line">	help();</span><br><span class="line">&#125;;</span><br><span class="line">myObject.<span class="keyword">double</span>();</span><br></pre></td></tr></table></figure></p>
-<p>###构造器调用模式<br>在这门语言中的new不要固执地和其他语言搞混了，如果在一个函数前面加上<code>new</code>的话，那么将创建一个隐藏链接到该函数的prototype成员的新对象。（确实不好理解）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Quo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.status = <span class="string">"open"</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//给所有的Quo实例提供get_status方法，想想为什么（添加到原型上）</span></span><br><span class="line">Quo.prototype.get_status = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.status);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> myQuo = <span class="keyword">new</span> Quo();</span><br><span class="line">myQuo.get_status();</span><br></pre></td></tr></table></figure></p>
-<p>###Apply调用模式<br>之前说过，JavaScript是一门函数式面向对象编程语言，函数也是对象，所以它拥有方法。</p>
+<h3 id="u6784_u9020_u5668_u8C03_u7528_u6A21_u5F0F"><a href="#u6784_u9020_u5668_u8C03_u7528_u6A21_u5F0F" class="headerlink" title="构造器调用模式"></a>构造器调用模式</h3><p>在这门语言中的new不要固执地和其他语言搞混了，如果在一个函数前面加上<code>new</code>的话，那么将创建一个隐藏链接到该函数的prototype成员的新对象。（确实不好理解）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Quo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.status = <span class="string">"open"</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//给所有的Quo实例提供get_status方法，想想为什么（添加到原型上）</span></span><br><span class="line">Quo.prototype.get_status = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.status);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> myQuo = <span class="keyword">new</span> Quo();</span><br><span class="line">myQuo.get_status();</span><br></pre></td></tr></table></figure></p>
+<h3 id="Apply_u8C03_u7528_u6A21_u5F0F"><a href="#Apply_u8C03_u7528_u6A21_u5F0F" class="headerlink" title="Apply调用模式"></a>Apply调用模式</h3><p>之前说过，JavaScript是一门函数式面向对象编程语言，函数也是对象，所以它拥有方法。</p>
 <blockquote>
 <p>apply方法允许我们选择this值，接受两个参数，第一个是将与this绑定的值，第二个是一个参数数组，供原来的方法使用。</p>
 </blockquote>
 <figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var name1 = &#123;</span><br><span class="line">	<span class="variable">key</span>:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line">var name2 = &#123;</span><br><span class="line">	<span class="variable">key</span>:<span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line">console.<span class="built_in">log</span>(Math.<span class="built_in">abs</span>.apply(name1,[name1.<span class="variable">key</span>]));</span><br></pre></td></tr></table></figure>
 <p>上述代码在两个命名空间下分别设置了key属性的值，我们可以看到，在调用Math.abs方法时，我们通过apply方法规定了其作用域在name1空间下，参数数组目前只包含一个值，为name1下的key，结果也显而易见，为1，再举一个例子：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">test</span> = &#123;</span><br><span class="line">	status:<span class="string">"test-open"</span></span><br><span class="line">&#125;</span><br><span class="line">Quo.prototype.get_status.apply(<span class="keyword">test</span>);</span><br></pre></td></tr></table></figure></p>
 <p>新创建了一个对象，拥有status属性，调用时，沿着Quo对象的原型链找到了<code>get_status</code>方法，通过apply将它内部的this指针指向了<code>test作用域</code>，所以运行结果和<code>test.status</code>别无二致。</p>
-<p>###返回值<br>我们都知道遇到return语句，函数会立即终止，并且返回相应值，如果没有指定，则返回<strong>undefined</strong>，需要理解下面语句：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> demo = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure></p>
+<h3 id="u8FD4_u56DE_u503C"><a href="#u8FD4_u56DE_u503C" class="headerlink" title="返回值"></a>返回值</h3><p>我们都知道遇到return语句，函数会立即终止，并且返回相应值，如果没有指定，则返回<strong>undefined</strong>，需要理解下面语句：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> demo = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure></p>
 <p>赋值号右边的部分生成一个新对象，并且返回了this指针，那么demo便是这个新对象的引用。</p>
-<p>###给类型增加方法<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Function</span>.prototype.<span class="keyword">method</span> = function(name,func)&#123;</span><br><span class="line">  this.prototype[name]=func;</span><br><span class="line">  <span class="keyword">return</span> this;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="u7ED9_u7C7B_u578B_u589E_u52A0_u65B9_u6CD5"><a href="#u7ED9_u7C7B_u578B_u589E_u52A0_u65B9_u6CD5" class="headerlink" title="给类型增加方法"></a>给类型增加方法</h3><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Function</span>.prototype.<span class="keyword">method</span> = function(name,func)&#123;</span><br><span class="line">  this.prototype[name]=func;</span><br><span class="line">  <span class="keyword">return</span> this;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>给Function对象的原型增加一个method方法，那么对于Function的所有实例都拥有这个方法，调用的时候，会将func绑定到它原型的name属性上，先前已经说过，如果name属性还不存在，那么便会自动创建它，所以该method的作用等价于<code>object.prototype.name = func</code>，<strong>以后书写的时候就可以省略prototype了</strong>。</p>
-<p>###闭包<br><a href="http://www.jianshu.com/p/796e903754f1" target="_blank" rel="external">传送门</a></p>
+<h3 id="u95ED_u5305"><a href="#u95ED_u5305" class="headerlink" title="闭包"></a>闭包</h3><p><a href="http://www.jianshu.com/p/796e903754f1" target="_blank" rel="external">传送门</a></p>
 </span>
       
     </div>
@@ -291,16 +291,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/ECMAScript-6/学习记录/" rel="next" title="学习记录">
-                <i class="fa fa-chevron-left"></i> 学习记录
+              <a href="/JavaScript/jQuery开发插件的简单语法/" rel="next" title="jQuery开发插件的简单语法">
+                <i class="fa fa-chevron-left"></i> jQuery开发插件的简单语法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/前端记录/慢慢整理的Web前端开发规范文档/" rel="prev" title="慢慢整理的Web前端开发规范文档">
-                慢慢整理的Web前端开发规范文档 <i class="fa fa-chevron-right"></i>
+              <a href="/JavaScript/JavaScript精彩代码段/" rel="prev" title="JavaScript精彩代码段">
+                JavaScript精彩代码段 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -369,14 +369,14 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">61</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
@@ -415,7 +415,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u51FD_u6570_u4E5F_u662F_u5BF9_u8C61"><span class="nav-number">1.</span> <span class="nav-text">函数也是对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8F93_u5165_u7684_u53C2_u6570_u548C_u5B9A_u4E49_u7684_u53C2_u6570_u4E0D_u5339_u914D_u4F1A_u600E_u4E48_u6837"><span class="nav-number">2.</span> <span class="nav-text">输入的参数和定义的参数不匹配会怎么样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B9_u6CD5_u8C03_u7528_u6A21_u5F0F"><span class="nav-number">3.</span> <span class="nav-text">方法调用模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u51FD_u6570_u4E5F_u662F_u5BF9_u8C61"><span class="nav-number">1.</span> <span class="nav-text">函数也是对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8F93_u5165_u7684_u53C2_u6570_u548C_u5B9A_u4E49_u7684_u53C2_u6570_u4E0D_u5339_u914D_u4F1A_u600E_u4E48_u6837"><span class="nav-number">2.</span> <span class="nav-text">输入的参数和定义的参数不匹配会怎么样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B9_u6CD5_u8C03_u7528_u6A21_u5F0F"><span class="nav-number">3.</span> <span class="nav-text">方法调用模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u51FA_u95EE_u9898_u7684_u8C03_u7528_u6A21_u5F0F_u2013_u51FD_u6570_u8C03_u7528"><span class="nav-number">4.</span> <span class="nav-text">出问题的调用模式–函数调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6784_u9020_u5668_u8C03_u7528_u6A21_u5F0F"><span class="nav-number">5.</span> <span class="nav-text">构造器调用模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Apply_u8C03_u7528_u6A21_u5F0F"><span class="nav-number">6.</span> <span class="nav-text">Apply调用模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FD4_u56DE_u503C"><span class="nav-number">7.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7ED9_u7C7B_u578B_u589E_u52A0_u65B9_u6CD5"><span class="nav-number">8.</span> <span class="nav-text">给类型增加方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u95ED_u5305"><span class="nav-number">9.</span> <span class="nav-text">闭包</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
