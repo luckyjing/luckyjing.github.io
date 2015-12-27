@@ -198,313 +198,6 @@
             
               
                 
-                <a class="post-title-link" href="/JavaScript/jQuery开发插件的简单语法/" itemprop="url">
-                  jQuery开发插件的简单语法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-12-26T14:25:04+08:00" content="2015年12月26日">
-              2015年12月26日
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            ##对象级别的插件开发
-###编写框架代码$.fn.extend创建一个对象级别的插件1234567;(function($)&#123;	$.fn.extend(&#123;		"border":function(options)&#123;			//插件代码处		&#125;	&#125;);&#125;)(jQuery)
-###填充代码内容1234567891011121314;(funct
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/JavaScript/jQuery开发插件的简单语法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/JavaScript/JavaScript精彩代码段/" itemprop="url">
-                  JavaScript精彩代码段
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-12-26T14:25:04+08:00" content="2015年12月26日">
-              2015年12月26日
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            ###提取数字的整数部分12345Number.prototype.integer = function()&#123;	return Math[this &lt; 0 ? 'ceil' : 'floor'](this);&#125;(-1.5).integer();//负数向上取整(1.5).integer();//正数向下取整
-三元表达式的运用增强了代码的可读性，注意数字也是对象，方法里的th
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/JavaScript/JavaScript精彩代码段/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/JavaScript/JavaScript中的函数调用模式/" itemprop="url">
-                  JavaScript中的函数调用模式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-12-26T14:25:04+08:00" content="2015年12月26日">
-              2015年12月26日
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            
-引言：所谓编程就是将一组需求分解成一组函数与数据结构的技能。
-
-###函数也是对象对象是什么？key\value的集合并且有一个连到原型对象的隐藏链接。函数这个对象可以被运行，我们可以认为它具有一个被调用的属性，而()被称为调用符，每一个函数都自带了this指针，指向调用者。
-###输入的参数和定义的参数不匹配会怎么样如果实际参数过多，那么多余的将会被忽略，否则缺少的值将被替换为undefine
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/JavaScript/JavaScript中的函数调用模式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/JavaScript/DOM对象和jQuery对象的区分/" itemprop="url">
                   DOM对象和jQuery对象的区分
                 </a>
@@ -606,8 +299,8 @@
             
               
                 
-                <a class="post-title-link" href="/Java/tomcat/" itemprop="url">
-                  tomcat
+                <a class="post-title-link" href="/css/Sass注释中文报错问题/" itemprop="url">
+                  Sass注释中文报错问题
                 </a>
               
             
@@ -627,8 +320,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -659,12 +352,15 @@
         
           <span itemprop="articleBody">
             
-            Apache 为HTML页面服务，而Tomcat 实际上运行JSP 页面和Servlet。
+            找到ruby的安装目录，里面也有sass模块，如这个路径：
+C:\Ruby\lib\ruby\gems\1.9.1\gems\sass-3.3.14\lib\sass
+在这个文件里面engine.rb，添加一行代码（同方法1）
+Encoding.default_external = Encoding.find(‘utf-8’)放在所有的require XXXX 之后即可。
 
             
           </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/Java/tomcat/#more" rel="contents">
+            <a class="btn" href="/css/Sass注释中文报错问题/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -732,7 +428,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-count">62</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

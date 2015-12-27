@@ -63,7 +63,7 @@
 块级也就是函数体内，if内，for内，{}内。
 
 1234567891011&apos;use strict&apos;;var a = 5;var b = 10;if (a === 5) &amp;#123; let a = 4; // The sc">
-<meta property="og:updated_time" content="2015-12-26T06:25:04.000Z">
+<meta property="og:updated_time" content="2015-12-27T04:59:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习记录">
 <meta name="twitter:description" content="letlet 允许把变量的作用域限制在块级域中。var 申明变量要么是全局的，要么是函数级的，而无法是块级的，它具有变量提升的作用，也就是解释器自动将它们的声明提升到首部。
@@ -211,8 +211,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-26T14:25:04+08:00" content="2015年12月26日">
-              2015年12月26日
+            <time itemprop="dateCreated" datetime="2015-12-27T12:59:26+08:00" content="2015年12月27日">
+              2015年12月27日
             </time>
           </span>
 
@@ -257,7 +257,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">if</span> (a === <span class="number">5</span>) &#123;</span><br><span class="line"> <span class="keyword">let</span> a = <span class="number">4</span>; <span class="comment">// The scope is inside the if-block</span></span><br><span class="line"> <span class="keyword">var</span> b = <span class="number">1</span>; <span class="comment">// The scope is inside the function</span></span><br><span class="line"> <span class="built_in">console</span>.log(a); <span class="comment">// 4</span></span><br><span class="line"> <span class="built_in">console</span>.log(b); <span class="comment">// 1</span></span><br><span class="line">&#125; </span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
 <p>let在循环中<br>可以使用<em>let</em>关键字绑定变量在循环的范围而不是使用一个全局变量(使用<em>var</em>)定义。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">'use strict'</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line"> <span class="built_in">console</span>.log(i); <span class="comment">// 0, 1, 2, 3, 4 ... 9</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i); <span class="comment">// i is not defined</span></span><br></pre></td></tr></table></figure></p>
 <p>上面报错，因为<strong>变量i不存在于for语句外的作用域中。*</strong>let*创建块级作用域变量的，使用var创建一个全局变量。</p>
-<p>#常量<br><code>const</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> NUM =<span class="number">10</span>;<span class="comment">//声明且需同时定义</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="u5E38_u91CF"><a href="#u5E38_u91CF" class="headerlink" title="常量"></a>常量</h1><p><code>const</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> NUM =<span class="number">10</span>;<span class="comment">//声明且需同时定义</span></span><br></pre></td></tr></table></figure></p>
 </span>
       
     </div>
@@ -269,16 +269,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/css/生成如图所示的样式纪录，有关z-index/" rel="next" title="生成如图所示的样式纪录，有关z-index">
-                <i class="fa fa-chevron-left"></i> 生成如图所示的样式纪录，有关z-index
+              <a href="/css/图片自适应，但有最大高度值/" rel="next" title="图片自适应，但有最大高度值">
+                <i class="fa fa-chevron-left"></i> 图片自适应，但有最大高度值
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/前端记录/-gitignore/" rel="prev" title="-gitignore">
-                -gitignore <i class="fa fa-chevron-right"></i>
+              <a href="/JavaScript/JavaScript中的函数调用模式/" rel="prev" title="JavaScript中的函数调用模式">
+                JavaScript中的函数调用模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -347,7 +347,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-count">62</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -393,7 +393,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#let"><span class="nav-number">1.</span> <span class="nav-text">let</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#let"><span class="nav-number">1.</span> <span class="nav-text">let</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u5E38_u91CF"><span class="nav-number">2.</span> <span class="nav-text">常量</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
