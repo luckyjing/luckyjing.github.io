@@ -1,0 +1,40 @@
+name: LuckyJing
+description: 爱跑🐴拉松，爱骑行，爱📷摄影，💕JavaScript的多能程序猿
+meta_description: ""
+
+aboutPage: true
+gems: [jekyll-paginate]
+markdown: redcarpet
+highlighter: pygments
+
+paginate: 20
+baseurl: /
+domain_name: 'http://yourblog-domain.com'
+google_analytics: 'UA-XXXXXXXX-X'
+disqus: false
+
+# Details for the RSS feed generator
+url:            'http://luckyjing.github.io'
+author:         'LuckyJing'
+
+permalink:       /:year/:title/
+
+defaults:
+    -
+        scope:
+            path: "" # empty string for all files
+            type: pages
+        values:
+            layout: default
+    -
+        scope:
+            path: "" # empty string for all files
+            type: posts
+        values:
+            layout: post
+    -
+        scope:
+            path: ""
+            type: drafts
+        values:
+            layout: post
