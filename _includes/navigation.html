@@ -1,6 +1,6 @@
 <nav class="main-nav">
-    {% if page.url != "/index.html" %}
-        <a href="{{ site.baseurl }}" class="cta">   主页 </a>
+    {% if page.url != "/index.html" || "/" %}
+        <a href="{{ site.baseurl }}" class="cta">主页 </a>
     {% endif %}
 
     {% if page.url != "/about/" %}
