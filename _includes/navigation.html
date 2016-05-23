@@ -3,10 +3,10 @@
         <a href="{{ site.baseurl }}" class="cta">   主页 </a>
     {% endif %}
 
-    <!--{% if page.url != "/about/" %}
+    {% if page.url != "/about/" %}
         {% if site.aboutPage %}
-            <a href="{{ site.baseurl }}about">About </a>
+            <a  href="{{ site.baseurl }}about" class="cta">关于我</a>
         {% endif %}
     {% endif %}
-    <a class="cta" href="{{ site.baseurl }}feed.xml">Subscribe</a>-->
+    <!--<a class="cta" href="{{ site.baseurl }}feed.xml">Subscribe</a>-->
 </nav>
