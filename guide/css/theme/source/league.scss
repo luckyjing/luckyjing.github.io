@@ -1,0 +1,29 @@
+/**
+ * League theme for reveal.js.
+ *
+ * This was the default theme pre-3.0.0.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+
+// Override theme settings (see ../template/settings.scss)
+
+// Background generator
+@mixin bodyBackground() {
+	@include radial-gradient( rgba(28,30,32,1), rgba(85,90,95,1) );
+}
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
