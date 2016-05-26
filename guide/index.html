@@ -7,11 +7,11 @@
 
 	<title>前端魔法堂</title>
 
-	<link rel="stylesheet" href="css/reveal.css">
-	<link rel="stylesheet" href="css/theme/league.css">
+	<link rel="stylesheet" href="../slide/css/reveal.css">
+	<link rel="stylesheet" href="../slide/css/theme/league.css">
 
 	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="../slide/lib/css/zenburn.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -21,8 +21,8 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 	</script>
-	<script src="lib/js/head.min.js"></script>
-	<script src="./js/reveal.min.js"></script>
+	<script src="../slide/lib/js/head.min.js"></script>
+	<script src="../slide/js/reveal.min.js"></script>
 </head>
 
 <body>
@@ -41,9 +41,9 @@
 				slideNumber: true,
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/highlight/highlight.js', callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../slide/plugin/markdown/marked.js' },
+					{ src: '../slide/plugin/markdown/markdown.js' },
+					{ src: '../slide/plugin/highlight/highlight.js', callback: function() { hljs.initHighlightingOnLoad(); } },
 				]
 			});
 	</script>
