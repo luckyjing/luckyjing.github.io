@@ -1,5 +1,6 @@
 
 # 前端小分享
+
 Luckyjing
 
 DBL前端团队
@@ -48,7 +49,7 @@ TODO FIXME CHANGED NOTE REVIEW
 
 
 
-# 3. 颜色版
+# 3. 颜色板
 
 发现好配色的网站，[http://colorhunt.co/](http://colorhunt.co/)
 
