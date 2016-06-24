@@ -44,11 +44,13 @@ TODO FIXME CHANGED NOTE REVIEW
 
 多多利用一些注释标记，能够快速定位待完善的地方，结合编辑器的相关插件，分分钟提高效率，改BUG也越来越顺手。
 
+`Atom`下推荐使用`Todo Show`,`WebStorm`已经集成了,`Sublime`不太清楚，应该有
+
 
 
 # 3. 颜色版
 
-[http://colorhunt.co/](http://colorhunt.co/)
+发现好配色的网站，[http://colorhunt.co/](http://colorhunt.co/)
 
 
 
@@ -63,7 +65,7 @@ TODO FIXME CHANGED NOTE REVIEW
 [https://kobra.io/](https://kobra.io/)
 
 1. 协同工作时？远程讲解代码时？
-2. 会议时提前将代码放置上去？离开时清除
+2. 会议时提前将代码放置上去？离开时清除即可
 3. ...
 
 
