@@ -4,20 +4,24 @@ date:   2016-11-12 10:18:00
 ---
 
 ![food](/assets/images/food.jpg)
-```
-console.log('hello,world');
+
+
+
+## Default Value
+
+初始值是状态中的value。如果要取数据，可直接使用 var inputValue = this.state.value。
+
+```js
+ render: function() {
+    return <input type="text" defaultValue={this.state.value}/>;
+ }
 ```
 
-## 统计代码行数
+## bind复用
 
-find static/css/ -name '*.css' | xargs wc -l
-
-## 复制
-Mac:
-```
-pbcopy < ~/.ssh/id_rsa.pub
-```
-GNU/Linux (requires xclip):
-```
-xclip -sel clip < ~/.ssh/id_rsa.pub
+```js
+handleChange:function(name,event){
+    ......
+}
+onChagne={this.handleChange.bind(this,'input')}
 ```
