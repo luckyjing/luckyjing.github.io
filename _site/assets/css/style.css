@@ -68,10 +68,15 @@ h2 {
 	font: italic 19px/1.3em Georgia,serif;
 	color: #bbb;
 }
-
+code {
+    padding: 2px 8px;
+    color: #5badf0;
+    background-color: #efefff;
+    border-radius: 4px
+}
 .profile #wrapper {
 	padding: 100px 40px 0px;
-	max-width: 600px;
+	max-width: 900px;
 	margin: 0 auto;
 }
 
@@ -111,7 +116,7 @@ h2 {
 nav.main-nav {
 	padding: 20px 20px 0;
 
-	/*max-width: 600px;*/
+	/*max-width: 900px;*/
 	/*width:100%;*/
 	background: #fff;
 	background: rgba(255,255,255,.90);
@@ -139,13 +144,13 @@ nav.main-nav a.cta {
 }
 
 #wrapper {
-  max-width: 600px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 60px 40px 100px 40px;
 }
 
 #wrapper.home {
-	max-width: 600px;
+	max-width: 900px;
 	margin: 0 auto;
 	padding: 0px 40px 20px 40px;
 }
@@ -174,7 +179,7 @@ p a { color: #5694f1; }
 /*Transitions*/
 a,
 #post-nav a,
-#post-list a	{
+#post-list a	{	
 	-webkit-transition: all 0.15s ease;
 	-moz-transition: all 0.15s ease;
 	-ms-transition: all 0.15s ease;

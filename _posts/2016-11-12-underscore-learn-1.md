@@ -1,6 +1,6 @@
 ---
-title:  "underscore源码解读-1"
-date:   2016-11-12 10:18:00
+title:  "underscore源码解读"
+date:   2016.11.11
 ---
 
 ![food](/assets/images/food.jpg)
@@ -9,7 +9,7 @@ date:   2016-11-12 10:18:00
 
 ## Default Value
 
-初始值是状态中的value。如果要取数据，可直接使用 var inputValue = this.state.value。
+初始值是状态中的value。如果要取数据，可直接使用`var inputValue = this.state.value`
 
 ```js
  render: function() {

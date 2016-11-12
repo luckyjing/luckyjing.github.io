@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>LuckyJing - 有趣的倒计时组件</title>
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="/rss.xml">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/9.2.0/styles/arduino-light.min.css
+">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="/" class="cta">主页 </a>
+    
+
+    
+        
+            <a  href="/about" class="cta">关于我</a>
+        
+    
+    <!--<a class="cta" href="/feed.xml">Subscribe</a>-->
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>有趣的倒计时组件</h1>
+        <h2 class="headline">2016年11月12日</h2>
+    </header>
+    <section id="post-body">
+        <iframe src="/flipclock" frameborder="0" style="width:100%;min-height:250px;">
+
+</iframe>
+
+<p>实现以上效果仅仅需要以下几行代码：</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">clock</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'.demo-clock'</span><span class="p">).</span><span class="nx">FlipClock</span><span class="p">(</span><span class="mi">3600</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">7</span><span class="p">,{</span>
+		<span class="na">clockFace</span><span class="p">:</span> <span class="s1">'DailyCounter'</span><span class="p">,</span>
+		<span class="na">countdown</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>此组件称为<code class="highlighter-rouge">flipclock</code>,效果出众并且API十分简单，可以基于它做很多的扩展。</p>
+
+<blockquote>
+  <p>官网地址：<a href="http://flipclockjs.com/">http://flipclockjs.com/</a></p>
+</blockquote>
+
+    </section>
+</article>
+<footer id="post-meta" class="clearfix">
+        <img class="avatar" src="/assets/images/avatar.png">
+        <div>
+            <span class="dark">LuckyJing</span>
+            <span>爱跑🐴拉松，爱骑行，爱📷影，💕JavaScript的多能程序猿</span>
+        </div>
+
+    <section id="sharing">
+        <!--<a class="twitter" href="https://twitter.com/intent/tweet?text=http://luckyjing.github.io/2016/flipClock/ - 有趣的倒计时组件 by @"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>-->
+    </section>
+</footer>
+
+<!-- Disqus comments -->
+
+
+<!-- Archive post list -->
+    <ul id="post-list" class="archive readmore">
+        <h3>更多</h3>
+        
+            <li>
+                <a href="/2016/flipClock/">有趣的倒计时组件<aside class="dates">2016年11月12日</aside></a>
+            </li>
+        
+            <li>
+                <a href="/2016/underscore-learn-1/">underscore源码解读<aside class="dates">2016年11月11日</aside></a>
+            </li>
+        
+            <li>
+                <a href="/2016/web-guide/">关于Web前端的一次分享<aside class="dates">2016年06月06日</aside></a>
+            </li>
+        
+    </ul>
+
+
+
+
+  </section>
+
+  <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+   
+</body>
+</html>
+
+
+

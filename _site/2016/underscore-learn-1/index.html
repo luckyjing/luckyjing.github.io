@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>LuckyJing - underscore源码解读</title>
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="/rss.xml">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/9.2.0/styles/arduino-light.min.css
+">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="/" class="cta">主页 </a>
+    
+
+    
+        
+            <a  href="/about" class="cta">关于我</a>
+        
+    
+    <!--<a class="cta" href="/feed.xml">Subscribe</a>-->
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>underscore源码解读</h1>
+        <h2 class="headline">2016年11月11日</h2>
+    </header>
+    <section id="post-body">
+        <p><img src="/assets/images/food.jpg" alt="food" /></p>
+
+<h2 id="default-value">Default Value</h2>
+
+<p>初始值是状态中的value。如果要取数据，可直接使用<code class="highlighter-rouge">var inputValue = this.state.value</code></p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code> <span class="nx">render</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">defaultValue</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="sr">/&gt;</span><span class="err">;
+</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="bind">bind复用</h2>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">handleChange</span><span class="err">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">event</span><span class="p">){</span>
+    <span class="p">......</span>
+<span class="p">}</span>
+<span class="nx">onChagne</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="s1">'input'</span><span class="p">)}</span>
+</code></pre>
+</div>
+
+    </section>
+</article>
+<footer id="post-meta" class="clearfix">
+        <img class="avatar" src="/assets/images/avatar.png">
+        <div>
+            <span class="dark">LuckyJing</span>
+            <span>爱跑🐴拉松，爱骑行，爱📷影，💕JavaScript的多能程序猿</span>
+        </div>
+
+    <section id="sharing">
+        <!--<a class="twitter" href="https://twitter.com/intent/tweet?text=http://luckyjing.github.io/2016/underscore-learn-1/ - underscore源码解读 by @"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>-->
+    </section>
+</footer>
+
+<!-- Disqus comments -->
+
+
+<!-- Archive post list -->
+    <ul id="post-list" class="archive readmore">
+        <h3>更多</h3>
+        
+            <li>
+                <a href="/2016/flipClock/">有趣的倒计时组件<aside class="dates">2016年11月12日</aside></a>
+            </li>
+        
+            <li>
+                <a href="/2016/underscore-learn-1/">underscore源码解读<aside class="dates">2016年11月11日</aside></a>
+            </li>
+        
+            <li>
+                <a href="/2016/web-guide/">关于Web前端的一次分享<aside class="dates">2016年06月06日</aside></a>
+            </li>
+        
+    </ul>
+
+
+
+
+  </section>
+
+  <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+   
+</body>
+</html>
+
+
+
