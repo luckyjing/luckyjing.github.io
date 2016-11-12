@@ -12,17 +12,7 @@ archive: true
         {{content}}
     </section>
 </article>
-<footer id="post-meta" class="clearfix">
-        <img class="avatar" src="{{ site.baseurl }}assets/images/avatar.png">
-        <div>
-            <span class="dark">{{ site.author }}</span>
-            <span>{{ site.description }}</span>
-        </div>
 
-    <section id="sharing">
-        {% include share.html %}
-    </section>
-</footer>
 
 <!-- Disqus comments -->
 {% if site.disqus %}
@@ -44,3 +34,18 @@ archive: true
 
 
 
+
+
+<footer id="post-meta" class="clearfix">
+       
+    <a href="/">
+         <img class="avatar" src="{{ site.baseurl }}assets/images/avatar.png">
+        <div>
+            <span class="dark">{{ site.author }}</span>
+            <span>{{ site.description }}</span>
+        </div>
+    </a>
+    <section id="sharing">
+        {% include share.html %}
+    </section>
+</footer>
