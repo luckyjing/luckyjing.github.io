@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>LuckyJing - 学生团队的前后端分离及持续交付探索历程</title>
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="/rss.xml">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/9.2.0/styles/arduino-light.min.css
+">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="/" class="cta">主页 </a>
+    
+
+    <!--
+        
+            <a  href="/about" class="cta">关于我</a>
+        
+    -->
+    <!--<a class="cta" href="/feed.xml">Subscribe</a>-->
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>学生团队的前后端分离及持续交付探索历程</h1>
+        <h2 class="headline">2016年11月19日</h2>
+    </header>
+    <section id="post-body">
+        <blockquote>
+  <p>大学的最后一门必修课也已经展开帷幕了，伴随而来的是一次大型的项目大作业，回顾大学三年，在学院课程大作业范围内的项目，并没有一次印象深刻的团队开发经历，往往都是三两程序员一聚，便草草开始了。年已至末，最后一次大作业，需要拥有规范的项目开发流程，能够平稳地推进项目的开发，不会让项目边界越来越大以至于收不住边界，导致最后往往以通宵加班而收场。</p>
+</blockquote>
+
+<h2 id="section">项目背景及成员情况</h2>
+
+<h3 id="section-1">项目背景</h3>
+
+<p>本次的项目是一个在线购物商城系统，这个词相信大家已经耳熟能详了，具体细节不必多说，分为三个子系统<code class="highlighter-rouge">Customer,Owner,Administrator</code>，需要将项目分为三个阶段，<code class="highlighter-rouge">Release1,2,3</code>，采用原型开发模式，每个版本给出一个可供交付的产品，总结来说，项目性质为无复杂功能点，但业务量繁多。</p>
+
+<h3 id="section-2">成员介绍</h3>
+
+<p>团队成员共有20人，其中开发同学共10位，前端同学4位，后端同学6位。首先进行技术调研，和在公司不同，在公司大家技术栈其实差不多，在学校则不是，最终得出结果，前端熟悉<code class="highlighter-rouge">React</code>同学1位，其余3位熟悉<code class="highlighter-rouge">jQuery</code>，后端同学全部熟悉<code class="highlighter-rouge">SSH框架</code>，为保证后端的统一，后端技术栈不作调整，但前端因考虑到自动化构建的工具的接入，以及用<code class="highlighter-rouge">jQuery</code>前期成本小，后期成本大，难以维护的现状，故全部采用<code class="highlighter-rouge">React</code>技术栈，并对不熟悉的同学进行一次集体培训以及后续答疑解惑。</p>
+
+<h3 id="section-3">前期准备</h3>
+
+<p>三个子系统之间其实前端关联度不大，可以认为是三个独立的系统，对于后端而言，不同数据之间是共享的，故由一名主力后端同学负责数据库的设计与构建，并且搭建好基础后端目录，其他同学在此基础上进行业务层面的开发。</p>
+
+<h2 id="section-4">项目构建历程</h2>
+
+<p><img src="http://7xlqsb.com1.z0.glb.clouddn.com/arch.png" alt="" /></p>
+<h3 id="section-5">基础结构预览</h3>
+
+<p>在看过上面这个图以后，项目的整个轮廓已经清晰，为了实现以上架构，我们需要定一些小小目标：</p>
+<ol>
+  <li>前后端采用分离模式开发，这样大家可以独立进行开发，数据全部通过以<code class="highlighter-rouge">json</code>为基础格式的接口交流。</li>
+  <li>后端接口还没有写好的时候，怎么才不会影响前端同学开发，最直接能想到的，打造一个<code class="highlighter-rouge">mock</code>服务器，这样前端就可以请求接口了，只不过数据都是自己模拟的。</li>
+  <li>我们只有一台服务器，是很实惠阿里云学生机，所以前后端数据都要放在这台机器上，前端静态资源存储在<code class="highlighter-rouge">nginx</code>服务器下，后端服务放在<code class="highlighter-rouge">tomcat/webapps</code>目录下，因为为单页应用，后端只需要在那份<code class="highlighter-rouge">index.html</code>里引入前端静态资源就可以了（直接写入绝对路径），最终访问的时候，服务器能够辨别是请求静态资源还是后端服务器，也就是俗称的<code class="highlighter-rouge">动静分离</code>。</li>
+  <li>本地开发如何部署到服务器上，部署的时候如何轻松，快捷，避免配置各种环境，要配也是一个人配，不能让开发同学苦恼。</li>
+</ol>
+
+<p>下面我们来一步步实现。</p>
+
+<h3 id="section-6">前端基础架构</h3>
+
+<ol>
+  <li>前后端分离开发，所以路由要放到前端，用<code class="highlighter-rouge">React-Router</code>。</li>
+  <li>前端要自动化构建，用<code class="highlighter-rouge">Webpack</code>。</li>
+  <li><code class="highlighter-rouge">React+Redux</code>配置其实挺麻烦的，如果能写好模板，然后自动生成就好了，用<code class="highlighter-rouge">redux-cli</code>。</li>
+</ol>
+
+<p>前端使用<code class="highlighter-rouge">React+Redux+React-Router</code>作为基础框架,使用<code class="highlighter-rouge">Webpack</code>作为构建工具，使用<code class="highlighter-rouge">mock2easy</code>作为前端mock服务,在项目开发前，我提前将项目的脚手架提前搭建好，项目的大概目录如下所示：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>├── README.md
+├── blueprints  # 这就是上述第三点的模板，大家可以去github上搜 redux-cli
+├── build # 构建后的文件
+├── dev.js # 类似webpack-dev-server 加入了mock的服务
+├── package.json
+├── src
+└── webpack.config.js
+</code></pre>
+</div>
+<p>将相关命令写到<code class="highlighter-rouge">package.json</code>中，前端同学只需执行个命令就可以启动服务了。</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>  "scripts": {
+    "dev": "node dev.js",
+    "pub": "NODE_ENV=production webpack &amp;&amp; git add . &amp;&amp; git commit -m':grin:发布新功能' &amp;&amp; git push origin master"
+}
+</code></pre>
+</div>
+<p>使用<code class="highlighter-rouge">Webpack</code>提前写好配置文件，不管<code class="highlighter-rouge">webpack.config.js</code>里有多少步骤，最终呈现出来的只有<code class="highlighter-rouge">build</code>目录下那几个打包好的文件，有一点要注意的是，在发布时，最好将<code class="highlighter-rouge">React</code>,<code class="highlighter-rouge">Redux</code>这些库抽离出来，这样打包出来文件会小，库文件我们可以用免费的<code class="highlighter-rouge">CDN</code>进行引入，比如：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script src="//cdn.bootcss.com/react/15.4.0/react.min.js"&gt;&lt;/script&gt;
+&lt;script src="//cdn.bootcss.com/react/15.4.0/react-dom.min.js"&gt;&lt;/script&gt;
+&lt;script src="//cdn.bootcss.com/redux/3.6.0/redux.min.js"&gt;&lt;/script&gt;
+</code></pre>
+</div>
+<p>目前为止，我们实现了前端项目的自动打包，还缺开发环境，下面我们继续打造。</p>
+
+<p>在开发模式下，<code class="highlighter-rouge">React</code>,<code class="highlighter-rouge">Redux</code>就不用被抽离出来了，当然代码也不用压缩了，一切以快为主。</p>
+
+<p>mock服务器什么原理，一张图给大家展示一下。
+<img src="http://7xlqsb.com1.z0.glb.clouddn.com/mock.png" alt="" /></p>
+
+<p>解释一下，<code class="highlighter-rouge">webpack-dev-server</code>简单点就是一个<code class="highlighter-rouge">express</code>的服务器，那么如果我们直接用它的话，直接访问<code class="highlighter-rouge">/ajax/test.json</code>肯定是跑不起来的，因为这个接口404啊，所以我们要想实现如下目标：既能拥有<code class="highlighter-rouge">webpack-dev-server</code>独特的热刷新功能，还可以当请求后缀为<code class="highlighter-rouge">xxx.json</code>的时候，去请求一个<code class="highlighter-rouge">mock</code>服务器去拿数据然后返回，我们这个<code class="highlighter-rouge">mock</code>服务使用的是<code class="highlighter-rouge">mock2easy</code>，大家可以去<code class="highlighter-rouge">GitHub</code>上搜搜看，一切皆透明，于是我们的<code class="highlighter-rouge">dev.js</code>配置如下所示：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>// 先实现一个webpack-dev-server
+var app = connect();
+var compiler = webpack(config);
+app.use(require("webpack-dev-middleware")(compiler, config.devServer));
+app.use(require("webpack-hot-middleware")(compiler));
+// 核心代码 之 mock服务就是一个中间件
+app.use(function(req,res,next){
+    if (req.url.indexOf('.json') == -1) {
+      return next();
+    }
+    // 发现是接口请求，然后去请求mock服务器，然后把数据返回
+    var _req = http.request(options, function (_res) {
+      var data = '';
+      _res.on('data', function (chunk) {
+        data += chunk;
+      });
+      _res.on('end', function () {
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.end(data);
+      });
+    });
+});
+app.listen(config.devServer.port, function () {
+  console.log('开发环境已经启动: http://127.0.0.1:' + port);
+});
+// 启动mock服务器
+require('mock2easynew')(options, function (app) {
+  app.listen(options.port, function () {
+    console.log('mock服务器已经启动，地址：http://localhost:' + options.port);
+  });
+});
+</code></pre>
+</div>
+
+<p>经过以上步骤之后，我们的前端开发环境已经搭建好了，开发同学只要先去填写一些<code class="highlighter-rouge">mock</code>的API，然后就可以在前端直接访问到了，所以剩下的只需要和后端进行约定下接口名称就可以了。</p>
+
+<h3 id="section-7">后端简介</h3>
+
+<ol>
+  <li>后端基本上尽可能也要自动化，快捷化，所以使用<code class="highlighter-rouge">maven</code>去进行项目的构建，达到出<code class="highlighter-rouge">src+pom.xml</code>即可四处运行的目的。</li>
+  <li>使用<code class="highlighter-rouge">Postman</code>让后端同学进行接口的测试。</li>
+</ol>
+
+<h2 id="section-8">服务器部署实战</h2>
+
+<p>到目前为止，前后端同学都可以在各自本地进行业务开发了，而且相互不耦合，以一份API文档为准便可以开发，接下来要讨论的就是构建的事情了，我们要达到的目的是：<strong>前端打包好后的静态资源可以自动部署到服务器上，后端代码推到仓库后，会自动进行maven构建，打war包，并自动上传到服务器上，进行tomcat服务器的重启</strong>。</p>
+
+<p>为了实现以上目的，项目采用阿里云<code class="highlighter-rouge">code</code>进行代码管理，与此同时，使用阿里云<code class="highlighter-rouge">CRP</code>服务实现上述持续化，描述如下：</p>
+
+<ol>
+  <li>CRP服务检测指定的远程仓库<code class="highlighter-rouge">master</code>分支是否有更新</li>
+  <li>如果有更新，则执行一段脚本（由用户输入，往往为一些构建命令）</li>
+  <li>用户指定需要上传的文件（往往是第二步骤的产出）</li>
+  <li>用户指定需要上传到的服务器以及路径</li>
+  <li>用户指定上传结束后需要执行的一段脚本（往往为一些部署前的命令，比如移动静态资源到指定目录，或关闭tomcat，解压缩包，重启tomcat）</li>
+</ol>
+
+<p>还需要对<code class="highlighter-rouge">nginx</code>做一下简单配置，实现动静分离。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># 由nginx处理静态页面
+location ~ .*\.(gif|jpg|png|bmp|swf)$
+{
+  expires 30d;   #使用expires缓存模块，缓存到客户端30天
+}
+location ~ .*\.(html|jsp|js|css)?$
+{
+  expires 1d;
+}
+# 其余请求全部转到tomcat
+location ~ .*$ {
+  proxy_pass http://127.0.0.1:8080;
+}
+</code></pre>
+</div>
+
+<p>我们集成后的效果如下，当集成完毕后，可以通知测试同学进行及时测试，提前暴露出问题，保证项目的稳步前进。
+<img src="http://7xlqsb.com1.z0.glb.clouddn.com/log.jpg" alt="" /></p>
+
+<h2 id="section-9">总结</h2>
+
+<p>全程构建系统的过程中，一直遵循的守则是自动化越高越好（<code class="highlighter-rouge">redux-cli</code>,<code class="highlighter-rouge">maven</code>,<code class="highlighter-rouge">持续交付</code>），细节屏蔽的越高越好（执行命令写到<code class="highlighter-rouge">package.json</code>里），将部署步骤和开发步骤相互隔离，开发同学只需要专注业务的开发即可，这样便可以三个子系统同时前进，开发同学可以有更多的时间去考虑代码本身的质量。</p>
+
+<p>能够让我们放心去构建整个系统的基础，屏蔽底层的不同，多亏了在背后运行的<code class="highlighter-rouge">Docker</code>服务，本次项目中的尝鲜体验已经感受到了好处，将<code class="highlighter-rouge">Docker</code>纳入项目的部署环境，往往会带来惊喜。</p>
+
+<p>路还长，保持新鲜感，不断去构造更加完善的自动化系统。</p>
+
+    </section>
+</article>
+
+ 
+
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/architecture-exploration/" data-title="学生团队的前后端分离及持续交付探索历程" ></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"luckyjing"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+<!-- Archive post list -->
+    <ul id="post-list" class="archive readmore">
+        <h3>更多</h3>
+        
+            <li>
+                <a href="/2016/architecture-exploration/">学生团队的前后端分离及持续交付探索历程<aside class="dates">2016年11月19日</aside></a>
+            </li>
+        
+            <li>
+                <a href="/2016/use-cnpm/">使用cnpm加速下载npm包<aside class="dates">2016年11月13日</aside></a>
+            </li>
+        
+            <li>
+                <a href="/2016/flipClock/">有趣的倒计时组件<aside class="dates">2016年11月12日</aside></a>
+            </li>
+        
+            <li>
+                <a href="/2016/web-guide/">关于Web前端的一次分享<aside class="dates">2016年06月06日</aside></a>
+            </li>
+        
+    </ul>
+
+<footer id="post-meta" class="clearfix">
+       
+    <a href="/">
+         <img class="avatar" src="/assets/images/avatar.png">
+        <div>
+            <span class="dark">LuckyJing</span>
+            <span>爱跑🐴拉松，爱骑行，爱📷影，💕JavaScript</span>
+        </div>
+    </a>
+    <section id="sharing">
+        <!--<a class="twitter" href="https://twitter.com/intent/tweet?text=http://luckyjing.github.io/2016/architecture-exploration/ - 学生团队的前后端分离及持续交付探索历程 by @"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>-->
+    </section>
+</footer>
+  </section>
+
+  <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+   
+</body>
+</html>
+
+
+

@@ -2,9 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>LuckyJing</title>
-    <description>爱跑🐴拉松，爱骑行，爱📷影，💕JavaScript的多能程序猿</description>
+    <description>爱跑🐴拉松，爱骑行，爱📷影，💕JavaScript</description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>学生团队的前后端分离及持续交付探索历程</title>
+        
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;大学的最后一门必修课也已经展开帷幕了，伴随而来的是一次大型的项目大作业，回顾大学三年，在学院课程大作业范围内的项目，并没有一次印象深刻的团队开发经历，往往都是三两程序员一聚，便草草开始了。年已至末，最后一次大作业，需要拥有规范的项目开发流程，能够平稳地推进项目的开发，不会让项目边界越来越大以至于收不住边界，导致最后往往以通宵加班而收场。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Sat, 19 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/architecture-exploration/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/architecture-exploration/</guid>
+      </item>
+    
+      <item>
+        <title>使用cnpm加速下载npm包</title>
+        
+        
+          <description>&lt;p&gt;淘宝NPM官网链接：&lt;a href=&quot;https://npm.taobao.org/&quot;&gt;https://npm.taobao.org/&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 13 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/use-cnpm/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/use-cnpm/</guid>
+      </item>
     
       <item>
         <title>有趣的倒计时组件</title>
@@ -18,19 +46,6 @@
         <pubDate>Sat, 12 Nov 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/flipClock/</link>
         <guid isPermaLink="true">http://localhost:4000/2016/flipClock/</guid>
-      </item>
-    
-      <item>
-        <title>underscore源码解读</title>
-        
-        
-          <description>&lt;p&gt;&lt;img src=&quot;/assets/images/food.jpg&quot; alt=&quot;food&quot; /&gt;&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Fri, 11 Nov 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/underscore-learn-1/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/underscore-learn-1/</guid>
       </item>
     
       <item>
