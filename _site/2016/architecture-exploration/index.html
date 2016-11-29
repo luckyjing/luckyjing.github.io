@@ -57,6 +57,7 @@
 <h2 id="section-4">项目构建历程</h2>
 
 <p><img src="http://7xlqsb.com1.z0.glb.clouddn.com/arch.png" alt="" /></p>
+
 <h3 id="section-5">基础结构预览</h3>
 
 <p>在看过上面这个图以后，项目的整个轮廓已经清晰，为了实现以上架构，我们需要定一些小小目标：</p>
@@ -78,6 +79,7 @@
 </ol>
 
 <p>前端使用<code class="highlighter-rouge">React+Redux+React-Router</code>作为基础框架,使用<code class="highlighter-rouge">Webpack</code>作为构建工具，使用<code class="highlighter-rouge">mock2easy</code>作为前端mock服务,在项目开发前，我提前将项目的脚手架提前搭建好，项目的大概目录如下所示：</p>
+
 <div class="highlighter-rouge"><pre class="highlight"><code>├── README.md
 ├── blueprints  # 这就是上述第三点的模板，大家可以去github上搜 redux-cli
 ├── build # 构建后的文件
@@ -87,58 +89,65 @@
 └── webpack.config.js
 </code></pre>
 </div>
+
 <p>将相关命令写到<code class="highlighter-rouge">package.json</code>中，前端同学只需执行个命令就可以启动服务了。</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>  "scripts": {
-    "dev": "node dev.js",
-    "pub": "NODE_ENV=production webpack &amp;&amp; git add . &amp;&amp; git commit -m':grin:发布新功能' &amp;&amp; git push origin master"
-}
-</code></pre>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="s2">"scripts"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node dev.js"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NODE_ENV=production webpack &amp;&amp; git add . &amp;&amp; git commit -m':grin:发布新功能' &amp;&amp; git push origin master"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 </div>
+
 <p>使用<code class="highlighter-rouge">Webpack</code>提前写好配置文件，不管<code class="highlighter-rouge">webpack.config.js</code>里有多少步骤，最终呈现出来的只有<code class="highlighter-rouge">build</code>目录下那几个打包好的文件，有一点要注意的是，在发布时，最好将<code class="highlighter-rouge">React</code>,<code class="highlighter-rouge">Redux</code>这些库抽离出来，这样打包出来文件会小，库文件我们可以用免费的<code class="highlighter-rouge">CDN</code>进行引入，比如：</p>
+
 <div class="highlighter-rouge"><pre class="highlight"><code>&lt;script src="//cdn.bootcss.com/react/15.4.0/react.min.js"&gt;&lt;/script&gt;
 &lt;script src="//cdn.bootcss.com/react/15.4.0/react-dom.min.js"&gt;&lt;/script&gt;
 &lt;script src="//cdn.bootcss.com/redux/3.6.0/redux.min.js"&gt;&lt;/script&gt;
 </code></pre>
 </div>
+
 <p>目前为止，我们实现了前端项目的自动打包，还缺开发环境，下面我们继续打造。</p>
 
 <p>在开发模式下，<code class="highlighter-rouge">React</code>,<code class="highlighter-rouge">Redux</code>就不用被抽离出来了，当然代码也不用压缩了，一切以快为主。</p>
 
-<p>mock服务器什么原理，一张图给大家展示一下。
-<img src="http://7xlqsb.com1.z0.glb.clouddn.com/mock.png" alt="" /></p>
+<p>mock服务器什么原理，一张图给大家展示一下。</p>
+
+<p><img src="http://7xlqsb.com1.z0.glb.clouddn.com/mock.png" alt="" /></p>
 
 <p>解释一下，<code class="highlighter-rouge">webpack-dev-server</code>简单点就是一个<code class="highlighter-rouge">express</code>的服务器，那么如果我们直接用它的话，直接访问<code class="highlighter-rouge">/ajax/test.json</code>肯定是跑不起来的，因为这个接口404啊，所以我们要想实现如下目标：既能拥有<code class="highlighter-rouge">webpack-dev-server</code>独特的热刷新功能，还可以当请求后缀为<code class="highlighter-rouge">xxx.json</code>的时候，去请求一个<code class="highlighter-rouge">mock</code>服务器去拿数据然后返回，我们这个<code class="highlighter-rouge">mock</code>服务使用的是<code class="highlighter-rouge">mock2easy</code>，大家可以去<code class="highlighter-rouge">GitHub</code>上搜搜看，一切皆透明，于是我们的<code class="highlighter-rouge">dev.js</code>配置如下所示：</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>// 先实现一个webpack-dev-server
-var app = connect();
-var compiler = webpack(config);
-app.use(require("webpack-dev-middleware")(compiler, config.devServer));
-app.use(require("webpack-hot-middleware")(compiler));
-// 核心代码 之 mock服务就是一个中间件
-app.use(function(req,res,next){
-    if (req.url.indexOf('.json') == -1) {
-      return next();
-    }
-    // 发现是接口请求，然后去请求mock服务器，然后把数据返回
-    var _req = http.request(options, function (_res) {
-      var data = '';
-      _res.on('data', function (chunk) {
-        data += chunk;
-      });
-      _res.on('end', function () {
-        res.setHeader('Content-Type', 'application/json; charset=utf-8');
-        res.end(data);
-      });
-    });
-});
-app.listen(config.devServer.port, function () {
-  console.log('开发环境已经启动: http://127.0.0.1:' + port);
-});
-// 启动mock服务器
-require('mock2easynew')(options, function (app) {
-  app.listen(options.port, function () {
-    console.log('mock服务器已经启动，地址：http://localhost:' + options.port);
-  });
-});
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// 先实现一个webpack-dev-server</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">compiler</span> <span class="o">=</span> <span class="nx">webpack</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">"webpack-dev-middleware"</span><span class="p">)(</span><span class="nx">compiler</span><span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">devServer</span><span class="p">));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">"webpack-hot-middleware"</span><span class="p">)(</span><span class="nx">compiler</span><span class="p">));</span>
+<span class="c1">// 核心代码 之 mock服务就是一个中间件</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="nx">res</span><span class="p">,</span><span class="nx">next</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'.json'</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">next</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="c1">// 发现是接口请求，然后去请求mock服务器，然后把数据返回</span>
+    <span class="kd">var</span> <span class="nx">_req</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">_res</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+      <span class="nx">_res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">data</span> <span class="o">+=</span> <span class="nx">chunk</span><span class="p">;</span>
+      <span class="p">});</span>
+      <span class="nx">_res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'end'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">'Content-Type'</span><span class="p">,</span> <span class="s1">'application/json; charset=utf-8'</span><span class="p">);</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+      <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">devServer</span><span class="p">.</span><span class="nx">port</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'开发环境已经启动: http://127.0.0.1:'</span> <span class="o">+</span> <span class="nx">port</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">// 启动mock服务器</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">'mock2easynew'</span><span class="p">)(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">port</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'mock服务器已经启动，地址：http://localhost:'</span> <span class="o">+</span> <span class="nx">options</span><span class="p">.</span><span class="nx">port</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
 </code></pre>
 </div>
 
@@ -183,8 +192,9 @@ location ~ .*$ {
 </code></pre>
 </div>
 
-<p>我们集成后的效果如下，当集成完毕后，可以通知测试同学进行及时测试，提前暴露出问题，保证项目的稳步前进。
-<img src="http://7xlqsb.com1.z0.glb.clouddn.com/log.jpg" alt="" /></p>
+<p>我们集成后的效果如下，当集成完毕后，可以通知测试同学进行及时测试，提前暴露出问题，保证项目的稳步前进。</p>
+
+<p><img src="http://7xlqsb.com1.z0.glb.clouddn.com/log.jpg" alt="" /></p>
 
 <h2 id="section-9">总结</h2>
 

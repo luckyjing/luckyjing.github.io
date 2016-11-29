@@ -23,6 +23,7 @@ description:  "在学生团队里，大家技术栈参差不齐，开发时间�
 ## 项目构建历程
 
 ![](http://7xlqsb.com1.z0.glb.clouddn.com/arch.png)
+
 ### 基础结构预览
 
 在看过上面这个图以后，项目的整个轮廓已经清晰，为了实现以上架构，我们需要定一些小小目标：
@@ -40,6 +41,7 @@ description:  "在学生团队里，大家技术栈参差不齐，开发时间�
 3. `React+Redux`配置其实挺麻烦的，如果能写好模板，然后自动生成就好了，用`redux-cli`。
 
 前端使用`React+Redux+React-Router`作为基础框架,使用`Webpack`作为构建工具，使用`mock2easy`作为前端mock服务,在项目开发前，我提前将项目的脚手架提前搭建好，项目的大概目录如下所示：
+
 ```
 ├── README.md
 ├── blueprints  # 这就是上述第三点的模板，大家可以去github上搜 redux-cli
@@ -49,28 +51,35 @@ description:  "在学生团队里，大家技术栈参差不齐，开发时间�
 ├── src
 └── webpack.config.js
 ```
+
 将相关命令写到`package.json`中，前端同学只需执行个命令就可以启动服务了。
-```
+
+```json
   "scripts": {
     "dev": "node dev.js",
     "pub": "NODE_ENV=production webpack && git add . && git commit -m':grin:发布新功能' && git push origin master"
 }
 ```
+
 使用`Webpack`提前写好配置文件，不管`webpack.config.js`里有多少步骤，最终呈现出来的只有`build`目录下那几个打包好的文件，有一点要注意的是，在发布时，最好将`React`,`Redux`这些库抽离出来，这样打包出来文件会小，库文件我们可以用免费的`CDN`进行引入，比如：
+
 ```
 <script src="//cdn.bootcss.com/react/15.4.0/react.min.js"></script>
 <script src="//cdn.bootcss.com/react/15.4.0/react-dom.min.js"></script>
 <script src="//cdn.bootcss.com/redux/3.6.0/redux.min.js"></script>
 ```
+
 目前为止，我们实现了前端项目的自动打包，还缺开发环境，下面我们继续打造。
 
 在开发模式下，`React`,`Redux`就不用被抽离出来了，当然代码也不用压缩了，一切以快为主。
 
 mock服务器什么原理，一张图给大家展示一下。
+
 ![](http://7xlqsb.com1.z0.glb.clouddn.com/mock.png)
 
 解释一下，`webpack-dev-server`简单点就是一个`express`的服务器，那么如果我们直接用它的话，直接访问`/ajax/test.json`肯定是跑不起来的，因为这个接口404啊，所以我们要想实现如下目标：既能拥有`webpack-dev-server`独特的热刷新功能，还可以当请求后缀为`xxx.json`的时候，去请求一个`mock`服务器去拿数据然后返回，我们这个`mock`服务使用的是`mock2easy`，大家可以去`GitHub`上搜搜看，一切皆透明，于是我们的`dev.js`配置如下所示：
-```
+
+```javascript
 // 先实现一个webpack-dev-server
 var app = connect();
 var compiler = webpack(config);
@@ -142,6 +151,7 @@ location ~ .*$ {
 ```
 
 我们集成后的效果如下，当集成完毕后，可以通知测试同学进行及时测试，提前暴露出问题，保证项目的稳步前进。
+
 ![](http://7xlqsb.com1.z0.glb.clouddn.com/log.jpg)
 
 ## 总结
