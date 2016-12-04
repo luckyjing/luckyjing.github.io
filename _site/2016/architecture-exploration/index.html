@@ -86,7 +86,7 @@
 
 <p>在项目开发前，我提前将项目的脚手架提前搭建好，项目的大概目录如下所示：</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>├── README.md
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>├── README.md
 ├── blueprints  <span class="c"># 这就是上述第三点的模板，大家可以去github上搜 redux-cli</span>
 ├── build <span class="c"># 构建后的文件</span>
 ├── dev.js <span class="c"># 类似webpack-dev-server 加入了mock的服务</span>
@@ -179,7 +179,7 @@
 
 <p>经过以上步骤之后，我们的前端开发环境已经搭建好了，开发同学只要先去填写一些<code class="highlighter-rouge">mock</code>的API，然后就可以在前端直接访问到了，所以剩下的只需要和后端进行约定下接口名称就可以了。</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># step1</span>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># step1</span>
 前后端约定API名称为：/ajax/profile.json
 <span class="c"># step2</span>
 前端<span class="o">(</span>假设是3005端口<span class="o">)</span>在mock服务器<span class="o">(</span>假设是8005端口<span class="o">)</span>添加这个接口 <span class="o">&amp;&amp;</span> 后端正常工作...
@@ -213,7 +213,7 @@
 
 <p>还需要对<code class="highlighter-rouge">nginx</code>做一下简单配置，实现动静分离。</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># 由nginx处理静态页面</span>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># 由nginx处理静态页面</span>
 location ~ .<span class="k">*</span><span class="se">\.</span><span class="o">(</span>gif|jpg|png|bmp|swf<span class="o">)</span><span class="err">$</span>
 <span class="o">{</span>
   expires 30d;   <span class="c">#使用expires缓存模块，缓存到客户端30天</span>

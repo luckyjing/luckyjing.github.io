@@ -48,7 +48,7 @@ description:  "在学生团队里，大家技术栈参差不齐，开发时间�
 
 在项目开发前，我提前将项目的脚手架提前搭建好，项目的大概目录如下所示：
 
-```shell
+```bash
 ├── README.md
 ├── blueprints  # 这就是上述第三点的模板，大家可以去github上搜 redux-cli
 ├── build # 构建后的文件
@@ -139,7 +139,7 @@ var config = {
 
 经过以上步骤之后，我们的前端开发环境已经搭建好了，开发同学只要先去填写一些`mock`的API，然后就可以在前端直接访问到了，所以剩下的只需要和后端进行约定下接口名称就可以了。
 
-```shell
+```bash
 # step1
 前后端约定API名称为：/ajax/profile.json
 # step2
@@ -169,7 +169,7 @@ var config = {
 
 还需要对`nginx`做一下简单配置，实现动静分离。
 
-```shell
+```bash
 # 由nginx处理静态页面
 location ~ .*\.(gif|jpg|png|bmp|swf)$
 {
