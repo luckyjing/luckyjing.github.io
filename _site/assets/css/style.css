@@ -67,11 +67,6 @@ h1 {
 	color: #222;
 	font-weight: bold;
 }
-
-h2 {
-	font-size: 19px/1.3em;
-	color: #bbb;
-}
 code {
     padding: 2px 8px;
     color: #1DAEF4;
@@ -110,10 +105,7 @@ code {
 .profile h2 {
 	font-size: 20px;
 	  font-weight: 300;
-	  color: #aaa;
 	  margin-top: 10px;
-	  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	  font-style: normal;
 
 }
 
@@ -225,10 +217,6 @@ em, i { font-style: italic; }
 	font-weight: bold;
 }
 
-.home h2 {
-	color: #bbb;
-}
-
 .post header {
 	text-align:center;
 
@@ -253,7 +241,6 @@ em, i { font-style: italic; }
 	/*font: italic 22px/1.3em Georgia,serif;*/
 	font: normal 13px/1.5em "Helvetica Neue",Helvetica,Arial,sans-serif;
 	margin: -5px 0 40px 0;
-	color: #b2b9be;
 	  font-size: 13px;
 	  text-transform: uppercase;
 	  letter-spacing: 2px;
@@ -263,14 +250,13 @@ em, i { font-style: italic; }
 
 #post-list h2 {
 	font: normal 17px/1.5em "Helvetica Neue",Helvetica,Arial,sans-serif;
-	color: #aaa;
 	max-width: 400px;
 	margin-top: 2px;
 }
 
-h3, h4, h5 { margin-top:10px;color:#333; }
-
-h3 { font-size:20px; font-weight: 400; }
+h3, h4, h5 { margin-top:10px;}
+h2 { font-size:24px; font-weight: bold; }
+h3 { font-size:20px; font-weight: bold; }
 h4 { font-size:16px; font-weight:bold; }
 h5 { font-size:15px; font-weight: bold; }
 
