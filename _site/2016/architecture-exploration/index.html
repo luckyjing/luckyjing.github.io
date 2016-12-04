@@ -37,22 +37,22 @@
     </header>
     <section id="post-body">
         <blockquote>
-  <p>大学的最后一门必修课也已经展开帷幕了，伴随而来的是一次大型的项目大作业，回顾大学三年，在学院课程大作业范围内的项目，并没有一次印象深刻的团队开发经历，往往都是三两程序员一聚，便草草开始了。年已至末，最后一次大作业，需要拥有规范的项目开发流程，能够平稳地推进项目的开发，不会让项目边界越来越大以至于收不住边界，导致最后往往以通宵加班而收场。</p>
+  <p>回顾大学四年，在学院课程大作业范围内的项目，并没有一次印象深刻的团队开发经历，往往都是三两程序员一聚，便草草开始了。在阿里云实习的几个月里，相比代码本身，学到的最多的便是人力资源的合理利用，工具的效率辅助，年已至末，最后一次大作业，将自己在实习过程中积累的经验运用起来，指定合理规范的项目开发流程，平稳地推进项目的开发，不会让项目边界越来越大以至于收不住边界，特地做此记录分享给大家。</p>
 </blockquote>
 
-<h2 id="section">项目背景及成员情况</h2>
+<h2 id="section">背景</h2>
 
 <h3 id="section-1">项目背景</h3>
 
-<p>本次的项目是一个在线购物商城系统，这个词相信大家已经耳熟能详了，具体细节不必多说，分为三个子系统<code class="highlighter-rouge">Customer,Owner,Administrator</code>，需要将项目分为三个阶段，<code class="highlighter-rouge">Release1,2,3</code>，采用原型开发模式，每个版本给出一个可供交付的产品，总结来说，项目性质为无复杂功能点，但业务量繁多。</p>
+<p>本次的项目是一个在线购物商城系统，这个词相信大家已经耳熟能详了，具体细节不必多说，分为三个子系统<code class="highlighter-rouge">Customer,Owner,Administrator</code>，需要将项目分为三个阶段，<code class="highlighter-rouge">Release1,2,3</code>，采用原型开发模式，每个版本给出一个可供交付的产品，总结来说，项目性质为<strong>无复杂功能点，但业务量繁多</strong>。</p>
 
 <h3 id="section-2">成员介绍</h3>
 
-<p>团队成员共有20人，其中开发同学共10位，前端同学4位，后端同学6位。首先进行技术调研，和在公司不同，在公司大家技术栈其实差不多，在学校则不是，最终得出结果，前端熟悉<code class="highlighter-rouge">React</code>同学1位，其余3位熟悉<code class="highlighter-rouge">jQuery</code>，后端同学全部熟悉<code class="highlighter-rouge">SSH框架</code>，为保证后端的统一，后端技术栈不作调整，但前端因考虑到自动化构建的工具的接入，以及用<code class="highlighter-rouge">jQuery</code>前期成本小，后期成本大，难以维护的现状，故全部采用<code class="highlighter-rouge">React</code>技术栈，并对不熟悉的同学进行一次集体培训以及后续答疑解惑。</p>
+<p>团队成员共有20人，其中开发同学共10位，前端同学4位，后端同学6位。首先进行技术调研，和在公司不同，在公司大家技术栈其实差不多，在学校则不是，最终得出结果，前端熟悉<code class="highlighter-rouge">React</code>同学1位，其余3位熟悉<code class="highlighter-rouge">jQuery</code>，后端同学全部熟悉<code class="highlighter-rouge">SSH框架</code>，为保证后端的统一，后端技术栈不作调整，但前端因考虑到自动化构建的工具的接入， 以及用<code class="highlighter-rouge">jQuery</code>前期成本小，后期成本大，难以维护的现状，故全部采用<code class="highlighter-rouge">React</code>技术栈，并对不熟悉的同学进行一次集体培训以及后续答疑解惑。</p>
 
 <h3 id="section-3">前期准备</h3>
 
-<p>三个子系统之间其实前端关联度不大，可以认为是三个独立的系统，对于后端而言，不同数据之间是共享的，故由一名主力后端同学负责数据库的设计与构建，并且搭建好基础后端目录，其他同学在此基础上进行业务层面的开发。</p>
+<p>三个子系统之间其实前端关联度不大，可以认为是三个独立的系统，对于前端而言，<code class="highlighter-rouge">React全家桶</code>搭建起来并不容易，涉及到代码目录的规定，<code class="highlighter-rouge">Webpack</code>的配置等等，故前端由我做出基层的脚手架，实现<strong>业务同学可以直接写业务，无需关系构件流程的目的</strong>，对于后端而言，不同数据之间是共享的，故由一名主力后端同学负责数据库的设计与构建，并且搭建好基础后端目录，其他同学在此基础上进行业务层面的开发。</p>
 
 <h2 id="section-4">项目构建历程</h2>
 
@@ -61,24 +61,30 @@
 <h3 id="section-5">基础结构预览</h3>
 
 <p>在看过上面这个图以后，项目的整个轮廓已经清晰，为了实现以上架构，我们需要定一些小小目标：</p>
+
 <ol>
-  <li>前后端采用分离模式开发，这样大家可以独立进行开发，数据全部通过以<code class="highlighter-rouge">json</code>为基础格式的接口交流。</li>
-  <li>后端接口还没有写好的时候，怎么才不会影响前端同学开发，最直接能想到的，打造一个<code class="highlighter-rouge">mock</code>服务器，这样前端就可以请求接口了，只不过数据都是自己模拟的。</li>
-  <li>我们只有一台服务器，是很实惠阿里云学生机，所以前后端数据都要放在这台机器上，前端静态资源存储在<code class="highlighter-rouge">nginx</code>服务器下，后端服务放在<code class="highlighter-rouge">tomcat/webapps</code>目录下，因为为单页应用，后端只需要在那份<code class="highlighter-rouge">index.html</code>里引入前端静态资源就可以了（直接写入绝对路径），最终访问的时候，服务器能够辨别是请求静态资源还是后端服务器，也就是俗称的<code class="highlighter-rouge">动静分离</code>。</li>
-  <li>本地开发如何部署到服务器上，部署的时候如何轻松，快捷，避免配置各种环境，要配也是一个人配，不能让开发同学苦恼。</li>
+  <li><strong>前后端采用分离模式开发</strong>，通过一份提前给出的<code class="highlighter-rouge">API</code>文档进行协商，数据则通过以<code class="highlighter-rouge">json</code>作为基础格式的接口进行交互。</li>
+  <li><strong>打造一个<code class="highlighter-rouge">Mock</code>服务器</strong>，实现<code class="highlighter-rouge">API文档已给出</code>，但后端接口还没有写好的时候，前端通过模拟接口可以透明地请求接口了。（注：透明的意思即Mock服务器可以拦截前端的所有请求，达到和真实线上服务调用接口一样的效果）</li>
+  <li><strong>动静资源分离</strong>，我们只有一台服务器，是很实惠阿里云学生机，所以前后端数据都要放在这台机器上，前端静态资源存储在<code class="highlighter-rouge">nginx</code>服务器下，后端服务放在<code class="highlighter-rouge">tomcat/webapps</code>目录下，因为为单页应用，后端只需要在那份<code class="highlighter-rouge">index.html</code>里引入前端静态资源就可以了（直接写入绝对路径），最终访问的时候，服务器能够辨别是请求静态资源还是后端服务器，也就是俗称的<code class="highlighter-rouge">动静分离</code>。</li>
+  <li><strong>快速部署</strong>,部署的时候如何轻松，快捷，避免配置各种环境，要配也是一个人配，不能让开发同学苦恼。</li>
 </ol>
 
 <p>下面我们来一步步实现。</p>
 
-<h3 id="section-6">前端基础架构</h3>
+<h3 id="section-6">前端</h3>
+
+<h4 id="section-7">简述</h4>
 
 <ol>
   <li>前后端分离开发，所以路由要放到前端，用<code class="highlighter-rouge">React-Router</code>。</li>
   <li>前端要自动化构建，用<code class="highlighter-rouge">Webpack</code>。</li>
   <li><code class="highlighter-rouge">React+Redux</code>配置其实挺麻烦的，如果能写好模板，然后自动生成就好了，用<code class="highlighter-rouge">redux-cli</code>。</li>
+  <li><code class="highlighter-rouge">mock2easy</code>作为mock服务器。</li>
 </ol>
 
-<p>前端使用<code class="highlighter-rouge">React+Redux+React-Router</code>作为基础框架,使用<code class="highlighter-rouge">Webpack</code>作为构建工具，使用<code class="highlighter-rouge">mock2easy</code>作为前端mock服务,在项目开发前，我提前将项目的脚手架提前搭建好，项目的大概目录如下所示：</p>
+<h4 id="section-8">基础目录结构</h4>
+
+<p>在项目开发前，我提前将项目的脚手架提前搭建好，项目的大概目录如下所示：</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>├── README.md
 ├── blueprints  # 这就是上述第三点的模板，大家可以去github上搜 redux-cli
@@ -90,7 +96,9 @@
 </code></pre>
 </div>
 
-<p>将相关命令写到<code class="highlighter-rouge">package.json</code>中，前端同学只需执行个命令就可以启动服务了。</p>
+<h4 id="section-9">自动化构建命令</h4>
+
+<p>使用<code class="highlighter-rouge">Webpack</code>提前写好配置文件，不管<code class="highlighter-rouge">webpack.config.js</code>里有多少步骤，最终呈现出来的只有<code class="highlighter-rouge">build</code>目录下那几个打包好的文件，将相关命令写到<code class="highlighter-rouge">package.json</code>中，前端同学<strong>只需执行一个命令</strong>就可以启动服务了。</p>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="s2">"scripts"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node dev.js"</span><span class="p">,</span><span class="w">
@@ -99,17 +107,7 @@
 </span></code></pre>
 </div>
 
-<p>使用<code class="highlighter-rouge">Webpack</code>提前写好配置文件，不管<code class="highlighter-rouge">webpack.config.js</code>里有多少步骤，最终呈现出来的只有<code class="highlighter-rouge">build</code>目录下那几个打包好的文件，有一点要注意的是，在发布时，最好将<code class="highlighter-rouge">React</code>,<code class="highlighter-rouge">Redux</code>这些库抽离出来，这样打包出来文件会小，库文件我们可以用免费的<code class="highlighter-rouge">CDN</code>进行引入，比如：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script src="//cdn.bootcss.com/react/15.4.0/react.min.js"&gt;&lt;/script&gt;
-&lt;script src="//cdn.bootcss.com/react/15.4.0/react-dom.min.js"&gt;&lt;/script&gt;
-&lt;script src="//cdn.bootcss.com/redux/3.6.0/redux.min.js"&gt;&lt;/script&gt;
-</code></pre>
-</div>
-
-<p>目前为止，我们实现了前端项目的自动打包，还缺开发环境，下面我们继续打造。</p>
-
-<p>在开发模式下，<code class="highlighter-rouge">React</code>,<code class="highlighter-rouge">Redux</code>就不用被抽离出来了，当然代码也不用压缩了，一切以快为主。</p>
+<h4 id="mock">mock服务</h4>
 
 <p>mock服务器什么原理，一张图给大家展示一下。</p>
 
@@ -151,18 +149,57 @@
 </code></pre>
 </div>
 
+<h4 id="section-10">优化</h4>
+
+<ul>
+  <li>在<strong>开发</strong>时，<code class="highlighter-rouge">React</code>,<code class="highlighter-rouge">Redux</code>就不用被抽离出来了，当然代码也不用压缩了，一切以快为主。</li>
+  <li>在<strong>发布</strong>时，将<code class="highlighter-rouge">React</code>,<code class="highlighter-rouge">Redux</code>这些库抽离出来，这样打包出来文件会小，库文件我们可以用免费的<code class="highlighter-rouge">CDN</code>进行引入。</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script src="//cdn.bootcss.com/react/15.4.0/react.min.js"&gt;&lt;/script&gt;
+&lt;script src="//cdn.bootcss.com/react/15.4.0/react-dom.min.js"&gt;&lt;/script&gt;
+&lt;script src="//cdn.bootcss.com/redux/3.6.0/redux.min.js"&gt;&lt;/script&gt;
+</code></pre>
+</div>
+<p>实现以上优化，我们需要在我们的<code class="highlighter-rouge">webpack.config.js</code>中加入如下逻辑，即需要拥有区分<strong>开发环境</strong>的能力。</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//  区别环境</span>
+<span class="kd">var</span> <span class="nx">debug</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="s1">'production'</span><span class="p">;</span>
+<span class="c1">// 第三方资源</span>
+<span class="kd">var</span> <span class="nx">externals</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"react"</span><span class="p">:</span> <span class="s1">'React'</span><span class="p">,</span>
+  <span class="s2">"react-dom"</span><span class="p">:</span> <span class="s2">"ReactDOM"</span><span class="p">,</span>
+  <span class="s1">'redux'</span><span class="p">:</span> <span class="s1">'Redux'</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">externals</span><span class="p">:</span> <span class="nx">debug</span> <span class="p">?</span> <span class="p">{}</span> <span class="p">:</span> <span class="nx">externals</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
 <p>经过以上步骤之后，我们的前端开发环境已经搭建好了，开发同学只要先去填写一些<code class="highlighter-rouge">mock</code>的API，然后就可以在前端直接访问到了，所以剩下的只需要和后端进行约定下接口名称就可以了。</p>
 
-<h3 id="section-7">后端简介</h3>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># step1</span>
+前后端约定API名称为：/ajax/profile.json
+<span class="c"># step2</span>
+前端<span class="o">(</span>假设是3005端口<span class="o">)</span>在mock服务器<span class="o">(</span>假设是8005端口<span class="o">)</span>添加这个接口 <span class="o">&amp;&amp;</span> 后端正常工作...
+<span class="c"># step3</span>
+访问localhost:3005/ajax/profile.json 成功拿到数据
+<span class="c"># step4</span>
+前端代码里直接书写 <span class="nv">$.</span>ajax<span class="o">(</span><span class="s1">'/ajax/profile.json'</span><span class="o">)</span> 即可
+</code></pre>
+</div>
+
+<h3 id="section-11">后端简介</h3>
 
 <ol>
-  <li>后端基本上尽可能也要自动化，快捷化，所以使用<code class="highlighter-rouge">maven</code>去进行项目的构建，达到出<code class="highlighter-rouge">src+pom.xml</code>即可四处运行的目的。</li>
-  <li>使用<code class="highlighter-rouge">Postman</code>让后端同学进行接口的测试。</li>
+  <li>后端基本上尽可能也要自动化，快捷化，所以使用<code class="highlighter-rouge">maven</code>去进行项目的构建，达到拥有一份源代码便可四处运行的目的。</li>
+  <li>使用<code class="highlighter-rouge">postman</code>让后端同学进行接口的测试。</li>
 </ol>
 
-<h2 id="section-8">服务器部署实战</h2>
+<h2 id="section-12">服务器部署实战</h2>
 
-<p>到目前为止，前后端同学都可以在各自本地进行业务开发了，而且相互不耦合，以一份API文档为准便可以开发，接下来要讨论的就是构建的事情了，我们要达到的目的是：<strong>前端打包好后的静态资源可以自动部署到服务器上，后端代码推到仓库后，会自动进行maven构建，打war包，并自动上传到服务器上，进行tomcat服务器的重启</strong>。</p>
+<p>到目前为止，前后端同学都可以在各自本地进行业务开发了，而且相互不耦合，以一份API文档为准便可以开发，接下来要讨论的就是构建的事情了，我们要达到的目的是：<strong>前端打包好后的静态资源可以自动部署到服务器上，后端代码推到仓库后，会自动进行maven构建，打war包，并自动上传到服务器上，重启tomcat服务器</strong>。</p>
 
 <p>为了实现以上目的，项目采用阿里云<code class="highlighter-rouge">code</code>进行代码管理，与此同时，使用阿里云<code class="highlighter-rouge">CRP</code>服务实现上述持续化，描述如下：</p>
 
@@ -196,7 +233,7 @@ location ~ .*$ {
 
 <p><img src="http://7xlqsb.com1.z0.glb.clouddn.com/log.jpg" alt="" /></p>
 
-<h2 id="section-9">总结</h2>
+<h2 id="section-13">总结</h2>
 
 <p>全程构建系统的过程中，一直遵循的守则是自动化越高越好（<code class="highlighter-rouge">redux-cli</code>,<code class="highlighter-rouge">maven</code>,<code class="highlighter-rouge">持续交付</code>），细节屏蔽的越高越好（执行命令写到<code class="highlighter-rouge">package.json</code>里），将部署步骤和开发步骤相互隔离，开发同学只需要专注业务的开发即可，这样便可以三个子系统同时前进，开发同学可以有更多的时间去考虑代码本身的质量。</p>
 
