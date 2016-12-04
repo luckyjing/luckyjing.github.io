@@ -7,10 +7,10 @@
 
   <title>LuckyJing - 学生团队的前后端分离及持续交付探索历程</title>
   <link rel="shortcut icon" href="/assets/images/favicon.ico">
-  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="/rss.xml">
-  <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/9.2.0/styles/arduino-light.min.css
+  <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/9.8.0/styles/arduino-light.min.css
 ">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
 
@@ -86,10 +86,10 @@
 
 <p>在项目开发前，我提前将项目的脚手架提前搭建好，项目的大概目录如下所示：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>├── README.md
-├── blueprints  # 这就是上述第三点的模板，大家可以去github上搜 redux-cli
-├── build # 构建后的文件
-├── dev.js # 类似webpack-dev-server 加入了mock的服务
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>├── README.md
+├── blueprints  <span class="c"># 这就是上述第三点的模板，大家可以去github上搜 redux-cli</span>
+├── build <span class="c"># 构建后的文件</span>
+├── dev.js <span class="c"># 类似webpack-dev-server 加入了mock的服务</span>
 ├── package.json
 ├── src
 └── webpack.config.js
@@ -156,9 +156,9 @@
   <li>在<strong>发布</strong>时，将<code class="highlighter-rouge">React</code>,<code class="highlighter-rouge">Redux</code>这些库抽离出来，这样打包出来文件会小，库文件我们可以用免费的<code class="highlighter-rouge">CDN</code>进行引入。</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script src="//cdn.bootcss.com/react/15.4.0/react.min.js"&gt;&lt;/script&gt;
-&lt;script src="//cdn.bootcss.com/react/15.4.0/react-dom.min.js"&gt;&lt;/script&gt;
-&lt;script src="//cdn.bootcss.com/redux/3.6.0/redux.min.js"&gt;&lt;/script&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdn.bootcss.com/react/15.4.0/react.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdn.bootcss.com/react/15.4.0/react-dom.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdn.bootcss.com/redux/3.6.0/redux.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre>
 </div>
 <p>实现以上优化，我们需要在我们的<code class="highlighter-rouge">webpack.config.js</code>中加入如下逻辑，即需要拥有区分<strong>开发环境</strong>的能力。</p>
@@ -213,19 +213,19 @@
 
 <p>还需要对<code class="highlighter-rouge">nginx</code>做一下简单配置，实现动静分离。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># 由nginx处理静态页面
-location ~ .*\.(gif|jpg|png|bmp|swf)$
-{
-  expires 30d;   #使用expires缓存模块，缓存到客户端30天
-}
-location ~ .*\.(html|jsp|js|css)?$
-{
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># 由nginx处理静态页面</span>
+location ~ .<span class="k">*</span><span class="se">\.</span><span class="o">(</span>gif|jpg|png|bmp|swf<span class="o">)</span><span class="err">$</span>
+<span class="o">{</span>
+  expires 30d;   <span class="c">#使用expires缓存模块，缓存到客户端30天</span>
+<span class="o">}</span>
+location ~ .<span class="k">*</span><span class="se">\.</span><span class="o">(</span>html|jsp|js|css<span class="o">)</span>?<span class="err">$</span>
+<span class="o">{</span>
   expires 1d;
-}
-# 其余请求全部转到tomcat
-location ~ .*$ {
+<span class="o">}</span>
+<span class="c"># 其余请求全部转到tomcat</span>
+location ~ .<span class="k">*</span><span class="nv">$ </span><span class="o">{</span>
   proxy_pass http://127.0.0.1:8080;
-}
+<span class="o">}</span>
 </code></pre>
 </div>
 

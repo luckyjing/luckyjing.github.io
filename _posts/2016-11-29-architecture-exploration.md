@@ -48,7 +48,7 @@ description:  "在学生团队里，大家技术栈参差不齐，开发时间�
 
 在项目开发前，我提前将项目的脚手架提前搭建好，项目的大概目录如下所示：
 
-```
+```shell
 ├── README.md
 ├── blueprints  # 这就是上述第三点的模板，大家可以去github上搜 redux-cli
 ├── build # 构建后的文件
@@ -116,7 +116,7 @@ require('mock2easynew')(options, function (app) {
 - 在**开发**时，`React`,`Redux`就不用被抽离出来了，当然代码也不用压缩了，一切以快为主。
 - 在**发布**时，将`React`,`Redux`这些库抽离出来，这样打包出来文件会小，库文件我们可以用免费的`CDN`进行引入。
 
-```
+```html
 <script src="//cdn.bootcss.com/react/15.4.0/react.min.js"></script>
 <script src="//cdn.bootcss.com/react/15.4.0/react-dom.min.js"></script>
 <script src="//cdn.bootcss.com/redux/3.6.0/redux.min.js"></script>
@@ -169,7 +169,7 @@ var config = {
 
 还需要对`nginx`做一下简单配置，实现动静分离。
 
-```
+```shell
 # 由nginx处理静态页面
 location ~ .*\.(gif|jpg|png|bmp|swf)$
 {
