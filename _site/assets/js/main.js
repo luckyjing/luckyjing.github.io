@@ -33,4 +33,8 @@ function retina() {
 	});
 };
  
-$(document).ready(retina);
+$(document).ready(function(){
+	retina();
+	$('.post a').attr('target','_blank');
+});
+

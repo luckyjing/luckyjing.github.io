@@ -1,5 +1,5 @@
 /* Reset */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 .hljs{
@@ -48,6 +48,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* Spacing */
 .post h1, h3, h4, h5, p, .post-body ul, #post-list li, pre {
+margin-top: 20px;
 margin-bottom: 20px;
 }
 
@@ -55,23 +56,24 @@ margin-bottom: 20px;
 html, body { height: 100%; }
 
 body {
-	font:16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #666;
+	font:16px/1 "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+	color: #333;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 }
-
-h1 {
-	font-size: 30px;
-	letter-spacing: -1px;
-	color: #222;
-	font-weight: bold;
-}
 code {
-    padding: 2px 8px;
-    color: #1DAEF4;
-    background-color: #efefef;
-    border-radius: 4px
+    padding: 2px 4px;
+    color: #c7254e;
+    background-color: #f9f2f4;
+	white-space: nowrap;
+	font-size: 90%;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+	font-style: normal;
+	font-weight: 500;
+}
+pre code{
+	white-space: pre-wrap;
+	border-radius: 0;
 }
 .profile #wrapper {
 	padding: 100px 40px 0px;
@@ -182,15 +184,16 @@ a,
 	-o-transition: all 0.15s ease;
 	transition: all 0.15s ease;
 }
-
-ul 	{ margin:0; padding:0; }
-li	{ list-style-type:initial; list-style-position:initial; }
+.post a:hover{
+	text-decoration: underline;
+}
 
 /* Line Height */
-#post-body, p { line-height:1.7; }
+#post-body, p { line-height:32px; }
 
-b, strong { font-weight: 500;
-  color: #1E2025; }
+b, strong {
+	font-weight: bold;
+  }
 em, i { font-style: italic; }
 
 #title {
@@ -225,21 +228,16 @@ em, i { font-style: italic; }
 .post h1 {
 	margin-top: 15px;
 	margin-bottom: 20px;
-	color: #222;
-	font: 300 32px/1.4em "Helvetica Neue", Helvetica,Arial,sans-serif;
 }
 
 .post h2 {
 	margin-top: 15px;
 	margin-bottom: 20px;
-	  font: 300 24px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
-	  color: #111;
 }
 
 
 .post h2.headline {
 	/*font: italic 22px/1.3em Georgia,serif;*/
-	font: normal 13px/1.5em "Helvetica Neue",Helvetica,Arial,sans-serif;
 	margin: -5px 0 40px 0;
 	  font-size: 13px;
 	  text-transform: uppercase;
@@ -254,15 +252,24 @@ em, i { font-style: italic; }
 	margin-top: 2px;
 }
 
+
+h1 {
+	font-size: 30px;
+	letter-spacing: -1px;
+}
+h1,h2,h3,h4,h5,h6{
+	color: #555;
+	font-weight: bold;
+}
 h3, h4, h5 { margin-top:10px;}
-h2 { font-size:24px; font-weight: bold; }
-h3 { font-size:20px; font-weight: bold; }
-h4 { font-size:16px; font-weight:bold; }
-h5 { font-size:15px; font-weight: bold; }
+h2 { font-size:24px;  }
+h3 { font-size:20px;  }
+h4 { font-size:16px;  }
+h5 { font-size:15px; }
 
 h6 {
 	font-size: 13px;
-	font-weight: bold;
+	font-weight: 200;
 	color: #666;
 	margin-bottom: 6px;
 }
@@ -277,6 +284,7 @@ p.small {
 blockquote {
 	padding-left: 15px;
 	border-left: 3px solid #eee;
+	color: #999;
 }
 
 hr {
@@ -287,10 +295,7 @@ hr {
 	background: #eee;
 }
 
-span.code { font-family:Menlo, Monaco, Courier; background-color:#EEE; font-size:14px; }
-
 pre	{
-	font-family:Menlo, Monaco, Courier;
 	white-space:pre-wrap;
 	border: 1px solid #dedede;
 	padding:20px;

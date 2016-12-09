@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>LuckyJing - 新手学Docker（1）Hello World</title>
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="/rss.xml">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/9.8.0/styles/arduino-light.min.css
+">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="/" class="cta">主页 </a>
+    
+
+    <!--
+        
+            <a  href="/about" class="cta">关于我</a>
+        
+    -->
+    <!--<a class="cta" href="/feed.xml">Subscribe</a>-->
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>新手学Docker（1）Hello World</h1>
+        <h2 class="headline">2016年12月09日</h2>
+    </header>
+    <section id="post-body">
+        <h2 id="docker">Docker从哪儿下载？</h2>
+
+<p>由于我们访问<code class="highlighter-rouge">Docker</code>官网一般情况下会非常慢，所以我们不得不把目光投向国内的镜像站，还好，<code class="highlighter-rouge">DaoCloud</code>为我们扫清了一系列障碍，<a href="https://www.daocloud.io">点击前往</a>。</p>
+
+<p>你只需要以下步骤：</p>
+
+<ul>
+  <li>注册一个<code class="highlighter-rouge">DaoCloud</code>账号</li>
+  <li>进入下载页面，根据自己的系统下载合适的镜像包</li>
+  <li>安装完成后配置<a href="https://www.daocloud.io/mirror.html#accelerator-doc">Docker加速器</a></li>
+  <li>打开命令行，执行<code class="highlighter-rouge">docker version</code>，观察<code class="highlighter-rouge">Docker</code>是否安装成功</li>
+</ul>
+
+<h2 id="section">入门锦囊</h2>
+
+<p><img src="http://7xlqsb.com1.z0.glb.clouddn.com/Docker.jpg" alt="" /></p>
+
+<h3 id="section-1">名词解释</h3>
+
+<ul>
+  <li>Image
+    <ul>
+      <li><code class="highlighter-rouge">Image</code>是一堆文件的集合体，从用户角度来看，它是一个镜像包，它的特征是只读的，它是别人（或者我们自己）构建好的一个环境，在<code class="highlighter-rouge">Docker</code>世界里，我们会经常寻找第三方包，来支持我们的工作，如<code class="highlighter-rouge">nginx</code>,<code class="highlighter-rouge">centos</code>，我们不修改它，我们基于它实例出的<code class="highlighter-rouge">container</code>进行工作。</li>
+    </ul>
+  </li>
+  <li>container
+    <ul>
+      <li><code class="highlighter-rouge">Image</code>是只读的，我们是不可能也没必要去修改<code class="highlighter-rouge">Image</code>的，我们要做的就是实例化<code class="highlighter-rouge">Image</code>，即称为<code class="highlighter-rouge">container</code>，我们所做的修改都是基于<code class="highlighter-rouge">container</code>的，如图所示，<code class="highlighter-rouge">container</code>其实就是<code class="highlighter-rouge">Image</code>的一份拷贝，但是多了一部分<strong>可读写</strong>的区域，我们就是对这部分进行加工处理的，<code class="highlighter-rouge">container</code>其实也是一系列文件，真正支持我们交互的是<code class="highlighter-rouge">Running container</code>，它多出了一个进程，此进程提供我们与<code class="highlighter-rouge">container</code>读写区域沟通的途径，我们才得以有机会<strong>运行Docker</strong>。</li>
+    </ul>
+  </li>
+</ul>
+
+<p><code class="highlighter-rouge">container</code>经过我们的处理就像在<code class="highlighter-rouge">git</code>仓库里修改了文件一样，将修改后的<code class="highlighter-rouge">container</code>打快照固化为<code class="highlighter-rouge">Image</code>，这便是<code class="highlighter-rouge">Docker</code>生态的流动源泉。起初，我们可能只是一个壳子，人们陆陆续续为其增添功能，并且固化，经过一系列的串行作业后，这个壳子镜像凝结了前人的智慧，傲娇地展示在我们面前。</p>
+
+<h3 id="section-2">命令解释</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">docker run [Image Name]</code>
+    <ul>
+      <li>检查本地是否有<strong>Image Name</strong></li>
+      <li>如果没有的话，则从远端仓库下载</li>
+      <li>加载<code class="highlighter-rouge">Image</code>并且实例化<code class="highlighter-rouge">container</code>（实际上执行了 <code class="highlighter-rouge">docker create</code> &amp;&amp; <code class="highlighter-rouge">docker start</code>）</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">docker ps</code>
+    <ul>
+      <li>默认显示当前<strong>正在运行</strong>的<code class="highlighter-rouge">container</code></li>
+      <li>加上<code class="highlighter-rouge">-a</code>可以显示<strong>创建过</strong>的所有的<code class="highlighter-rouge">container</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="hello-world-1">Hello World 1</h2>
+
+<ol>
+  <li>输入<code class="highlighter-rouge">docker run hello-world</code>，命令行会打印以下信息</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>docker run hello-world
+
+Unable to find image <span class="s1">'hello-world:latest'</span> locally
+latest: Pulling from library/hello-world
+535020c3e8ad: Pull <span class="nb">complete
+</span>af340544ed62: Pull <span class="nb">complete
+</span>Digest: sha256:a68868bfe696c00866942e8f5ca39e3e31b79c1e50feaee4ce5e28df2f051d5c
+Status: Downloaded newer image <span class="k">for </span>hello-world:latest
+
+Hello from Docker.
+</code></pre>
+</div>
+
+<ol>
+  <li>执行<code class="highlighter-rouge">docker ps -a</code>，将会显示一个列表，显示错乱往往是因为你的命令行工具太窄了，你可以试着全屏显示。我们启动过的所有的<code class="highlighter-rouge">container</code>将会在这里显示。
+    <blockquote>
+      <p>为什么不能直接执行<code class="highlighter-rouge">docker ps</code>？hello-world这个Image在创建好<code class="highlighter-rouge">container</code>以后，打印信息，然后自动<code class="highlighter-rouge">stop</code>这个<code class="highlighter-rouge">container</code>，所以它已经不在正在运行的<code class="highlighter-rouge">container</code>列表里了。</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h2 id="hello-world-2">Hello World 2</h2>
+
+<ol>
+  <li>输入<code class="highlighter-rouge">docker run centos /bin/echo 'hello world'</code>，这一步我们不仅仅启动了一个<code class="highlighter-rouge">container</code>，还传输了一个命令进去执行了。
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code> docker run centos /bin/echo <span class="s1">'Hello world'</span>
+
+ Hello world
+</code></pre>
+    </div>
+  </li>
+  <li>输入<code class="highlighter-rouge">docker ps -a</code>可以看到第一步启动的那个<code class="highlighter-rouge">container</code></li>
+  <li>输入<code class="highlighter-rouge">docker run -t -i centos</code>可以启动一个交互性的<code class="highlighter-rouge">centos</code>，如同你正在远程<code class="highlighter-rouge">ssh</code>连接服务器。</li>
+</ol>
+
+<h2 id="section-3">扩展阅读</h2>
+<ul>
+  <li><a href="http://dockone.io/article/783">10张图带你深入了解Docker容器和镜像</a>
+    <ul>
+      <li>了解原理后，图解<code class="highlighter-rouge">Docker</code>的运行命令，非常值得一看！！！</li>
+    </ul>
+  </li>
+  <li><a href="http://docs.daocloud.io/docker-frontend/docker-frontend-open">前端开发者的Docker之旅</a>
+    <ul>
+      <li>作为一名正经前端，当然也要对<code class="highlighter-rouge">Docker</code>尝尝鲜，在<code class="highlighter-rouge">DaoCloud</code>官网上发现了一篇非常不错的文章，大家可以据此了解<code class="highlighter-rouge">Docker</code>。</li>
+    </ul>
+  </li>
+</ul>
+
+    </section>
+</article>
+
+ 
+
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/begin-docker-1/" data-title="新手学Docker（1）Hello World" ></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"luckyjing"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+<!-- Archive post list -->
+    <ul id="post-list" class="archive readmore">
+        <h3>更多</h3>
+        
+            <li>
+                <a href="/2016/begin-docker-2/">新手学Docker（2）熟悉Run命令<aside class="dates">2016年12月09日</aside></a>
+            </li>
+        
+            <li>
+                <a href="/2016/begin-docker-1/">新手学Docker（1）Hello World<aside class="dates">2016年12月09日</aside></a>
+            </li>
+        
+            <li>
+                <a href="/2016/architecture-exploration/">学生团队的前后端分离及持续交付探索历程<aside class="dates">2016年11月19日</aside></a>
+            </li>
+        
+            <li>
+                <a href="/2016/use-cnpm/">使用cnpm加速下载npm包<aside class="dates">2016年11月13日</aside></a>
+            </li>
+        
+            <li>
+                <a href="/2016/flipClock/">有趣的倒计时组件<aside class="dates">2016年11月12日</aside></a>
+            </li>
+        
+            <li>
+                <a href="/2016/web-guide/">关于Web前端的一次分享<aside class="dates">2016年06月06日</aside></a>
+            </li>
+        
+    </ul>
+
+<footer id="post-meta" class="clearfix">
+       
+    <a href="/">
+         <img class="avatar" src="/assets/images/avatar.png">
+        <div>
+            <span class="dark">LuckyJing</span>
+            <span>爱跑🐴拉松，爱骑行，爱📷影，💕JavaScript</span>
+        </div>
+    </a>
+    <section id="sharing">
+        <!--<a class="twitter" href="https://twitter.com/intent/tweet?text=http://luckyjing.github.io/2016/begin-docker-1/ - 新手学Docker（1）Hello World by @"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>-->
+    </section>
+</footer>
+  </section>
+
+  <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+  
+  <script src="http://cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+   
+</body>
+</html>
+
+
+
