@@ -47,7 +47,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 .icon-facebook-rect:before { content: '\e803'; }
 
 /* Spacing */
-.post h1, h3, h4, h5, p, .post-body ul, #post-list li, pre {
+.post h1, h3, h4, h5, p, .post-body ul,  pre {
 margin-top: 20px;
 margin-bottom: 20px;
 }
@@ -83,7 +83,6 @@ pre code{
 
 .profile #header {
 	border-bottom: 1px solid #eee;
-	margin-bottom: 40px;
 	padding-bottom: 40px;
 	text-align: center;
 	position: relative;
@@ -248,7 +247,7 @@ em, i { font-style: italic; }
 
 #post-list h2 {
 	font: normal 17px/1.5em "Helvetica Neue",Helvetica,Arial,sans-serif;
-	max-width: 400px;
+	max-width: 80%;
 	margin-top: 2px;
 }
 
@@ -378,7 +377,14 @@ Post List
 #archive-list {
 	margin-top: 100px;
 }
-
+#post-list{
+	margin-top:0;
+	padding-left:0;
+}
+#post-list li{
+	padding-top:10px;
+	padding-bottom:10px;
+}
 #post-list li,#archive-list li {
 	list-style-type: none;
 }
@@ -388,7 +394,6 @@ Post List
 }
 
 #post-list li+li {
-	padding-top: 20px;
 	border-top: 1px solid #eee;
 }
 
@@ -436,7 +441,6 @@ Post List
 #footer {
 	box-shadow: inset 0 1px 0 #eee;
 	padding: 40px 0 0 0;
-	margin-top: 100px;
 }
 
 /* Post Page */

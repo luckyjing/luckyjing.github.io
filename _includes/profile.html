@@ -1,14 +1,28 @@
 <div class="profile">
     <section id="wrapper">
         <header id="header">
-        {% if site.aboutPage %}
+            {% if site.aboutPage %}
             <!--<a href="{{ site.baseurl }}about">-->
-                <img id="avatar" class="2x" src="{{ site.baseurl }}assets/images/avatar.png"/>
+            <!--<img id="avatar" class="2x" src="{{ site.baseurl }}assets/images/avatar.png"/>-->
             <!--</a>-->
-        {% else %}
-            <img id="avatar" class="2x" src="{{ site.baseurl }}assets/images/avatar.png"/>
-        {% endif %}
-            <h1>{{ site.author }}</h1>
+            {% else %}
+            <!--<img id="avatar" class="2x" src="{{ site.baseurl }}assets/images/avatar.png"/>-->
+            {% endif %}
+            <!--<h1>{{ site.author }}</h1>-->
+            <svg viewBox="0 0 1200 250" class="my-logo">
+                <symbol id="s-text">
+                    <text text-anchor="middle" x="50%" y="70%" class="text--line">
+                        LuckyJing
+                    </text>
+                </symbol>
+                <g class="g-ants">
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                </g>
+            </svg>
             <p style="padding-top:20px">{{ site.description }}</p>
         </header>
     </section>

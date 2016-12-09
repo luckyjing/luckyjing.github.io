@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/9.8.0/styles/arduino-light.min.css
 ">
   <link rel="stylesheet" href="{{ site.baseurl }}assets/css/style.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}assets/css/logo.css">
   <script>
 var _hmt = _hmt || [];
 (function() {
@@ -26,7 +27,11 @@ var _hmt = _hmt || [];
 
 <body>
 
-  {% include navigation.html %} {% if page.profile %} {% include profile.html %} {% endif %}
+  {% include navigation.html %} 
+
+  {% if page.profile %} 
+    {% include profile.html %} 
+  {% endif %}
 
   <section id="wrapper" class="{% if page.profile %}home{% endif %}">
     {{ content }}
