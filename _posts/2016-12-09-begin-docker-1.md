@@ -63,6 +63,7 @@ Hello from Docker.
 ## Hello World 2
 
 1. 输入`docker run centos /bin/echo 'hello world'`，这一步我们不仅仅启动了一个`container`，还传输了一个命令进去执行了。
+
 ```bash
     docker run centos /bin/echo 'Hello world'
 

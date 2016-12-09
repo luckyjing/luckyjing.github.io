@@ -118,13 +118,15 @@ Hello from Docker.
 <h2 id="hello-world-2">Hello World 2</h2>
 
 <ol>
-  <li>输入<code class="highlighter-rouge">docker run centos /bin/echo 'hello world'</code>，这一步我们不仅仅启动了一个<code class="highlighter-rouge">container</code>，还传输了一个命令进去执行了。
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code> docker run centos /bin/echo <span class="s1">'Hello world'</span>
+  <li>输入<code class="highlighter-rouge">docker run centos /bin/echo 'hello world'</code>，这一步我们不仅仅启动了一个<code class="highlighter-rouge">container</code>，还传输了一个命令进去执行了。</li>
+</ol>
 
- Hello world
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>    docker run centos /bin/echo <span class="s1">'Hello world'</span>
+
+    Hello world
 </code></pre>
-    </div>
-  </li>
+</div>
+<ol>
   <li>输入<code class="highlighter-rouge">docker ps -a</code>可以看到第一步启动的那个<code class="highlighter-rouge">container</code></li>
   <li>输入<code class="highlighter-rouge">docker run -t -i centos</code>可以启动一个交互性的<code class="highlighter-rouge">centos</code>，如同你正在远程<code class="highlighter-rouge">ssh</code>连接服务器。</li>
 </ol>
